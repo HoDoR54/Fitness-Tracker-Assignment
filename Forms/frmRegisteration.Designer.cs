@@ -281,6 +281,7 @@
             this.btnSignUp.TabIndex = 20;
             this.btnSignUp.Text = "Sign up";
             this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // btnCancel
             // 
@@ -291,29 +292,31 @@
             this.btnCancel.TabIndex = 21;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(97, 40);
+            this.label10.Location = new System.Drawing.Point(148, 38);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(390, 25);
+            this.label10.Size = new System.Drawing.Size(327, 25);
             this.label10.TabIndex = 22;
-            this.label10.Text = "Let us me your daily physical assistant";
+            this.label10.Text = "A daily assistant for your fitness";
             // 
             // linkLogin
             // 
             this.linkLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLogin.AutoSize = true;
             this.linkLogin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLogin.Location = new System.Drawing.Point(158, 75);
+            this.linkLogin.Location = new System.Drawing.Point(182, 72);
             this.linkLogin.Name = "linkLogin";
             this.linkLogin.Size = new System.Drawing.Size(263, 22);
             this.linkLogin.TabIndex = 23;
             this.linkLogin.TabStop = true;
             this.linkLogin.Text = "Already have an account? log in";
+            this.linkLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogin_LinkClicked);
             // 
             // label11
             // 
@@ -368,7 +371,8 @@
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MinimumSize = new System.Drawing.Size(587, 650);
             this.Name = "frmRegistration";
-            this.Text = "Registration Form";
+            this.Text = "Create a new account";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRegisteration_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.numCurrentWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHeight)).EndInit();

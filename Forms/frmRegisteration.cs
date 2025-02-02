@@ -21,5 +21,24 @@ namespace Fitness_Tracker.Forms
         {
             Application.Exit();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+            this.Hide();
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            frmMain frmMain = new frmMain();
+            frmMain.Show();
+            this.Hide();
+        }
     }
 }

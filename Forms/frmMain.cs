@@ -21,5 +21,10 @@ namespace Fitness_Tracker.Forms
         {
             Application.Exit();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

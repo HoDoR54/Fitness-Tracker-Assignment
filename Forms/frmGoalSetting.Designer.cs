@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(578, 466);
             this.Name = "frmGoalSetting";
             this.Text = "frmGoalSetting";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGoalSetting_FormClosing);

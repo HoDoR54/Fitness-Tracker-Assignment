@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\frmActivityTracking.cs">
+    <Compile Include="Forms\frmAccountMgmt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmActivityTracking.Designer.cs">
-      <DependentUpon>frmActivityTracking.cs</DependentUpon>
+    <Compile Include="Forms\frmAccountMgmt.Designer.cs">
+      <DependentUpon>frmAccountMgmt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmActivitiesPicking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmActivitiesPicking.Designer.cs">
+      <DependentUpon>frmActivitiesPicking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCalories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCalories.Designer.cs">
+      <DependentUpon>frmCalories.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmGoalSetting.cs">
       <SubType>Form</SubType>
@@ -83,8 +95,14 @@
     <Compile Include="Utils\CalorieCalculator.cs" />
     <Compile Include="Utils\DatabaseManipulation.cs" />
     <Compile Include="Utils\PasswordValidation.cs" />
-    <EmbeddedResource Include="Forms\frmActivityTracking.resx">
-      <DependentUpon>frmActivityTracking.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmAccountMgmt.resx">
+      <DependentUpon>frmAccountMgmt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmActivitiesPicking.resx">
+      <DependentUpon>frmActivitiesPicking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCalories.resx">
+      <DependentUpon>frmCalories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmGoalSetting.resx">
       <DependentUpon>frmGoalSetting.cs</DependentUpon>

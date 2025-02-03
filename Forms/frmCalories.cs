@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace Fitness_Tracker.Forms
 {
-    public partial class frmActivityTracking : Form
+    public partial class frmCalories : Form
     {
-        public frmActivityTracking()
+        public frmCalories()
         {
             InitializeComponent();
         }
 
-        private void frmActivityTracking_FormClosing(object sender, FormClosingEventArgs e)
+        private void frmCalories_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

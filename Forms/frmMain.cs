@@ -26,5 +26,29 @@ namespace Fitness_Tracker.Forms
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmGoalSetting frmGoalSetting = new frmGoalSetting();
+            frmGoalSetting.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmActivitiesPicking frmActivityTracking = new frmActivitiesPicking();
+            frmActivityTracking.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmCalories frmCalories = new frmCalories();
+            frmCalories.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            frmAccountMgmt frmAccountMgmt = new frmAccountMgmt();  
+            frmAccountMgmt.ShowDialog();
+        }
     }
 }

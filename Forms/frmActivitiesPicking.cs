@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Fitness_Tracker.Forms
 {
-    public partial class frmGoalSetting : Form
+    public partial class frmActivitiesPicking : Form
     {
-        public frmGoalSetting()
+        public frmActivitiesPicking()
         {
             InitializeComponent();
         }
 
-        private void frmGoalSetting_FormClosing(object sender, FormClosingEventArgs e)
+        private void frmActivityTracking_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
         }

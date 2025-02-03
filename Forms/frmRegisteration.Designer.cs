@@ -60,7 +60,7 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Location = new System.Drawing.Point(26, 126);
+            this.label1.Location = new System.Drawing.Point(26, 116);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.label1.Size = new System.Drawing.Size(200, 46);
@@ -70,7 +70,7 @@
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.Location = new System.Drawing.Point(26, 172);
+            this.label2.Location = new System.Drawing.Point(26, 162);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.label2.Size = new System.Drawing.Size(200, 46);
@@ -80,7 +80,7 @@
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Location = new System.Drawing.Point(26, 218);
+            this.label3.Location = new System.Drawing.Point(26, 208);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.label3.Size = new System.Drawing.Size(200, 46);
@@ -90,7 +90,7 @@
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.Location = new System.Drawing.Point(26, 356);
+            this.label4.Location = new System.Drawing.Point(26, 346);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.label4.Size = new System.Drawing.Size(200, 46);
@@ -100,7 +100,7 @@
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.Location = new System.Drawing.Point(26, 310);
+            this.label5.Location = new System.Drawing.Point(26, 300);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.label5.Size = new System.Drawing.Size(200, 46);
@@ -110,7 +110,7 @@
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.Location = new System.Drawing.Point(26, 402);
+            this.label6.Location = new System.Drawing.Point(26, 392);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.label6.Size = new System.Drawing.Size(200, 46);
@@ -120,7 +120,7 @@
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.Location = new System.Drawing.Point(26, 264);
+            this.label7.Location = new System.Drawing.Point(26, 254);
             this.label7.Name = "label7";
             this.label7.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.label7.Size = new System.Drawing.Size(200, 46);
@@ -130,7 +130,7 @@
             // txtUsername
             // 
             this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUsername.Location = new System.Drawing.Point(232, 123);
+            this.txtUsername.Location = new System.Drawing.Point(232, 113);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(300, 34);
             this.txtUsername.TabIndex = 7;
@@ -138,7 +138,7 @@
             // txtName
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtName.Location = new System.Drawing.Point(232, 169);
+            this.txtName.Location = new System.Drawing.Point(232, 159);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(300, 34);
             this.txtName.TabIndex = 8;
@@ -147,7 +147,7 @@
             // 
             this.dtpDob.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDob.Location = new System.Drawing.Point(232, 218);
+            this.dtpDob.Location = new System.Drawing.Point(232, 208);
             this.dtpDob.Name = "dtpDob";
             this.dtpDob.Size = new System.Drawing.Size(300, 34);
             this.dtpDob.TabIndex = 9;
@@ -156,7 +156,7 @@
             // 
             this.rdoMale.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdoMale.AutoSize = true;
-            this.rdoMale.Location = new System.Drawing.Point(232, 264);
+            this.rdoMale.Location = new System.Drawing.Point(232, 254);
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Size = new System.Drawing.Size(78, 30);
             this.rdoMale.TabIndex = 10;
@@ -168,7 +168,7 @@
             // 
             this.rdoFemale.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdoFemale.AutoSize = true;
-            this.rdoFemale.Location = new System.Drawing.Point(387, 264);
+            this.rdoFemale.Location = new System.Drawing.Point(387, 254);
             this.rdoFemale.Name = "rdoFemale";
             this.rdoFemale.Size = new System.Drawing.Size(100, 30);
             this.rdoFemale.TabIndex = 11;
@@ -185,7 +185,7 @@
             0,
             0,
             65536});
-            this.numCurrentWeight.Location = new System.Drawing.Point(232, 310);
+            this.numCurrentWeight.Location = new System.Drawing.Point(232, 300);
             this.numCurrentWeight.Maximum = new decimal(new int[] {
             300,
             0,
@@ -204,7 +204,7 @@
             // 
             this.numHeight.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numHeight.DecimalPlaces = 2;
-            this.numHeight.Location = new System.Drawing.Point(232, 359);
+            this.numHeight.Location = new System.Drawing.Point(232, 349);
             this.numHeight.Maximum = new decimal(new int[] {
             250,
             0,
@@ -222,7 +222,7 @@
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.Location = new System.Drawing.Point(382, 350);
+            this.label8.Location = new System.Drawing.Point(382, 340);
             this.label8.Name = "label8";
             this.label8.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.label8.Size = new System.Drawing.Size(150, 46);
@@ -238,7 +238,7 @@
             0,
             0,
             65536});
-            this.numGoalWeight.Location = new System.Drawing.Point(232, 408);
+            this.numGoalWeight.Location = new System.Drawing.Point(232, 398);
             this.numGoalWeight.Maximum = new decimal(new int[] {
             300,
             0,
@@ -256,7 +256,7 @@
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPassword.Location = new System.Drawing.Point(232, 451);
+            this.txtPassword.Location = new System.Drawing.Point(232, 441);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = 'o';
             this.txtPassword.Size = new System.Drawing.Size(300, 34);
@@ -265,7 +265,7 @@
             // label9
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.Location = new System.Drawing.Point(26, 451);
+            this.label9.Location = new System.Drawing.Point(26, 441);
             this.label9.Name = "label9";
             this.label9.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.label9.Size = new System.Drawing.Size(200, 46);
@@ -275,7 +275,7 @@
             // btnSignUp
             // 
             this.btnSignUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSignUp.Location = new System.Drawing.Point(423, 528);
+            this.btnSignUp.Location = new System.Drawing.Point(448, 530);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(109, 41);
             this.btnSignUp.TabIndex = 20;
@@ -286,7 +286,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(308, 528);
+            this.btnCancel.Location = new System.Drawing.Point(333, 530);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 41);
             this.btnCancel.TabIndex = 21;
@@ -299,7 +299,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(148, 38);
+            this.label10.Location = new System.Drawing.Point(148, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(327, 25);
             this.label10.TabIndex = 22;
@@ -310,7 +310,7 @@
             this.linkLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLogin.AutoSize = true;
             this.linkLogin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLogin.Location = new System.Drawing.Point(182, 72);
+            this.linkLogin.Location = new System.Drawing.Point(182, 62);
             this.linkLogin.Name = "linkLogin";
             this.linkLogin.Size = new System.Drawing.Size(263, 22);
             this.linkLogin.TabIndex = 23;
@@ -321,7 +321,7 @@
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.Location = new System.Drawing.Point(382, 310);
+            this.label11.Location = new System.Drawing.Point(382, 300);
             this.label11.Name = "label11";
             this.label11.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.label11.Size = new System.Drawing.Size(150, 46);
@@ -331,7 +331,7 @@
             // label12
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.Location = new System.Drawing.Point(382, 402);
+            this.label12.Location = new System.Drawing.Point(382, 392);
             this.label12.Name = "label12";
             this.label12.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.label12.Size = new System.Drawing.Size(150, 46);
@@ -342,7 +342,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 603);
+            this.ClientSize = new System.Drawing.Size(569, 583);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.linkLogin);
@@ -369,7 +369,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.MinimumSize = new System.Drawing.Size(587, 650);
+            this.MinimumSize = new System.Drawing.Size(587, 630);
             this.Name = "frmRegistration";
             this.Text = "Create a new account";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

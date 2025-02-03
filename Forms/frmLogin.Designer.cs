@@ -80,7 +80,7 @@
             this.linkLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLogin.AutoSize = true;
             this.linkLogin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLogin.Location = new System.Drawing.Point(153, 67);
+            this.linkLogin.Location = new System.Drawing.Point(178, 73);
             this.linkLogin.Name = "linkLogin";
             this.linkLogin.Size = new System.Drawing.Size(280, 22);
             this.linkLogin.TabIndex = 25;
@@ -93,7 +93,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(200, 30);
+            this.label10.Location = new System.Drawing.Point(225, 36);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(156, 25);
             this.label10.TabIndex = 24;
@@ -105,7 +105,7 @@
             this.btnCancel.Location = new System.Drawing.Point(315, 223);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 41);
-            this.btnCancel.TabIndex = 27;
+            this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -116,7 +116,7 @@
             this.btnLogin.Location = new System.Drawing.Point(430, 223);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(109, 41);
-            this.btnLogin.TabIndex = 26;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Log in";
             this.btnLogin.UseVisualStyleBackColor = true;
             // 

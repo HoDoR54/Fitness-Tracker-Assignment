@@ -16,5 +16,3 @@ graph TD;
     C --> E["Goal Setter"];
     C --> F["Set activity List"];
     C --> G["Account Management"];
-    C --> H["Go Back to Main"];
-

@@ -30,8 +30,8 @@
         {
             this.label10 = new System.Windows.Forms.Label();
             this.lblActivitiesListDisplay = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCalories = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.cbxWalking = new System.Windows.Forms.CheckBox();
             this.cbxSwimming = new System.Windows.Forms.CheckBox();
             this.cbxRunning = new System.Windows.Forms.CheckBox();
@@ -65,26 +65,26 @@
             this.lblActivitiesListDisplay.Size = new System.Drawing.Size(325, 240);
             this.lblActivitiesListDisplay.TabIndex = 26;
             // 
-            // label2
+            // lblCalories
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(719, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 20);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Daily calorie burn goal";
+            this.lblCalories.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCalories.AutoSize = true;
+            this.lblCalories.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalories.Location = new System.Drawing.Point(719, 9);
+            this.lblCalories.Name = "lblCalories";
+            this.lblCalories.Size = new System.Drawing.Size(171, 20);
+            this.lblCalories.TabIndex = 27;
+            this.lblCalories.Text = "Daily calorie burn goal";
             // 
-            // label1
+            // lblUsername
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 20);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Username Display";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(12, 9);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(141, 20);
+            this.lblUsername.TabIndex = 28;
+            this.lblUsername.Text = "Username Display";
             // 
             // cbxWalking
             // 
@@ -210,8 +210,8 @@
             this.Controls.Add(this.cbxRunning);
             this.Controls.Add(this.cbxSwimming);
             this.Controls.Add(this.cbxWalking);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblCalories);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblActivitiesListDisplay);
             this.Controls.Add(this.label10);
             this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,6 +220,7 @@
             this.Name = "frmActivitiesPicking";
             this.Text = "Activities";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmActivityTracking_FormClosing);
+            this.Load += new System.EventHandler(this.frmActivitiesPicking_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,8 +230,8 @@
 
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblActivitiesListDisplay;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCalories;
+        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.CheckBox cbxWalking;
         private System.Windows.Forms.CheckBox cbxSwimming;
         private System.Windows.Forms.CheckBox cbxRunning;

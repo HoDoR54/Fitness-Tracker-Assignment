@@ -16,9 +16,9 @@ namespace Fitness_Tracker.Models
             public decimal CurrentWeight { get; set; }
             public decimal WeightGoal { get; set; }
             public decimal HeightInCm { get; set; }
+            public int CalorieGoal {  get; set; }
 
-
-        public clsUser(string username, string name, string password, string gender, DateTime dateOfBirth, decimal currentWeight, decimal weightGoal, decimal heightInCm)
+        public clsUser(string username, string name, string password, string gender, DateTime dateOfBirth, decimal currentWeight, decimal weightGoal, decimal heightInCm, int calorieGoal)
         {
             Username = username;
             Name = name;
@@ -28,6 +28,7 @@ namespace Fitness_Tracker.Models
             CurrentWeight = currentWeight;
             WeightGoal = weightGoal;
             HeightInCm = heightInCm;
+            CalorieGoal = calorieGoal;
         }
     }
 }

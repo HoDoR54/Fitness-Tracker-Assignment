@@ -297,6 +297,8 @@ namespace Fitness_Tracker {
             
             private global::System.Data.DataColumn columnpassword;
             
+            private global::System.Data.DataColumn columncalorieGoal;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tblUserDataTable() {
@@ -404,6 +406,14 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn calorieGoalColumn {
+                get {
+                    return this.columncalorieGoal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -439,7 +449,7 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblUserRow AddtblUserRow(string id, string username, string name, System.DateTime dateOfBirth, string gender, decimal currentWeight, decimal weightGoal, decimal height, string password) {
+            public tblUserRow AddtblUserRow(string id, string username, string name, System.DateTime dateOfBirth, string gender, decimal currentWeight, decimal weightGoal, decimal height, string password, int calorieGoal) {
                 tblUserRow rowtblUserRow = ((tblUserRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -450,7 +460,8 @@ namespace Fitness_Tracker {
                         currentWeight,
                         weightGoal,
                         height,
-                        password};
+                        password,
+                        calorieGoal};
                 rowtblUserRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblUserRow);
                 return rowtblUserRow;
@@ -489,6 +500,7 @@ namespace Fitness_Tracker {
                 this.columnweightGoal = base.Columns["weightGoal"];
                 this.columnheight = base.Columns["height"];
                 this.columnpassword = base.Columns["password"];
+                this.columncalorieGoal = base.Columns["calorieGoal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -512,6 +524,8 @@ namespace Fitness_Tracker {
                 base.Columns.Add(this.columnheight);
                 this.columnpassword = new global::System.Data.DataColumn("password", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpassword);
+                this.columncalorieGoal = new global::System.Data.DataColumn("calorieGoal", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncalorieGoal);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
@@ -782,6 +796,22 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int calorieGoal {
+                get {
+                    try {
+                        return ((int)(this[this.tabletblUser.calorieGoalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'calorieGoal\' in table \'tblUser\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblUser.calorieGoalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IscurrentWeightNull() {
                 return this.IsNull(this.tabletblUser.currentWeightColumn);
             }
@@ -814,6 +844,18 @@ namespace Fitness_Tracker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetheightNull() {
                 this[this.tabletblUser.heightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscalorieGoalNull() {
+                return this.IsNull(this.tabletblUser.calorieGoalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcalorieGoalNull() {
+                this[this.tabletblUser.calorieGoalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -985,10 +1027,11 @@ namespace Fitness_Tracker.DBFitness_Tracker_WinFormDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("weightGoal", "weightGoal");
             tableMapping.ColumnMappings.Add("height", "height");
             tableMapping.ColumnMappings.Add("password", "password");
+            tableMapping.ColumnMappings.Add("calorieGoal", "calorieGoal");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[tblUser] WHERE (([id] = @Original_id) AND ([username] = @Original_username) AND ([name] = @Original_name) AND ([dateOfBirth] = @Original_dateOfBirth) AND ([gender] = @Original_gender) AND ((@IsNull_currentWeight = 1 AND [currentWeight] IS NULL) OR ([currentWeight] = @Original_currentWeight)) AND ((@IsNull_weightGoal = 1 AND [weightGoal] IS NULL) OR ([weightGoal] = @Original_weightGoal)) AND ((@IsNull_height = 1 AND [height] IS NULL) OR ([height] = @Original_height)) AND ([password] = @Original_password))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[tblUser] WHERE (([id] = @Original_id) AND ([username] = @Original_username) AND ([name] = @Original_name) AND ([dateOfBirth] = @Original_dateOfBirth) AND ([gender] = @Original_gender) AND ((@IsNull_currentWeight = 1 AND [currentWeight] IS NULL) OR ([currentWeight] = @Original_currentWeight)) AND ((@IsNull_weightGoal = 1 AND [weightGoal] IS NULL) OR ([weightGoal] = @Original_weightGoal)) AND ((@IsNull_height = 1 AND [height] IS NULL) OR ([height] = @Original_height)) AND ([password] = @Original_password) AND ((@IsNull_calorieGoal = 1 AND [calorieGoal] IS NULL) OR ([calorieGoal] = @Original_calorieGoal)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1002,10 +1045,12 @@ namespace Fitness_Tracker.DBFitness_Tracker_WinFormDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_height", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "height", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_height", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "height", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_calorieGoal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "calorieGoal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_calorieGoal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "calorieGoal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tblUser] ([id], [username], [name], [dateOfBirth], [gender], [currentWeight], [weightGoal], [height], [password]) VALUES (@id, @username, @name, @dateOfBirth, @gender, @currentWeight, @weightGoal, @height, @password);
-SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, height, password FROM tblUser WHERE (id = @id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tblUser] ([id], [username], [name], [dateOfBirth], [gender], [currentWeight], [weightGoal], [height], [password], [calorieGoal]) VALUES (@id, @username, @name, @dateOfBirth, @gender, @currentWeight, @weightGoal, @height, @password, @calorieGoal);
+SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, height, password, calorieGoal FROM tblUser WHERE (id = @id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1016,10 +1061,11 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@weightGoal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 6, 2, "weightGoal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@height", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "height", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@calorieGoal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "calorieGoal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tblUser] SET [id] = @id, [username] = @username, [name] = @name, [dateOfBirth] = @dateOfBirth, [gender] = @gender, [currentWeight] = @currentWeight, [weightGoal] = @weightGoal, [height] = @height, [password] = @password WHERE (([id] = @Original_id) AND ([username] = @Original_username) AND ([name] = @Original_name) AND ([dateOfBirth] = @Original_dateOfBirth) AND ([gender] = @Original_gender) AND ((@IsNull_currentWeight = 1 AND [currentWeight] IS NULL) OR ([currentWeight] = @Original_currentWeight)) AND ((@IsNull_weightGoal = 1 AND [weightGoal] IS NULL) OR ([weightGoal] = @Original_weightGoal)) AND ((@IsNull_height = 1 AND [height] IS NULL) OR ([height] = @Original_height)) AND ([password] = @Original_password));
-SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, height, password FROM tblUser WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tblUser] SET [id] = @id, [username] = @username, [name] = @name, [dateOfBirth] = @dateOfBirth, [gender] = @gender, [currentWeight] = @currentWeight, [weightGoal] = @weightGoal, [height] = @height, [password] = @password, [calorieGoal] = @calorieGoal WHERE (([id] = @Original_id) AND ([username] = @Original_username) AND ([name] = @Original_name) AND ([dateOfBirth] = @Original_dateOfBirth) AND ([gender] = @Original_gender) AND ((@IsNull_currentWeight = 1 AND [currentWeight] IS NULL) OR ([currentWeight] = @Original_currentWeight)) AND ((@IsNull_weightGoal = 1 AND [weightGoal] IS NULL) OR ([weightGoal] = @Original_weightGoal)) AND ((@IsNull_height = 1 AND [height] IS NULL) OR ([height] = @Original_height)) AND ([password] = @Original_password) AND ((@IsNull_calorieGoal = 1 AND [calorieGoal] IS NULL) OR ([calorieGoal] = @Original_calorieGoal)));
+SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, height, password, calorieGoal FROM tblUser WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1030,6 +1076,7 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@weightGoal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 6, 2, "weightGoal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@height", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "height", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@calorieGoal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "calorieGoal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1042,6 +1089,8 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_height", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "height", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_height", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "height", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_calorieGoal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "calorieGoal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_calorieGoal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "calorieGoal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1054,12 +1103,18 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, height" +
-                ", password FROM dbo.tblUser";
+                ", password, calorieGoal FROM dbo.tblUser";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "UPDATE tblUser \r\nSET calorieGoal = @calorieGoal \r\nWHERE username = @username;";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@calorieGoal", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "calorieGoal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1119,7 +1174,7 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_id, string Original_username, string Original_name, System.DateTime Original_dateOfBirth, string Original_gender, global::System.Nullable<decimal> Original_currentWeight, global::System.Nullable<decimal> Original_weightGoal, global::System.Nullable<decimal> Original_height, string Original_password) {
+        public virtual int Delete(string Original_id, string Original_username, string Original_name, System.DateTime Original_dateOfBirth, string Original_gender, global::System.Nullable<decimal> Original_currentWeight, global::System.Nullable<decimal> Original_weightGoal, global::System.Nullable<decimal> Original_height, string Original_password, global::System.Nullable<int> Original_calorieGoal) {
             if ((Original_id == null)) {
                 throw new global::System.ArgumentNullException("Original_id");
             }
@@ -1175,6 +1230,14 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_password));
             }
+            if ((Original_calorieGoal.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((int)(Original_calorieGoal.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1195,7 +1258,7 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string id, string username, string name, System.DateTime dateOfBirth, string gender, global::System.Nullable<decimal> currentWeight, global::System.Nullable<decimal> weightGoal, global::System.Nullable<decimal> height, string password) {
+        public virtual int Insert(string id, string username, string name, System.DateTime dateOfBirth, string gender, global::System.Nullable<decimal> currentWeight, global::System.Nullable<decimal> weightGoal, global::System.Nullable<decimal> height, string password, global::System.Nullable<int> calorieGoal) {
             if ((id == null)) {
                 throw new global::System.ArgumentNullException("id");
             }
@@ -1245,6 +1308,12 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(password));
             }
+            if ((calorieGoal.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(calorieGoal.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1275,6 +1344,7 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                     global::System.Nullable<decimal> weightGoal, 
                     global::System.Nullable<decimal> height, 
                     string password, 
+                    global::System.Nullable<int> calorieGoal, 
                     string Original_id, 
                     string Original_username, 
                     string Original_name, 
@@ -1283,7 +1353,8 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                     global::System.Nullable<decimal> Original_currentWeight, 
                     global::System.Nullable<decimal> Original_weightGoal, 
                     global::System.Nullable<decimal> Original_height, 
-                    string Original_password) {
+                    string Original_password, 
+                    global::System.Nullable<int> Original_calorieGoal) {
             if ((id == null)) {
                 throw new global::System.ArgumentNullException("id");
             }
@@ -1333,60 +1404,74 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(password));
             }
+            if ((calorieGoal.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(calorieGoal.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
             if ((Original_id == null)) {
                 throw new global::System.ArgumentNullException("Original_id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_id));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_id));
             }
             if ((Original_username == null)) {
                 throw new global::System.ArgumentNullException("Original_username");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_username));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_username));
             }
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_name));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_name));
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_dateOfBirth));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_dateOfBirth));
             if ((Original_gender == null)) {
                 throw new global::System.ArgumentNullException("Original_gender");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_gender));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_gender));
             }
             if ((Original_currentWeight.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Original_currentWeight.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(Original_currentWeight.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             if ((Original_weightGoal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(Original_weightGoal.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(Original_weightGoal.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             if ((Original_height.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_height.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((decimal)(Original_height.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             if ((Original_password == null)) {
                 throw new global::System.ArgumentNullException("Original_password");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_password));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_password));
+            }
+            if ((Original_calorieGoal.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_calorieGoal.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1417,6 +1502,7 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                     global::System.Nullable<decimal> weightGoal, 
                     global::System.Nullable<decimal> height, 
                     string password, 
+                    global::System.Nullable<int> calorieGoal, 
                     string Original_id, 
                     string Original_username, 
                     string Original_name, 
@@ -1425,8 +1511,44 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                     global::System.Nullable<decimal> Original_currentWeight, 
                     global::System.Nullable<decimal> Original_weightGoal, 
                     global::System.Nullable<decimal> Original_height, 
-                    string Original_password) {
-            return this.Update(Original_id, username, name, dateOfBirth, gender, currentWeight, weightGoal, height, password, Original_id, Original_username, Original_name, Original_dateOfBirth, Original_gender, Original_currentWeight, Original_weightGoal, Original_height, Original_password);
+                    string Original_password, 
+                    global::System.Nullable<int> Original_calorieGoal) {
+            return this.Update(Original_id, username, name, dateOfBirth, gender, currentWeight, weightGoal, height, password, calorieGoal, Original_id, Original_username, Original_name, Original_dateOfBirth, Original_gender, Original_currentWeight, Original_weightGoal, Original_height, Original_password, Original_calorieGoal);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateUserCalGoal(global::System.Nullable<int> calorieGoal, string username) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((calorieGoal.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(calorieGoal.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((username == null)) {
+                throw new global::System.ArgumentNullException("username");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(username));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

@@ -33,7 +33,7 @@ namespace Fitness_Tracker.Utils
         {
             try
             {
-                int dataInserted = adapter.Insert(AutoGenerateId(), user.Username, user.Name, user.DateOfBirth, user.Gender, user.CurrentWeight, user.WeightGoal, user.HeightInCm, user.Password);
+                int dataInserted = adapter.Insert(AutoGenerateId(), user.Username, user.Name, user.DateOfBirth, user.Gender, user.CurrentWeight, user.WeightGoal, user.HeightInCm, user.Password, user.CalorieGoal);
                 return dataInserted > 0;
             }
             catch (Exception ex)
@@ -70,13 +70,27 @@ namespace Fitness_Tracker.Utils
                     currentWeight: Convert.ToDecimal(matchedRow["currentWeight"]),
                     weightGoal: Convert.ToDecimal(matchedRow["weightGoal"]),
                     heightInCm: Convert.ToInt32(matchedRow["height"]),
-                    password: matchedRow["password"].ToString()
+                    password: matchedRow["password"].ToString(),
+                    calorieGoal: Convert.ToInt32(matchedRow["calorieGoal"])
                 );
             }
 
             return null;
         }
 
+        public bool UpdateUserCalGoal (int calorieGoal, string username)
+        {
+            try
+            {
+                int dataUpdated = adapter.UpdateUserCalGoal(calorieGoal, username);
+                return dataUpdated > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
 
     }
 }

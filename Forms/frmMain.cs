@@ -32,7 +32,7 @@ namespace Fitness_Tracker.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmGoalSetting frmGoalSetting = new frmGoalSetting();
+            frmGoalSetting frmGoalSetting = new frmGoalSetting(currentUser.Username);
             frmGoalSetting.ShowDialog();
         }
 
@@ -57,7 +57,7 @@ namespace Fitness_Tracker.Forms
         private void frmMain_Load(object sender, EventArgs e)
         {
             lblUsername.Text = $"Username: {currentUser.Username}";
-            lblCalories.Text = $"Daily calorie buring goal: not set";
+            lblCalories.Text = $"Daily calorie buring goal: {currentUser.CalorieGoal}";
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fitness_Tracker.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace Fitness_Tracker.Forms
 {
     public partial class frmMain : Form
     {
-        public frmMain()
+        clsUser currentUser;
+        public frmMain(clsUser user)
         {
             InitializeComponent();
+            currentUser = user;
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -49,6 +52,12 @@ namespace Fitness_Tracker.Forms
         {
             frmAccountMgmt frmAccountMgmt = new frmAccountMgmt();  
             frmAccountMgmt.ShowDialog();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            lblUsername.Text = $"Username: {currentUser.Username}";
+            lblCalories.Text = $"Daily calorie buring goal: not set";
         }
     }
 }

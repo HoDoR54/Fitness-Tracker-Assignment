@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBFitness_Tracker_WinFormDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBFitness_Tracker_WinFormDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmAccountMgmt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,8 +98,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\CalorieCalculator.cs" />
-    <Compile Include="Utils\DatabaseManipulation.cs" />
-    <Compile Include="Utils\PasswordValidation.cs" />
+    <Compile Include="Utils\DatabaseHelper.cs" />
     <EmbeddedResource Include="Forms\frmAccountMgmt.resx">
       <DependentUpon>frmAccountMgmt.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +129,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DBFitness_Tracker_WinFormDataSet.xsc">
+      <DependentUpon>DBFitness_Tracker_WinFormDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBFitness_Tracker_WinFormDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBFitness_Tracker_WinFormDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBFitness_Tracker_WinFormDataSet.xss">
+      <DependentUpon>DBFitness_Tracker_WinFormDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

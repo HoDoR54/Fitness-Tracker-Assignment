@@ -75,10 +75,14 @@ namespace Fitness_Tracker.Forms
 
                 MessageBox.Show("Goal set successfully!", "Goal set", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                frmMain mainForm = new frmMain(currentUser);
-                mainForm.Show();
+                frmMain existingMainForm = Application.OpenForms.OfType<frmMain>().FirstOrDefault();
+                if (existingMainForm != null)
+                {
+                    existingMainForm.UpdateCalorieGoal(currentUser.CalorieGoal);
+                    existingMainForm.Show();
+                    this.Close();
+                }
 
-                this.Hide();
             }
         }
 

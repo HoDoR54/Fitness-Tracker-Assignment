@@ -25,39 +25,40 @@ namespace Fitness_Tracker.Forms
             Application.Exit();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void frmMain_Load(object sender, EventArgs e)
         {
-            Application.Exit();
+            lblUsername.Text = $"Username: {currentUser.Username}";
+            UpdateCalorieGoal(currentUser.CalorieGoal);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void UpdateCalorieGoal(int goal)
+        {
+            lblCalories.Text = "Daily calorie burning goal: " + (goal != 0 ? goal.ToString() : "not set");
+        }
+
+
+        private void btnToGoal_Click(object sender, EventArgs e)
         {
             frmGoalSetting frmGoalSetting = new frmGoalSetting(currentUser.Username);
             frmGoalSetting.ShowDialog();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnToAccount_Click(object sender, EventArgs e)
         {
-            frmActivitiesPicking frmActivityTracking = new frmActivitiesPicking();
-            frmActivityTracking.ShowDialog();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            frmCalories frmCalories = new frmCalories();
-            frmCalories.ShowDialog();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            frmAccountMgmt frmAccountMgmt = new frmAccountMgmt();  
+            frmAccountMgmt frmAccountMgmt = new frmAccountMgmt();
             frmAccountMgmt.ShowDialog();
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        private void btnToActivities_Click(object sender, EventArgs e)
         {
-            lblUsername.Text = $"Username: {currentUser.Username}";
-            lblCalories.Text = $"Daily calorie buring goal: {currentUser.CalorieGoal}";
+            frmActivitiesPicking frmActivitiesPicking = new frmActivitiesPicking();
+            frmActivitiesPicking.ShowDialog();
+        }
+
+        private void btnToCalories_Click(object sender, EventArgs e)
+        {
+            frmCalories frmCalories= new frmCalories();
+            frmCalories.ShowDialog();
         }
     }
 }

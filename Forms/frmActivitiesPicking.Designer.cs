@@ -153,9 +153,9 @@
             this.cbxZumba.AutoSize = true;
             this.cbxZumba.Location = new System.Drawing.Point(202, 92);
             this.cbxZumba.Name = "cbxZumba";
-            this.cbxZumba.Size = new System.Drawing.Size(99, 30);
+            this.cbxZumba.Size = new System.Drawing.Size(96, 30);
             this.cbxZumba.TabIndex = 34;
-            this.cbxZumba.Text = "Zumba";
+            this.cbxZumba.Text = "Squats";
             this.cbxZumba.UseVisualStyleBackColor = true;
             this.cbxZumba.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 

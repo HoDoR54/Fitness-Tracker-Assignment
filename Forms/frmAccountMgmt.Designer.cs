@@ -108,7 +108,7 @@
             this.Name = "frmAccountMgmt";
             this.Text = "Manage your account";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAccountMgmt_FormClosing);
-            //this.Load += new System.EventHandler(this.frmAccountMgmt_Load);
+            this.Load += new System.EventHandler(this.frmAccountMgmt_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

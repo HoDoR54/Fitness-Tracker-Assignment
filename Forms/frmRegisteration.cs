@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Fitness_Tracker.Models;
 using Fitness_Tracker.Utils;
 
 namespace Fitness_Tracker.Forms
@@ -146,6 +145,11 @@ namespace Fitness_Tracker.Forms
                 frmMain.Show();
                 this.Hide();
             }
+
+        }
+
+        private void frmRegistration_Load(object sender, EventArgs e)
+        {
 
         }
     }

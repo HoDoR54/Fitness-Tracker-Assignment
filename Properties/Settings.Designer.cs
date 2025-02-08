@@ -33,5 +33,27 @@ namespace Fitness_Tracker.Properties {
                 return ((string)(this["DBFitness_Tracker_WinFormConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MSI\\MSSQLSERVER01;Initial Catalog=dbFitness_Tracker;Integrated Securi" +
+            "ty=True;TrustServerCertificate=True")]
+        public string dbFitness_TrackerConnectionString {
+            get {
+                return ((string)(this["dbFitness_TrackerConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MSI\\MSSQLSERVER01;Initial Catalog=DB_Fitness_Tracker;Integrated Secur" +
+            "ity=True;TrustServerCertificate=True")]
+        public string DB_Fitness_TrackerConnectionString {
+            get {
+                return ((string)(this["DB_Fitness_TrackerConnectionString"]));
+            }
+        }
     }
 }

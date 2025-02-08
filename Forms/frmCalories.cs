@@ -26,5 +26,10 @@ namespace Fitness_Tracker.Forms
         {
             this.Hide();
         }
+
+        private void frmCalories_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

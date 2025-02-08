@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Fitness_Tracker.Models;
 
 namespace Fitness_Tracker.Forms
 {
@@ -71,7 +70,7 @@ namespace Fitness_Tracker.Forms
             {
                 clsUser currentUser = databaseHelper.GetUserByUsername(currentUsername);
                 currentUser.CalorieGoal = goal;
-                databaseHelper.UpdateUserCalGoal(currentUser.CalorieGoal, currentUsername);
+                databaseHelper.UpdateUserCalGoal(currentUser.CalorieGoal, currentUser.Username);
 
                 MessageBox.Show("Goal set successfully!", "Goal set", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -86,5 +85,9 @@ namespace Fitness_Tracker.Forms
             }
         }
 
+        private void frmGoalSetting_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

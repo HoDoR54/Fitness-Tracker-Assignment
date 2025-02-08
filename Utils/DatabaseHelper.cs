@@ -1,7 +1,7 @@
-﻿using Fitness_Tracker.DBFitness_Tracker_WinFormDataSetTableAdapters;
-using Fitness_Tracker.Models;
+﻿using Fitness_Tracker.DB_Fitness_TrackerDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -12,13 +12,16 @@ namespace Fitness_Tracker.Utils
 {
     internal class DatabaseHelper
     {
-        tblUserTableAdapter adapter = new tblUserTableAdapter();
+        tblUserTableAdapter userAdapter = new tblUserTableAdapter();
         DataTable userData = new DataTable();
+
+        tblActivityUserTableAdapter auAdapter = new tblActivityUserTableAdapter();
+        tblActivityTableAdapter actAdapter = new tblActivityTableAdapter();
 
         public string AutoGenerateId()
         {
             string trainerId = "FIT001";
-            userData = adapter.GetData();
+            userData = userAdapter.GetData();
 
             if (userData.Rows.Count > 0)
             {
@@ -33,7 +36,7 @@ namespace Fitness_Tracker.Utils
         {
             try
             {
-                int dataInserted = adapter.Insert(AutoGenerateId(), user.Username, user.Name, user.DateOfBirth, user.Gender, user.CurrentWeight, user.WeightGoal, user.HeightInCm, user.Password, user.CalorieGoal);
+                int dataInserted = userAdapter.Insert(AutoGenerateId(), user.Username, user.Name, user.DateOfBirth, user.Gender, user.CurrentWeight, user.WeightGoal, user.HeightInCm, user.CalorieGoal, user.Password);
                 return dataInserted > 0;
             }
             catch (Exception ex)
@@ -56,7 +59,7 @@ namespace Fitness_Tracker.Utils
 
         public clsUser GetUserByUsername(string username)
         {
-            userData = adapter.GetData();
+            userData = userAdapter.GetData();
 
             DataRow matchedRow = userData.AsEnumerable()
                 .FirstOrDefault(row => row["username"].ToString() == username);
@@ -71,7 +74,7 @@ namespace Fitness_Tracker.Utils
                     weightGoal: Convert.ToDecimal(matchedRow["weightGoal"]),
                     heightInCm: Convert.ToInt32(matchedRow["height"]),
                     password: matchedRow["password"].ToString(),
-                    calorieGoal: Convert.ToInt32(matchedRow["calorieGoal"])
+                    calorieGoal: Convert.ToInt32(matchedRow["dailyCalorie"])
                 );
             }
 
@@ -82,7 +85,7 @@ namespace Fitness_Tracker.Utils
         {
             try
             {
-                int dataUpdated = adapter.UpdateUserCalGoal(calorieGoal, username);
+                int dataUpdated = userAdapter.UpdateUserCalGoal(calorieGoal, username);
                 return dataUpdated > 0;
             }
             catch (Exception ex)
@@ -91,6 +94,39 @@ namespace Fitness_Tracker.Utils
                 return false;
             }
         }
+
+        public bool AddUserActivity(string activity, string username)
+        {
+            try
+            {
+                int? activityId = actAdapter.GetActivityIdByName(activity);
+                string userId = userAdapter.GetIdByUsername(username);
+                int rowsInserted = auAdapter.InsertUserActivity(activityId, userId);
+                return rowsInserted > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        public bool DeleteUserActivity(string activity, string username)
+        {
+            try
+            {
+                int? activityId = actAdapter.GetActivityIdByName(activity);
+                string userId = userAdapter.GetIdByUsername(username);
+                int rowsInserted = auAdapter.DeleteUserActivity(activityId, userId);
+                return rowsInserted > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
 
     }
 }

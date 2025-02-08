@@ -72,9 +72,9 @@
             // btnToCalories
             // 
             this.btnToCalories.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnToCalories.Location = new System.Drawing.Point(336, 115);
+            this.btnToCalories.Location = new System.Drawing.Point(338, 115);
             this.btnToCalories.Name = "btnToCalories";
-            this.btnToCalories.Size = new System.Drawing.Size(309, 89);
+            this.btnToCalories.Size = new System.Drawing.Size(307, 89);
             this.btnToCalories.TabIndex = 2;
             this.btnToCalories.Text = "Calories burnt";
             this.btnToCalories.UseVisualStyleBackColor = true;

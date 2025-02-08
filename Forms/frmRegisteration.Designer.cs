@@ -374,6 +374,7 @@
             this.Text = "Create a new account";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRegisteration_FormClosing);
+            this.Load += new System.EventHandler(this.frmRegistration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numCurrentWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGoalWeight)).EndInit();

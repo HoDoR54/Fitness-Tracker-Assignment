@@ -125,6 +125,7 @@
             this.Name = "frmGoalSetting";
             this.Text = "Set your goals";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGoalSetting_FormClosing);
+            this.Load += new System.EventHandler(this.frmGoalSetting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numIntake)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGoal)).EndInit();
             this.ResumeLayout(false);

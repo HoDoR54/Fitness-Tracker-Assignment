@@ -72,5 +72,10 @@ namespace Fitness_Tracker.Forms
                 this.Hide();
             }
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

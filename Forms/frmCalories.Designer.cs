@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ComboBox cboActivities;
             this.lblUsername = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblToday = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblGoal = new System.Windows.Forms.Label();
+            this.lblMatric1 = new System.Windows.Forms.Label();
+            this.lblMatric2 = new System.Windows.Forms.Label();
+            this.lblMatric3 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
@@ -45,28 +44,18 @@
             this.lblUnit1 = new System.Windows.Forms.Label();
             this.btnResult = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            cboActivities = new System.Windows.Forms.ComboBox();
+            this.cboActivities = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cboActivities
-            // 
-            cboActivities.Anchor = System.Windows.Forms.AnchorStyles.None;
-            cboActivities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            cboActivities.FormattingEnabled = true;
-            cboActivities.Location = new System.Drawing.Point(532, 112);
-            cboActivities.Name = "cboActivities";
-            cboActivities.Size = new System.Drawing.Size(203, 28);
-            cboActivities.TabIndex = 0;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Location = new System.Drawing.Point(12, 9);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(84, 21);
+            this.lblUsername.Size = new System.Drawing.Size(104, 26);
             this.lblUsername.TabIndex = 1;
             this.lblUsername.Text = "Username";
             // 
@@ -76,7 +65,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(415, 112);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 21);
+            this.label1.Size = new System.Drawing.Size(111, 26);
             this.label1.TabIndex = 2;
             this.label1.Text = "Activities: ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -87,7 +76,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblToday.Location = new System.Drawing.Point(392, 9);
             this.lblToday.Name = "lblToday";
-            this.lblToday.Size = new System.Drawing.Size(185, 21);
+            this.lblToday.Size = new System.Drawing.Size(185, 26);
             this.lblToday.TabIndex = 3;
             this.lblToday.Text = "Today";
             this.lblToday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -100,83 +89,83 @@
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(358, 218);
             this.lblResult.TabIndex = 4;
-            this.lblResult.Text = "See whether your efforts are paying off!";
+            this.lblResult.Text = "See whether your efforts \r\nare paying off!";
             this.lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lblGoal
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Location = new System.Drawing.Point(592, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 21);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Goal";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblGoal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblGoal.Location = new System.Drawing.Point(592, 9);
+            this.lblGoal.Name = "lblGoal";
+            this.lblGoal.Size = new System.Drawing.Size(180, 21);
+            this.lblGoal.TabIndex = 5;
+            this.lblGoal.Text = "Goal";
+            this.lblGoal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label3
+            // lblMatric1
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(416, 172);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 21);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Matric 1:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMatric1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMatric1.AutoSize = true;
+            this.lblMatric1.Location = new System.Drawing.Point(416, 172);
+            this.lblMatric1.Name = "lblMatric1";
+            this.lblMatric1.Size = new System.Drawing.Size(94, 26);
+            this.lblMatric1.TabIndex = 6;
+            this.lblMatric1.Text = "Matric 1:";
+            this.lblMatric1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lblMatric2
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(416, 215);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 21);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Matric 2:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMatric2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMatric2.AutoSize = true;
+            this.lblMatric2.Location = new System.Drawing.Point(416, 215);
+            this.lblMatric2.Name = "lblMatric2";
+            this.lblMatric2.Size = new System.Drawing.Size(94, 26);
+            this.lblMatric2.TabIndex = 7;
+            this.lblMatric2.Text = "Matric 2:";
+            this.lblMatric2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lblMatric3
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(416, 255);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 21);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Matric 3:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMatric3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMatric3.AutoSize = true;
+            this.lblMatric3.Location = new System.Drawing.Point(416, 255);
+            this.lblMatric3.Name = "lblMatric3";
+            this.lblMatric3.Size = new System.Drawing.Size(94, 26);
+            this.lblMatric3.TabIndex = 8;
+            this.lblMatric3.Text = "Matric 3:";
+            this.lblMatric3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numericUpDown1.Location = new System.Drawing.Point(532, 170);
+            this.numericUpDown1.Location = new System.Drawing.Point(564, 170);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 29);
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 34);
             this.numericUpDown1.TabIndex = 9;
             // 
             // numericUpDown2
             // 
             this.numericUpDown2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numericUpDown2.Location = new System.Drawing.Point(532, 213);
+            this.numericUpDown2.Location = new System.Drawing.Point(564, 213);
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 29);
+            this.numericUpDown2.Size = new System.Drawing.Size(120, 34);
             this.numericUpDown2.TabIndex = 10;
             // 
             // numericUpDown3
             // 
             this.numericUpDown3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numericUpDown3.Location = new System.Drawing.Point(532, 253);
+            this.numericUpDown3.Location = new System.Drawing.Point(564, 253);
             this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 29);
+            this.numericUpDown3.Size = new System.Drawing.Size(120, 34);
             this.numericUpDown3.TabIndex = 11;
             // 
             // lblUnit3
             // 
             this.lblUnit3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnit3.AutoSize = true;
-            this.lblUnit3.Location = new System.Drawing.Point(658, 255);
+            this.lblUnit3.Location = new System.Drawing.Point(690, 255);
             this.lblUnit3.Name = "lblUnit3";
-            this.lblUnit3.Size = new System.Drawing.Size(41, 21);
+            this.lblUnit3.Size = new System.Drawing.Size(51, 26);
             this.lblUnit3.TabIndex = 12;
             this.lblUnit3.Text = "Unit";
             this.lblUnit3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -185,9 +174,9 @@
             // 
             this.lblUnit2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnit2.AutoSize = true;
-            this.lblUnit2.Location = new System.Drawing.Point(658, 215);
+            this.lblUnit2.Location = new System.Drawing.Point(690, 215);
             this.lblUnit2.Name = "lblUnit2";
-            this.lblUnit2.Size = new System.Drawing.Size(41, 21);
+            this.lblUnit2.Size = new System.Drawing.Size(51, 26);
             this.lblUnit2.TabIndex = 13;
             this.lblUnit2.Text = "Unit";
             this.lblUnit2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -196,9 +185,9 @@
             // 
             this.lblUnit1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnit1.AutoSize = true;
-            this.lblUnit1.Location = new System.Drawing.Point(658, 172);
+            this.lblUnit1.Location = new System.Drawing.Point(690, 172);
             this.lblUnit1.Name = "lblUnit1";
-            this.lblUnit1.Size = new System.Drawing.Size(41, 21);
+            this.lblUnit1.Size = new System.Drawing.Size(51, 26);
             this.lblUnit1.TabIndex = 14;
             this.lblUnit1.Text = "Unit";
             this.lblUnit1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -223,11 +212,21 @@
             this.button1.Text = "Add activity";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // cboActivities
+            // 
+            this.cboActivities.FormattingEnabled = true;
+            this.cboActivities.Location = new System.Drawing.Point(532, 109);
+            this.cboActivities.Name = "cboActivities";
+            this.cboActivities.Size = new System.Drawing.Size(209, 34);
+            this.cboActivities.TabIndex = 17;
+            this.cboActivities.SelectedIndexChanged += new System.EventHandler(this.cboActivities_SelectedIndexChanged);
+            // 
             // frmCalories
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 391);
+            this.Controls.Add(this.cboActivities);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnResult);
             this.Controls.Add(this.lblUnit1);
@@ -236,14 +235,13 @@
             this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblMatric3);
+            this.Controls.Add(this.lblMatric2);
+            this.Controls.Add(this.lblMatric1);
+            this.Controls.Add(this.lblGoal);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.lblToday);
             this.Controls.Add(this.label1);
-            this.Controls.Add(cboActivities);
             this.Controls.Add(this.lblUsername);
             this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -265,10 +263,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblToday;
         private System.Windows.Forms.Label lblResult;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblGoal;
+        private System.Windows.Forms.Label lblMatric1;
+        private System.Windows.Forms.Label lblMatric2;
+        private System.Windows.Forms.Label lblMatric3;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
@@ -277,5 +275,6 @@
         private System.Windows.Forms.Label lblUnit1;
         private System.Windows.Forms.Button btnResult;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cboActivities;
     }
 }

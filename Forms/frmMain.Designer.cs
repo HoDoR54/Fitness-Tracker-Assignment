@@ -32,10 +32,9 @@
             this.lblCalories = new System.Windows.Forms.Label();
             this.btnToGoal = new System.Windows.Forms.Button();
             this.btnToCalories = new System.Windows.Forms.Button();
-            this.btnToActivities = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.btnToAccount = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnToHistory = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -62,7 +61,7 @@
             // btnToGoal
             // 
             this.btnToGoal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnToGoal.Location = new System.Drawing.Point(14, 115);
+            this.btnToGoal.Location = new System.Drawing.Point(16, 118);
             this.btnToGoal.Name = "btnToGoal";
             this.btnToGoal.Size = new System.Drawing.Size(309, 89);
             this.btnToGoal.TabIndex = 1;
@@ -73,7 +72,7 @@
             // btnToCalories
             // 
             this.btnToCalories.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnToCalories.Location = new System.Drawing.Point(338, 115);
+            this.btnToCalories.Location = new System.Drawing.Point(340, 118);
             this.btnToCalories.Name = "btnToCalories";
             this.btnToCalories.Size = new System.Drawing.Size(307, 89);
             this.btnToCalories.TabIndex = 2;
@@ -81,23 +80,12 @@
             this.btnToCalories.UseVisualStyleBackColor = true;
             this.btnToCalories.Click += new System.EventHandler(this.btnToCalories_Click);
             // 
-            // btnToActivities
-            // 
-            this.btnToActivities.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnToActivities.Location = new System.Drawing.Point(14, 224);
-            this.btnToActivities.Name = "btnToActivities";
-            this.btnToActivities.Size = new System.Drawing.Size(309, 89);
-            this.btnToActivities.TabIndex = 3;
-            this.btnToActivities.Text = "Choose activities";
-            this.btnToActivities.UseVisualStyleBackColor = true;
-            this.btnToActivities.Click += new System.EventHandler(this.btnToActivities_Click);
-            // 
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(117, 62);
+            this.label10.Location = new System.Drawing.Point(119, 65);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(376, 44);
             this.label10.TabIndex = 23;
@@ -106,7 +94,7 @@
             // btnToAccount
             // 
             this.btnToAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnToAccount.Location = new System.Drawing.Point(175, 330);
+            this.btnToAccount.Location = new System.Drawing.Point(340, 227);
             this.btnToAccount.Name = "btnToAccount";
             this.btnToAccount.Size = new System.Drawing.Size(309, 89);
             this.btnToAccount.TabIndex = 27;
@@ -114,26 +102,25 @@
             this.btnToAccount.UseVisualStyleBackColor = true;
             this.btnToAccount.Click += new System.EventHandler(this.btnToAccount_Click);
             // 
-            // button1
+            // btnToHistory
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(338, 224);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(309, 89);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "History";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnToHistory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnToHistory.Location = new System.Drawing.Point(16, 227);
+            this.btnToHistory.Name = "btnToHistory";
+            this.btnToHistory.Size = new System.Drawing.Size(309, 89);
+            this.btnToHistory.TabIndex = 28;
+            this.btnToHistory.Text = "History";
+            this.btnToHistory.UseVisualStyleBackColor = true;
+            this.btnToHistory.Click += new System.EventHandler(this.btnToHistory_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 442);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(659, 341);
+            this.Controls.Add(this.btnToHistory);
             this.Controls.Add(this.btnToAccount);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.btnToActivities);
             this.Controls.Add(this.btnToCalories);
             this.Controls.Add(this.btnToGoal);
             this.Controls.Add(this.lblCalories);
@@ -157,9 +144,8 @@
         private System.Windows.Forms.Label lblCalories;
         private System.Windows.Forms.Button btnToGoal;
         private System.Windows.Forms.Button btnToCalories;
-        private System.Windows.Forms.Button btnToActivities;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnToAccount;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnToHistory;
     }
 }

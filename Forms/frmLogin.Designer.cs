@@ -43,7 +43,7 @@
             this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsername.Location = new System.Drawing.Point(245, 106);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(300, 34);
+            this.txtUsername.Size = new System.Drawing.Size(300, 29);
             this.txtUsername.TabIndex = 9;
             // 
             // label1
@@ -55,6 +55,7 @@
             this.label1.Size = new System.Drawing.Size(200, 46);
             this.label1.TabIndex = 8;
             this.label1.Text = "Username";
+            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtPassword
             // 
@@ -62,7 +63,7 @@
             this.txtPassword.Location = new System.Drawing.Point(245, 159);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = 'o';
-            this.txtPassword.Size = new System.Drawing.Size(300, 34);
+            this.txtPassword.Size = new System.Drawing.Size(300, 29);
             this.txtPassword.TabIndex = 11;
             // 
             // label2
@@ -82,7 +83,7 @@
             this.linkLogin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLogin.Location = new System.Drawing.Point(178, 73);
             this.linkLogin.Name = "linkLogin";
-            this.linkLogin.Size = new System.Drawing.Size(280, 22);
+            this.linkLogin.Size = new System.Drawing.Size(218, 19);
             this.linkLogin.TabIndex = 25;
             this.linkLogin.TabStop = true;
             this.linkLogin.Text = "Don\'t have an account yet? sign up";
@@ -95,7 +96,7 @@
             this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(225, 36);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(156, 25);
+            this.label10.Size = new System.Drawing.Size(130, 22);
             this.label10.TabIndex = 24;
             this.label10.Text = "Welcome back";
             // 
@@ -123,9 +124,9 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 287);
+            this.ClientSize = new System.Drawing.Size(599, 295);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.linkLogin);
@@ -141,7 +142,7 @@
             this.Text = "Log in to your existing account";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
-            this.Load += new System.EventHandler(this.frmLogin_Load);
+            //this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

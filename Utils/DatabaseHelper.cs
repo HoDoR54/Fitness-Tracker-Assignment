@@ -17,6 +17,8 @@ namespace Fitness_Tracker.Utils
 
         tblActivityUserTableAdapter auAdapter = new tblActivityUserTableAdapter();
         tblActivityTableAdapter actAdapter = new tblActivityTableAdapter();
+        tblActivityMatricTableAdapter amAdapter = new tblActivityMatricTableAdapter();
+
 
         public string AutoGenerateId()
         {
@@ -97,11 +99,12 @@ namespace Fitness_Tracker.Utils
 
         public bool AddUserActivity(string activity, string username)
         {
+            DateTime now = DateTime.Now;
             try
             {
                 int? activityId = actAdapter.GetActivityIdByName(activity);
                 string userId = userAdapter.GetIdByUsername(username);
-                int rowsInserted = auAdapter.InsertUserActivity(activityId, userId);
+                int rowsInserted = auAdapter.InsertUserActivity(activityId, userId, now, null);
                 return rowsInserted > 0;
             }
             catch (Exception ex)
@@ -127,6 +130,34 @@ namespace Fitness_Tracker.Utils
             }
         }
 
+        public List<string> GetAllActivities ()
+        {
+            DB_Fitness_TrackerDataSet.tblActivityDataTable activityData = new DB_Fitness_TrackerDataSet.tblActivityDataTable();
+            List<string> activities = new List<string>();
+            actAdapter.GetAllActivities(activityData);
 
+            for (int i = 0; i < activityData.Rows.Count; i++)
+            {
+                activities.Add(activityData.Rows[i]["activityName"].ToString());
+            }
+            return activities;
+        }
+
+
+        public List<Dictionary<string, string>> GetMatricsByActivityName (string activityName)
+        {
+            DB_Fitness_TrackerDataSet.tblActivityMatricDataTable matricData = new DB_Fitness_TrackerDataSet.tblActivityMatricDataTable();
+            List<Dictionary<string, string>> matrics = new List<Dictionary<string, string>>();
+
+            amAdapter.GetMatricsByActivityName(matricData, activityName);
+
+            for (int i = 0; i < matricData.Rows.Count; i++)
+            {
+                Dictionary<string, string> matricAndUnit = new Dictionary<string, string>();
+                matricAndUnit.Add(matricData[i]["matricName"].ToString(), matricData[i]["matricUnit"].ToString());
+                matrics.Add(matricAndUnit);
+            }
+            return matrics;
+        }
     }
 }

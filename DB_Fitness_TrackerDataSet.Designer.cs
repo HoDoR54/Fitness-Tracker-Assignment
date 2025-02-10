@@ -3076,7 +3076,7 @@ SELECT id, activityName FROM tblActivity WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, activityName FROM dbo.tblActivity";
@@ -3086,6 +3086,10 @@ SELECT id, activityName FROM tblActivity WHERE (id = @id)";
             this._commandCollection[1].CommandText = "SELECT id FROM tblActivity WHERE LOWER(activityName) = @activityName;\r\n";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityName", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT activityName FROM tblActivity;";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3110,6 +3114,19 @@ SELECT id, activityName FROM tblActivity WHERE (id = @id)";
             DB_Fitness_TrackerDataSet.tblActivityDataTable dataTable = new DB_Fitness_TrackerDataSet.tblActivityDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int GetAllActivities(DB_Fitness_TrackerDataSet.tblActivityDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3448,11 +3465,18 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, activityId, matricId FROM dbo.tblActivityMatric";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT m.matricName, m.matricUnit\r\nFROM tblActivity a\r\nJOIN tblActivityMatric am " +
+                "ON a.id = am.activityId\r\nJOIN tblMatric m ON m.id = am.matricId\r\nWHERE a.activit" +
+                "yName = @activityName;\r\n";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityName", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "activityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3477,6 +3501,25 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
             DB_Fitness_TrackerDataSet.tblActivityMatricDataTable dataTable = new DB_Fitness_TrackerDataSet.tblActivityMatricDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int GetMatricsByActivityName(DB_Fitness_TrackerDataSet.tblActivityMatricDataTable dataTable, string activityName) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((activityName == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(activityName));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3835,12 +3878,15 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[tblActivityUser] ([activityId], [userId]) VALUES (@activityId," +
-                " @userId);\r\nSELECT id, activityId, userId FROM tblActivityUser WHERE (id = SCOPE" +
-                "_IDENTITY())";
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[tblActivityUser] ([activityId], [userId], [dateDone], [success" +
+                "Status]) VALUES (@activityId, @userId, @dateDone, @successStatus);\r\nSELECT id, a" +
+                "ctivityId, userId, dateDone, successStatus FROM tblActivityUser WHERE (id = SCOP" +
+                "E_IDENTITY())";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateDone", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@successStatus", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4121,7 +4167,7 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertUserActivity(global::System.Nullable<int> activityId, string userId) {
+        public virtual int InsertUserActivity(global::System.Nullable<int> activityId, string userId, global::System.Nullable<global::System.DateTime> dateDone, global::System.Nullable<bool> successStatus) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((activityId.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(activityId.Value));
@@ -4134,6 +4180,18 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
             }
             else {
                 command.Parameters[1].Value = ((string)(userId));
+            }
+            if ((dateDone.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(dateDone.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((successStatus.HasValue == true)) {
+                command.Parameters[3].Value = ((bool)(successStatus.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

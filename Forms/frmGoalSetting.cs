@@ -14,17 +14,17 @@ namespace Fitness_Tracker.Forms
 {
     public partial class frmGoalSetting : Form
     {
-        string currentUsername;
-        public frmGoalSetting(string username)
+        clsUser currentUser;
+        public frmGoalSetting(clsUser user)
         {
             InitializeComponent();
-            currentUsername = username;
+            currentUser = user;
         }
 
         private void frmGoalSetting_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
-            frmMain mainForm = new frmMain(databaseHelper.GetUserByUsername(currentUsername));
+            frmMain mainForm = new frmMain(databaseHelper.GetUserByUsername(currentUser.Username));
             mainForm.Show();
             this.Hide();
         }
@@ -68,26 +68,19 @@ namespace Fitness_Tracker.Forms
             }
             else
             {
-                clsUser currentUser = databaseHelper.GetUserByUsername(currentUsername);
                 currentUser.CalorieGoal = goal;
-                databaseHelper.UpdateUserCalGoal(currentUser.CalorieGoal, currentUser.Username);
+                databaseHelper.UpdateUserCalGoal(goal, currentUser.Username);
 
                 MessageBox.Show("Goal set successfully!", "Goal set", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 frmMain existingMainForm = Application.OpenForms.OfType<frmMain>().FirstOrDefault();
                 if (existingMainForm != null)
                 {
-                    existingMainForm.UpdateCalorieGoal(currentUser.CalorieGoal);
-                    existingMainForm.Show();
-                    this.Close();
+                    existingMainForm.UpdateCalorieGoal(goal);
                 }
 
+                this.Close();
             }
-        }
-
-        private void frmGoalSetting_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

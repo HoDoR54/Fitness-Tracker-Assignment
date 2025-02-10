@@ -39,7 +39,7 @@ namespace Fitness_Tracker.Forms
 
         private void btnToGoal_Click(object sender, EventArgs e)
         {
-            frmGoalSetting frmGoalSetting = new frmGoalSetting(currentUser.Username);
+            frmGoalSetting frmGoalSetting = new frmGoalSetting(currentUser);
             frmGoalSetting.ShowDialog();
         }
 
@@ -49,19 +49,13 @@ namespace Fitness_Tracker.Forms
             frmAccountMgmt.ShowDialog();
         }
 
-        private void btnToActivities_Click(object sender, EventArgs e)
-        {
-            frmActivitiesPicking frmActivitiesPicking = new frmActivitiesPicking(currentUser);
-            frmActivitiesPicking.ShowDialog();
-        }
-
         private void btnToCalories_Click(object sender, EventArgs e)
         {
-            frmCalories frmCalories = new frmCalories();
+            frmCalories frmCalories = new frmCalories(currentUser);
             frmCalories.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnToHistory_Click(object sender, EventArgs e)
         {
             frmHistory frmHistory = new frmHistory();
             frmHistory.ShowDialog();

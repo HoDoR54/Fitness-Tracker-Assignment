@@ -92,7 +92,7 @@
             0,
             0});
             this.numIntake.Name = "numIntake";
-            this.numIntake.Size = new System.Drawing.Size(249, 34);
+            this.numIntake.Size = new System.Drawing.Size(249, 29);
             this.numIntake.TabIndex = 17;
             // 
             // numGoal
@@ -105,14 +105,14 @@
             0,
             0});
             this.numGoal.Name = "numGoal";
-            this.numGoal.Size = new System.Drawing.Size(249, 34);
+            this.numGoal.Size = new System.Drawing.Size(249, 29);
             this.numGoal.TabIndex = 18;
             // 
             // frmGoalSetting
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 333);
+            this.ClientSize = new System.Drawing.Size(417, 341);
             this.Controls.Add(this.numGoal);
             this.Controls.Add(this.numIntake);
             this.Controls.Add(this.btnSetGoal);
@@ -125,7 +125,7 @@
             this.Name = "frmGoalSetting";
             this.Text = "Set your goals";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGoalSetting_FormClosing);
-            this.Load += new System.EventHandler(this.frmGoalSetting_Load);
+            //this.Load += new System.EventHandler(this.frmGoalSetting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numIntake)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGoal)).EndInit();
             this.ResumeLayout(false);

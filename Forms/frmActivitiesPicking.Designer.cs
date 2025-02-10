@@ -49,7 +49,7 @@
             this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(39, 52);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(460, 25);
+            this.label10.Size = new System.Drawing.Size(381, 22);
             this.label10.TabIndex = 25;
             this.label10.Text = "Choose five of your regular physical activities";
             // 
@@ -69,7 +69,7 @@
             this.cbxWalking.AutoSize = true;
             this.cbxWalking.Location = new System.Drawing.Point(44, 92);
             this.cbxWalking.Name = "cbxWalking";
-            this.cbxWalking.Size = new System.Drawing.Size(110, 30);
+            this.cbxWalking.Size = new System.Drawing.Size(88, 25);
             this.cbxWalking.TabIndex = 29;
             this.cbxWalking.Text = "Walking";
             this.cbxWalking.UseVisualStyleBackColor = true;
@@ -81,7 +81,7 @@
             this.cbxSwimming.AutoSize = true;
             this.cbxSwimming.Location = new System.Drawing.Point(44, 128);
             this.cbxSwimming.Name = "cbxSwimming";
-            this.cbxSwimming.Size = new System.Drawing.Size(135, 30);
+            this.cbxSwimming.Size = new System.Drawing.Size(107, 25);
             this.cbxSwimming.TabIndex = 30;
             this.cbxSwimming.Text = "Swimming";
             this.cbxSwimming.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@
             this.cbxRunning.AutoSize = true;
             this.cbxRunning.Location = new System.Drawing.Point(44, 164);
             this.cbxRunning.Name = "cbxRunning";
-            this.cbxRunning.Size = new System.Drawing.Size(114, 30);
+            this.cbxRunning.Size = new System.Drawing.Size(91, 25);
             this.cbxRunning.TabIndex = 31;
             this.cbxRunning.Text = "Running";
             this.cbxRunning.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             this.cbxCycling.AutoSize = true;
             this.cbxCycling.Location = new System.Drawing.Point(43, 200);
             this.cbxCycling.Name = "cbxCycling";
-            this.cbxCycling.Size = new System.Drawing.Size(105, 30);
+            this.cbxCycling.Size = new System.Drawing.Size(86, 25);
             this.cbxCycling.TabIndex = 32;
             this.cbxCycling.Text = "Cycling";
             this.cbxCycling.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@
             this.cbxJumbRope.AutoSize = true;
             this.cbxJumbRope.Location = new System.Drawing.Point(44, 236);
             this.cbxJumbRope.Name = "cbxJumbRope";
-            this.cbxJumbRope.Size = new System.Drawing.Size(133, 30);
+            this.cbxJumbRope.Size = new System.Drawing.Size(108, 25);
             this.cbxJumbRope.TabIndex = 33;
             this.cbxJumbRope.Text = "Jump rope";
             this.cbxJumbRope.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             this.cbxJumpJack.AutoSize = true;
             this.cbxJumpJack.Location = new System.Drawing.Point(202, 164);
             this.cbxJumpJack.Name = "cbxJumpJack";
-            this.cbxJumpJack.Size = new System.Drawing.Size(161, 30);
+            this.cbxJumpJack.Size = new System.Drawing.Size(129, 25);
             this.cbxJumpJack.TabIndex = 36;
             this.cbxJumpJack.Text = "Jumping Jack";
             this.cbxJumpJack.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@
             this.cbxBurpee.AutoSize = true;
             this.cbxBurpee.Location = new System.Drawing.Point(202, 128);
             this.cbxBurpee.Name = "cbxBurpee";
-            this.cbxBurpee.Size = new System.Drawing.Size(100, 30);
+            this.cbxBurpee.Size = new System.Drawing.Size(82, 25);
             this.cbxBurpee.TabIndex = 35;
             this.cbxBurpee.Text = "Burpee";
             this.cbxBurpee.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             this.cbxZumba.AutoSize = true;
             this.cbxZumba.Location = new System.Drawing.Point(202, 92);
             this.cbxZumba.Name = "cbxZumba";
-            this.cbxZumba.Size = new System.Drawing.Size(96, 30);
+            this.cbxZumba.Size = new System.Drawing.Size(80, 25);
             this.cbxZumba.TabIndex = 34;
             this.cbxZumba.Text = "Squats";
             this.cbxZumba.UseVisualStyleBackColor = true;
@@ -182,9 +182,9 @@
             // 
             // frmActivitiesPicking
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 363);
+            this.ClientSize = new System.Drawing.Size(904, 371);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cbxJumpJack);

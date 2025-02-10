@@ -60,5 +60,11 @@ namespace Fitness_Tracker.Forms
             frmCalories frmCalories = new frmCalories();
             frmCalories.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmHistory frmHistory = new frmHistory();
+            frmHistory.ShowDialog();
+        }
     }
 }

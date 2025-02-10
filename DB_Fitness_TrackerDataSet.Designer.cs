@@ -1026,6 +1026,10 @@ namespace Fitness_Tracker {
             
             private global::System.Data.DataColumn columnuserId;
             
+            private global::System.Data.DataColumn columndateDone;
+            
+            private global::System.Data.DataColumn columnsuccessStatus;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tblActivityUserDataTable() {
@@ -1085,6 +1089,22 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn dateDoneColumn {
+                get {
+                    return this.columndateDone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn successStatusColumn {
+                get {
+                    return this.columnsuccessStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1120,12 +1140,14 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblActivityUserRow AddtblActivityUserRow(tblActivityRow parenttblActivityRowByFK__tblActivi__activ__412EB0B6, tblUserRow parenttblUserRowByFK__tblActivi__userI__4222D4EF) {
+            public tblActivityUserRow AddtblActivityUserRow(tblActivityRow parenttblActivityRowByFK__tblActivi__activ__412EB0B6, tblUserRow parenttblUserRowByFK__tblActivi__userI__4222D4EF, System.DateTime dateDone, bool successStatus) {
                 tblActivityUserRow rowtblActivityUserRow = ((tblActivityUserRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        null};
+                        null,
+                        dateDone,
+                        successStatus};
                 if ((parenttblActivityRowByFK__tblActivi__activ__412EB0B6 != null)) {
                     columnValuesArray[1] = parenttblActivityRowByFK__tblActivi__activ__412EB0B6[0];
                 }
@@ -1164,6 +1186,8 @@ namespace Fitness_Tracker {
                 this.columnid = base.Columns["id"];
                 this.columnactivityId = base.Columns["activityId"];
                 this.columnuserId = base.Columns["userId"];
+                this.columndateDone = base.Columns["dateDone"];
+                this.columnsuccessStatus = base.Columns["successStatus"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1175,6 +1199,10 @@ namespace Fitness_Tracker {
                 base.Columns.Add(this.columnactivityId);
                 this.columnuserId = new global::System.Data.DataColumn("userId", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnuserId);
+                this.columndateDone = new global::System.Data.DataColumn("dateDone", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndateDone);
+                this.columnsuccessStatus = new global::System.Data.DataColumn("successStatus", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsuccessStatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -2230,6 +2258,38 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime dateDone {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletblActivityUser.dateDoneColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'dateDone\' in table \'tblActivityUser\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblActivityUser.dateDoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool successStatus {
+                get {
+                    try {
+                        return ((bool)(this[this.tabletblActivityUser.successStatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'successStatus\' in table \'tblActivityUser\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblActivityUser.successStatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tblActivityRow tblActivityRow {
                 get {
                     return ((tblActivityRow)(this.GetParentRow(this.Table.ParentRelations["FK__tblActivi__activ__412EB0B6"])));
@@ -2272,6 +2332,30 @@ namespace Fitness_Tracker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetuserIdNull() {
                 this[this.tabletblActivityUser.userIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsdateDoneNull() {
+                return this.IsNull(this.tabletblActivityUser.dateDoneColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetdateDoneNull() {
+                this[this.tabletblActivityUser.dateDoneColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IssuccessStatusNull() {
+                return this.IsNull(this.tabletblActivityUser.successStatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetsuccessStatusNull() {
+                this[this.tabletblActivityUser.successStatusColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2999,7 +3083,7 @@ SELECT id, activityName FROM tblActivity WHERE (id = @id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT id FROM tblActivity WHERE LOWER(activityName) = @activityName;";
+            this._commandCollection[1].CommandText = "SELECT id FROM tblActivity WHERE LOWER(activityName) = @activityName;\r\n";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityName", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -3679,39 +3763,51 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("activityId", "activityId");
             tableMapping.ColumnMappings.Add("userId", "userId");
+            tableMapping.ColumnMappings.Add("dateDone", "dateDone");
+            tableMapping.ColumnMappings.Add("successStatus", "successStatus");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tblActivityUser] WHERE (([id] = @Original_id) AND ((@IsNull_ac" +
-                "tivityId = 1 AND [activityId] IS NULL) OR ([activityId] = @Original_activityId))" +
-                " AND ((@IsNull_userId = 1 AND [userId] IS NULL) OR ([userId] = @Original_userId)" +
-                "))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[tblActivityUser] WHERE (([id] = @Original_id) AND ((@IsNull_activityId = 1 AND [activityId] IS NULL) OR ([activityId] = @Original_activityId)) AND ((@IsNull_userId = 1 AND [userId] IS NULL) OR ([userId] = @Original_userId)) AND ((@IsNull_dateDone = 1 AND [dateDone] IS NULL) OR ([dateDone] = @Original_dateDone)) AND ((@IsNull_successStatus = 1 AND [successStatus] IS NULL) OR ([successStatus] = @Original_successStatus)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_userId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_userId", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dateDone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateDone", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_successStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_successStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tblActivityUser] ([activityId], [userId]) VALUES (@activityId," +
-                " @userId);\r\nSELECT id, activityId, userId FROM tblActivityUser WHERE (id = SCOPE" +
-                "_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tblActivityUser] ([activityId], [userId], [dateDone], [success" +
+                "Status]) VALUES (@activityId, @userId, @dateDone, @successStatus);\r\nSELECT id, a" +
+                "ctivityId, userId, dateDone, successStatus FROM tblActivityUser WHERE (id = SCOP" +
+                "E_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateDone", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@successStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tblActivityUser] SET [activityId] = @activityId, [userId] = @userId WHERE (([id] = @Original_id) AND ((@IsNull_activityId = 1 AND [activityId] IS NULL) OR ([activityId] = @Original_activityId)) AND ((@IsNull_userId = 1 AND [userId] IS NULL) OR ([userId] = @Original_userId)));
-SELECT id, activityId, userId FROM tblActivityUser WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tblActivityUser] SET [activityId] = @activityId, [userId] = @userId, [dateDone] = @dateDone, [successStatus] = @successStatus WHERE (([id] = @Original_id) AND ((@IsNull_activityId = 1 AND [activityId] IS NULL) OR ([activityId] = @Original_activityId)) AND ((@IsNull_userId = 1 AND [userId] IS NULL) OR ([userId] = @Original_userId)) AND ((@IsNull_dateDone = 1 AND [dateDone] IS NULL) OR ([dateDone] = @Original_dateDone)) AND ((@IsNull_successStatus = 1 AND [successStatus] IS NULL) OR ([successStatus] = @Original_successStatus)));
+SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateDone", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@successStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_userId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_userId", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dateDone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateDone", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_successStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_successStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3728,12 +3824,12 @@ SELECT id, activityId, userId FROM tblActivityUser WHERE (id = @id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, activityId, userId FROM dbo.tblActivityUser";
+            this._commandCollection[0].CommandText = "SELECT id, activityId, userId, dateDone, successStatus FROM dbo.tblActivityUser";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "DELETE FROM tblActivityUser\r\nWHERE activityId = @activityId\r\nAND userId = @userId" +
-                ";\r\n";
+                ";";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3804,7 +3900,7 @@ SELECT id, activityId, userId FROM tblActivityUser WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_activityId, string Original_userId) {
+        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_activityId, string Original_userId, global::System.Nullable<global::System.DateTime> Original_dateDone, global::System.Nullable<bool> Original_successStatus) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_activityId.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -3821,6 +3917,22 @@ SELECT id, activityId, userId FROM tblActivityUser WHERE (id = @id)";
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_userId));
+            }
+            if ((Original_dateDone.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_dateDone.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_successStatus.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((bool)(Original_successStatus.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3842,7 +3954,7 @@ SELECT id, activityId, userId FROM tblActivityUser WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> activityId, string userId) {
+        public virtual int Insert(global::System.Nullable<int> activityId, string userId, global::System.Nullable<global::System.DateTime> dateDone, global::System.Nullable<bool> successStatus) {
             if ((activityId.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(activityId.Value));
             }
@@ -3854,6 +3966,18 @@ SELECT id, activityId, userId FROM tblActivityUser WHERE (id = @id)";
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(userId));
+            }
+            if ((dateDone.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(dateDone.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((successStatus.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(successStatus.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3875,7 +3999,7 @@ SELECT id, activityId, userId FROM tblActivityUser WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> activityId, string userId, int Original_id, global::System.Nullable<int> Original_activityId, string Original_userId, int id) {
+        public virtual int Update(global::System.Nullable<int> activityId, string userId, global::System.Nullable<global::System.DateTime> dateDone, global::System.Nullable<bool> successStatus, int Original_id, global::System.Nullable<int> Original_activityId, string Original_userId, global::System.Nullable<global::System.DateTime> Original_dateDone, global::System.Nullable<bool> Original_successStatus, int id) {
             if ((activityId.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(activityId.Value));
             }
@@ -3888,24 +4012,52 @@ SELECT id, activityId, userId FROM tblActivityUser WHERE (id = @id)";
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(userId));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_id));
-            if ((Original_activityId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_activityId.Value));
+            if ((dateDone.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(dateDone.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_userId == null)) {
+            if ((successStatus.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(successStatus.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
+            if ((Original_activityId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_activityId.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_userId));
+            if ((Original_userId == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(id));
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_userId));
+            }
+            if ((Original_dateDone.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_dateDone.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_successStatus.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(Original_successStatus.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3926,8 +4078,8 @@ SELECT id, activityId, userId FROM tblActivityUser WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> activityId, string userId, int Original_id, global::System.Nullable<int> Original_activityId, string Original_userId) {
-            return this.Update(activityId, userId, Original_id, Original_activityId, Original_userId, Original_id);
+        public virtual int Update(global::System.Nullable<int> activityId, string userId, global::System.Nullable<global::System.DateTime> dateDone, global::System.Nullable<bool> successStatus, int Original_id, global::System.Nullable<int> Original_activityId, string Original_userId, global::System.Nullable<global::System.DateTime> Original_dateDone, global::System.Nullable<bool> Original_successStatus) {
+            return this.Update(activityId, userId, dateDone, successStatus, Original_id, Original_activityId, Original_userId, Original_dateDone, Original_successStatus, Original_id);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

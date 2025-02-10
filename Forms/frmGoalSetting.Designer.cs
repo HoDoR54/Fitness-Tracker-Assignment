@@ -41,7 +41,7 @@
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.Location = new System.Drawing.Point(73, 63);
+            this.label2.Location = new System.Drawing.Point(75, 56);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.label2.Size = new System.Drawing.Size(271, 46);
@@ -52,7 +52,7 @@
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Location = new System.Drawing.Point(66, 165);
+            this.label3.Location = new System.Drawing.Point(68, 158);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.label3.Size = new System.Drawing.Size(278, 46);
@@ -85,7 +85,7 @@
             // numIntake
             // 
             this.numIntake.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numIntake.Location = new System.Drawing.Point(78, 112);
+            this.numIntake.Location = new System.Drawing.Point(80, 105);
             this.numIntake.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -98,7 +98,7 @@
             // numGoal
             // 
             this.numGoal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numGoal.Location = new System.Drawing.Point(78, 214);
+            this.numGoal.Location = new System.Drawing.Point(80, 207);
             this.numGoal.Maximum = new decimal(new int[] {
             10000,
             0,

@@ -35,6 +35,7 @@
             this.btnToActivities = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.btnToAccount = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -43,7 +44,7 @@
             this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.Location = new System.Drawing.Point(12, 9);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(141, 20);
+            this.lblUsername.Size = new System.Drawing.Size(117, 17);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Username Display";
             // 
@@ -98,14 +99,14 @@
             this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(117, 62);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(459, 50);
+            this.label10.Size = new System.Drawing.Size(376, 44);
             this.label10.TabIndex = 23;
             this.label10.Text = "\"The body achieves what the mind believes.\"\n\n";
             // 
             // btnToAccount
             // 
             this.btnToAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnToAccount.Location = new System.Drawing.Point(338, 224);
+            this.btnToAccount.Location = new System.Drawing.Point(175, 330);
             this.btnToAccount.Name = "btnToAccount";
             this.btnToAccount.Size = new System.Drawing.Size(309, 89);
             this.btnToAccount.TabIndex = 27;
@@ -113,11 +114,23 @@
             this.btnToAccount.UseVisualStyleBackColor = true;
             this.btnToAccount.Click += new System.EventHandler(this.btnToAccount_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Location = new System.Drawing.Point(338, 224);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(309, 89);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "History";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 333);
+            this.ClientSize = new System.Drawing.Size(659, 442);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnToAccount);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnToActivities);
@@ -147,5 +160,6 @@
         private System.Windows.Forms.Button btnToActivities;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnToAccount;
+        private System.Windows.Forms.Button button1;
     }
 }

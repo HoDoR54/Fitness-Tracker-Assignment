@@ -22,14 +22,9 @@ namespace Fitness_Tracker.Forms
             this.Hide();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
         private void frmCalories_Load(object sender, EventArgs e)
         {
-
+            lblToday.Text = DateTime.Today.ToString("yyyy-MM-dd");
         }
     }
 }

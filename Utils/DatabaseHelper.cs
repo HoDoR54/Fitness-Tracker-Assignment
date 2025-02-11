@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +18,7 @@ namespace Fitness_Tracker.Utils
 
         tblActivityUserTableAdapter auAdapter = new tblActivityUserTableAdapter();
         tblActivityTableAdapter actAdapter = new tblActivityTableAdapter();
-        tblActivityMatricTableAdapter amAdapter = new tblActivityMatricTableAdapter();
+        tblActivityMetricTableAdapter amAdapter = new tblActivityMetricTableAdapter();
 
 
         public string AutoGenerateId()
@@ -97,14 +98,14 @@ namespace Fitness_Tracker.Utils
             }
         }
 
-        public bool AddUserActivity(string activity, string username)
+        public bool AddUserActivity(string activity, string username, decimal burntCalories)
         {
             DateTime now = DateTime.Now;
             try
             {
                 int? activityId = actAdapter.GetActivityIdByName(activity);
                 string userId = userAdapter.GetIdByUsername(username);
-                int rowsInserted = auAdapter.InsertUserActivity(activityId, userId, now, null);
+                int rowsInserted = auAdapter.InsertUserActivity(activityId, userId, burntCalories, now);
                 return rowsInserted > 0;
             }
             catch (Exception ex)
@@ -120,7 +121,7 @@ namespace Fitness_Tracker.Utils
             {
                 int? activityId = actAdapter.GetActivityIdByName(activity);
                 string userId = userAdapter.GetIdByUsername(username);
-                int rowsInserted = auAdapter.DeleteUserActivity(activityId, userId);
+                int rowsInserted = auAdapter.DeleteUserActivity(userId, activityId);
                 return rowsInserted > 0;
             }
             catch (Exception ex)
@@ -143,21 +144,20 @@ namespace Fitness_Tracker.Utils
             return activities;
         }
 
-
-        public List<Dictionary<string, string>> GetMatricsByActivityName (string activityName)
+        public List<Dictionary<string, string>> GetMetricsByActivityName (string activityName)
         {
-            DB_Fitness_TrackerDataSet.tblActivityMatricDataTable matricData = new DB_Fitness_TrackerDataSet.tblActivityMatricDataTable();
-            List<Dictionary<string, string>> matrics = new List<Dictionary<string, string>>();
+            DB_Fitness_TrackerDataSet.tblActivityMetricDataTable metricData = new DB_Fitness_TrackerDataSet.tblActivityMetricDataTable();
+            List<Dictionary<string, string>> metrics = new List<Dictionary<string, string>>();
 
-            amAdapter.GetMatricsByActivityName(matricData, activityName);
+            amAdapter.GetMetricsByActivityName(metricData, activityName);
 
-            for (int i = 0; i < matricData.Rows.Count; i++)
+            for (int i = 0; i < metricData.Rows.Count; i++)
             {
-                Dictionary<string, string> matricAndUnit = new Dictionary<string, string>();
-                matricAndUnit.Add(matricData[i]["matricName"].ToString(), matricData[i]["matricUnit"].ToString());
-                matrics.Add(matricAndUnit);
+                Dictionary<string, string> metricAndUnit = new Dictionary<string, string>();
+                metricAndUnit.Add(metricData[i]["metricName"].ToString(), metricData[i]["metricUnit"].ToString());
+                metrics.Add(metricAndUnit);
             }
-            return matrics;
+            return metrics;
         }
     }
 }

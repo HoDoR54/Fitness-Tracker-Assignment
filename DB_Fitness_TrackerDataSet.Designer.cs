@@ -26,21 +26,21 @@ namespace Fitness_Tracker {
         
         private tblActivityDataTable tabletblActivity;
         
-        private tblActivityMatricDataTable tabletblActivityMatric;
+        private tblActivityMetricDataTable tabletblActivityMetric;
         
         private tblActivityUserDataTable tabletblActivityUser;
         
-        private tblMatricDataTable tabletblMatric;
+        private tblMetricDataTable tabletblMetric;
         
         private tblUserDataTable tabletblUser;
         
-        private global::System.Data.DataRelation relationFK__tblActivi__activ__3D5E1FD2;
+        private global::System.Data.DataRelation relationFK__tblActivi__activ__4AB81AF0;
         
-        private global::System.Data.DataRelation relationFK__tblActivi__matri__3E52440B;
+        private global::System.Data.DataRelation relationFK__tblActivi__metri__4BAC3F29;
         
-        private global::System.Data.DataRelation relationFK__tblActivi__activ__412EB0B6;
+        private global::System.Data.DataRelation relationFK__tblActivi__activ__4E88ABD4;
         
-        private global::System.Data.DataRelation relationFK__tblActivi__userI__4222D4EF;
+        private global::System.Data.DataRelation relationFK__tblActivi__userI__4F7CD00D;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -73,14 +73,14 @@ namespace Fitness_Tracker {
                 if ((ds.Tables["tblActivity"] != null)) {
                     base.Tables.Add(new tblActivityDataTable(ds.Tables["tblActivity"]));
                 }
-                if ((ds.Tables["tblActivityMatric"] != null)) {
-                    base.Tables.Add(new tblActivityMatricDataTable(ds.Tables["tblActivityMatric"]));
+                if ((ds.Tables["tblActivityMetric"] != null)) {
+                    base.Tables.Add(new tblActivityMetricDataTable(ds.Tables["tblActivityMetric"]));
                 }
                 if ((ds.Tables["tblActivityUser"] != null)) {
                     base.Tables.Add(new tblActivityUserDataTable(ds.Tables["tblActivityUser"]));
                 }
-                if ((ds.Tables["tblMatric"] != null)) {
-                    base.Tables.Add(new tblMatricDataTable(ds.Tables["tblMatric"]));
+                if ((ds.Tables["tblMetric"] != null)) {
+                    base.Tables.Add(new tblMetricDataTable(ds.Tables["tblMetric"]));
                 }
                 if ((ds.Tables["tblUser"] != null)) {
                     base.Tables.Add(new tblUserDataTable(ds.Tables["tblUser"]));
@@ -117,9 +117,9 @@ namespace Fitness_Tracker {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tblActivityMatricDataTable tblActivityMatric {
+        public tblActivityMetricDataTable tblActivityMetric {
             get {
-                return this.tabletblActivityMatric;
+                return this.tabletblActivityMetric;
             }
         }
         
@@ -137,9 +137,9 @@ namespace Fitness_Tracker {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tblMatricDataTable tblMatric {
+        public tblMetricDataTable tblMetric {
             get {
-                return this.tabletblMatric;
+                return this.tabletblMetric;
             }
         }
         
@@ -223,14 +223,14 @@ namespace Fitness_Tracker {
                 if ((ds.Tables["tblActivity"] != null)) {
                     base.Tables.Add(new tblActivityDataTable(ds.Tables["tblActivity"]));
                 }
-                if ((ds.Tables["tblActivityMatric"] != null)) {
-                    base.Tables.Add(new tblActivityMatricDataTable(ds.Tables["tblActivityMatric"]));
+                if ((ds.Tables["tblActivityMetric"] != null)) {
+                    base.Tables.Add(new tblActivityMetricDataTable(ds.Tables["tblActivityMetric"]));
                 }
                 if ((ds.Tables["tblActivityUser"] != null)) {
                     base.Tables.Add(new tblActivityUserDataTable(ds.Tables["tblActivityUser"]));
                 }
-                if ((ds.Tables["tblMatric"] != null)) {
-                    base.Tables.Add(new tblMatricDataTable(ds.Tables["tblMatric"]));
+                if ((ds.Tables["tblMetric"] != null)) {
+                    base.Tables.Add(new tblMetricDataTable(ds.Tables["tblMetric"]));
                 }
                 if ((ds.Tables["tblUser"] != null)) {
                     base.Tables.Add(new tblUserDataTable(ds.Tables["tblUser"]));
@@ -274,10 +274,10 @@ namespace Fitness_Tracker {
                     this.tabletblActivity.InitVars();
                 }
             }
-            this.tabletblActivityMatric = ((tblActivityMatricDataTable)(base.Tables["tblActivityMatric"]));
+            this.tabletblActivityMetric = ((tblActivityMetricDataTable)(base.Tables["tblActivityMetric"]));
             if ((initTable == true)) {
-                if ((this.tabletblActivityMatric != null)) {
-                    this.tabletblActivityMatric.InitVars();
+                if ((this.tabletblActivityMetric != null)) {
+                    this.tabletblActivityMetric.InitVars();
                 }
             }
             this.tabletblActivityUser = ((tblActivityUserDataTable)(base.Tables["tblActivityUser"]));
@@ -286,10 +286,10 @@ namespace Fitness_Tracker {
                     this.tabletblActivityUser.InitVars();
                 }
             }
-            this.tabletblMatric = ((tblMatricDataTable)(base.Tables["tblMatric"]));
+            this.tabletblMetric = ((tblMetricDataTable)(base.Tables["tblMetric"]));
             if ((initTable == true)) {
-                if ((this.tabletblMatric != null)) {
-                    this.tabletblMatric.InitVars();
+                if ((this.tabletblMetric != null)) {
+                    this.tabletblMetric.InitVars();
                 }
             }
             this.tabletblUser = ((tblUserDataTable)(base.Tables["tblUser"]));
@@ -298,10 +298,10 @@ namespace Fitness_Tracker {
                     this.tabletblUser.InitVars();
                 }
             }
-            this.relationFK__tblActivi__activ__3D5E1FD2 = this.Relations["FK__tblActivi__activ__3D5E1FD2"];
-            this.relationFK__tblActivi__matri__3E52440B = this.Relations["FK__tblActivi__matri__3E52440B"];
-            this.relationFK__tblActivi__activ__412EB0B6 = this.Relations["FK__tblActivi__activ__412EB0B6"];
-            this.relationFK__tblActivi__userI__4222D4EF = this.Relations["FK__tblActivi__userI__4222D4EF"];
+            this.relationFK__tblActivi__activ__4AB81AF0 = this.Relations["FK__tblActivi__activ__4AB81AF0"];
+            this.relationFK__tblActivi__metri__4BAC3F29 = this.Relations["FK__tblActivi__metri__4BAC3F29"];
+            this.relationFK__tblActivi__activ__4E88ABD4 = this.Relations["FK__tblActivi__activ__4E88ABD4"];
+            this.relationFK__tblActivi__userI__4F7CD00D = this.Relations["FK__tblActivi__userI__4F7CD00D"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -314,30 +314,30 @@ namespace Fitness_Tracker {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tabletblActivity = new tblActivityDataTable();
             base.Tables.Add(this.tabletblActivity);
-            this.tabletblActivityMatric = new tblActivityMatricDataTable();
-            base.Tables.Add(this.tabletblActivityMatric);
+            this.tabletblActivityMetric = new tblActivityMetricDataTable();
+            base.Tables.Add(this.tabletblActivityMetric);
             this.tabletblActivityUser = new tblActivityUserDataTable();
             base.Tables.Add(this.tabletblActivityUser);
-            this.tabletblMatric = new tblMatricDataTable();
-            base.Tables.Add(this.tabletblMatric);
+            this.tabletblMetric = new tblMetricDataTable();
+            base.Tables.Add(this.tabletblMetric);
             this.tabletblUser = new tblUserDataTable();
             base.Tables.Add(this.tabletblUser);
-            this.relationFK__tblActivi__activ__3D5E1FD2 = new global::System.Data.DataRelation("FK__tblActivi__activ__3D5E1FD2", new global::System.Data.DataColumn[] {
+            this.relationFK__tblActivi__activ__4AB81AF0 = new global::System.Data.DataRelation("FK__tblActivi__activ__4AB81AF0", new global::System.Data.DataColumn[] {
                         this.tabletblActivity.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabletblActivityMatric.activityIdColumn}, false);
-            this.Relations.Add(this.relationFK__tblActivi__activ__3D5E1FD2);
-            this.relationFK__tblActivi__matri__3E52440B = new global::System.Data.DataRelation("FK__tblActivi__matri__3E52440B", new global::System.Data.DataColumn[] {
-                        this.tabletblMatric.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabletblActivityMatric.matricIdColumn}, false);
-            this.Relations.Add(this.relationFK__tblActivi__matri__3E52440B);
-            this.relationFK__tblActivi__activ__412EB0B6 = new global::System.Data.DataRelation("FK__tblActivi__activ__412EB0B6", new global::System.Data.DataColumn[] {
+                        this.tabletblActivityMetric.activityIdColumn}, false);
+            this.Relations.Add(this.relationFK__tblActivi__activ__4AB81AF0);
+            this.relationFK__tblActivi__metri__4BAC3F29 = new global::System.Data.DataRelation("FK__tblActivi__metri__4BAC3F29", new global::System.Data.DataColumn[] {
+                        this.tabletblMetric.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletblActivityMetric.metricIdColumn}, false);
+            this.Relations.Add(this.relationFK__tblActivi__metri__4BAC3F29);
+            this.relationFK__tblActivi__activ__4E88ABD4 = new global::System.Data.DataRelation("FK__tblActivi__activ__4E88ABD4", new global::System.Data.DataColumn[] {
                         this.tabletblActivity.idColumn}, new global::System.Data.DataColumn[] {
                         this.tabletblActivityUser.activityIdColumn}, false);
-            this.Relations.Add(this.relationFK__tblActivi__activ__412EB0B6);
-            this.relationFK__tblActivi__userI__4222D4EF = new global::System.Data.DataRelation("FK__tblActivi__userI__4222D4EF", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__tblActivi__activ__4E88ABD4);
+            this.relationFK__tblActivi__userI__4F7CD00D = new global::System.Data.DataRelation("FK__tblActivi__userI__4F7CD00D", new global::System.Data.DataColumn[] {
                         this.tabletblUser.idColumn}, new global::System.Data.DataColumn[] {
                         this.tabletblActivityUser.userIdColumn}, false);
-            this.Relations.Add(this.relationFK__tblActivi__userI__4222D4EF);
+            this.Relations.Add(this.relationFK__tblActivi__userI__4F7CD00D);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -348,7 +348,7 @@ namespace Fitness_Tracker {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializetblActivityMatric() {
+        private bool ShouldSerializetblActivityMetric() {
             return false;
         }
         
@@ -360,7 +360,7 @@ namespace Fitness_Tracker {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializetblMatric() {
+        private bool ShouldSerializetblMetric() {
             return false;
         }
         
@@ -429,13 +429,13 @@ namespace Fitness_Tracker {
         public delegate void tblActivityRowChangeEventHandler(object sender, tblActivityRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void tblActivityMatricRowChangeEventHandler(object sender, tblActivityMatricRowChangeEvent e);
+        public delegate void tblActivityMetricRowChangeEventHandler(object sender, tblActivityMetricRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void tblActivityUserRowChangeEventHandler(object sender, tblActivityUserRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void tblMatricRowChangeEventHandler(object sender, tblMatricRowChangeEvent e);
+        public delegate void tblMetricRowChangeEventHandler(object sender, tblMetricRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void tblUserRowChangeEventHandler(object sender, tblUserRowChangeEvent e);
@@ -722,18 +722,18 @@ namespace Fitness_Tracker {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tblActivityMatricDataTable : global::System.Data.TypedTableBase<tblActivityMatricRow> {
+        public partial class tblActivityMetricDataTable : global::System.Data.TypedTableBase<tblActivityMetricRow> {
             
             private global::System.Data.DataColumn columnid;
             
             private global::System.Data.DataColumn columnactivityId;
             
-            private global::System.Data.DataColumn columnmatricId;
+            private global::System.Data.DataColumn columnmetricId;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblActivityMatricDataTable() {
-                this.TableName = "tblActivityMatric";
+            public tblActivityMetricDataTable() {
+                this.TableName = "tblActivityMetric";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -741,7 +741,7 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal tblActivityMatricDataTable(global::System.Data.DataTable table) {
+            internal tblActivityMetricDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -758,7 +758,7 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected tblActivityMatricDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected tblActivityMetricDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -781,9 +781,9 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn matricIdColumn {
+            public global::System.Data.DataColumn metricIdColumn {
                 get {
-                    return this.columnmatricId;
+                    return this.columnmetricId;
                 }
             }
             
@@ -798,60 +798,60 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblActivityMatricRow this[int index] {
+            public tblActivityMetricRow this[int index] {
                 get {
-                    return ((tblActivityMatricRow)(this.Rows[index]));
+                    return ((tblActivityMetricRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tblActivityMatricRowChangeEventHandler tblActivityMatricRowChanging;
+            public event tblActivityMetricRowChangeEventHandler tblActivityMetricRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tblActivityMatricRowChangeEventHandler tblActivityMatricRowChanged;
+            public event tblActivityMetricRowChangeEventHandler tblActivityMetricRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tblActivityMatricRowChangeEventHandler tblActivityMatricRowDeleting;
+            public event tblActivityMetricRowChangeEventHandler tblActivityMetricRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tblActivityMatricRowChangeEventHandler tblActivityMatricRowDeleted;
+            public event tblActivityMetricRowChangeEventHandler tblActivityMetricRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddtblActivityMatricRow(tblActivityMatricRow row) {
+            public void AddtblActivityMetricRow(tblActivityMetricRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblActivityMatricRow AddtblActivityMatricRow(tblActivityRow parenttblActivityRowByFK__tblActivi__activ__3D5E1FD2, tblMatricRow parenttblMatricRowByFK__tblActivi__matri__3E52440B) {
-                tblActivityMatricRow rowtblActivityMatricRow = ((tblActivityMatricRow)(this.NewRow()));
+            public tblActivityMetricRow AddtblActivityMetricRow(tblActivityRow parenttblActivityRowByFK__tblActivi__activ__4AB81AF0, tblMetricRow parenttblMetricRowByFK__tblActivi__metri__4BAC3F29) {
+                tblActivityMetricRow rowtblActivityMetricRow = ((tblActivityMetricRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null};
-                if ((parenttblActivityRowByFK__tblActivi__activ__3D5E1FD2 != null)) {
-                    columnValuesArray[1] = parenttblActivityRowByFK__tblActivi__activ__3D5E1FD2[0];
+                if ((parenttblActivityRowByFK__tblActivi__activ__4AB81AF0 != null)) {
+                    columnValuesArray[1] = parenttblActivityRowByFK__tblActivi__activ__4AB81AF0[0];
                 }
-                if ((parenttblMatricRowByFK__tblActivi__matri__3E52440B != null)) {
-                    columnValuesArray[2] = parenttblMatricRowByFK__tblActivi__matri__3E52440B[0];
+                if ((parenttblMetricRowByFK__tblActivi__metri__4BAC3F29 != null)) {
+                    columnValuesArray[2] = parenttblMetricRowByFK__tblActivi__metri__4BAC3F29[0];
                 }
-                rowtblActivityMatricRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtblActivityMatricRow);
-                return rowtblActivityMatricRow;
+                rowtblActivityMetricRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtblActivityMetricRow);
+                return rowtblActivityMetricRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblActivityMatricRow FindByid(int id) {
-                return ((tblActivityMatricRow)(this.Rows.Find(new object[] {
+            public tblActivityMetricRow FindByid(int id) {
+                return ((tblActivityMetricRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                tblActivityMatricDataTable cln = ((tblActivityMatricDataTable)(base.Clone()));
+                tblActivityMetricDataTable cln = ((tblActivityMetricDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -859,7 +859,7 @@ namespace Fitness_Tracker {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new tblActivityMatricDataTable();
+                return new tblActivityMetricDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -867,7 +867,7 @@ namespace Fitness_Tracker {
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
                 this.columnactivityId = base.Columns["activityId"];
-                this.columnmatricId = base.Columns["matricId"];
+                this.columnmetricId = base.Columns["metricId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -877,8 +877,8 @@ namespace Fitness_Tracker {
                 base.Columns.Add(this.columnid);
                 this.columnactivityId = new global::System.Data.DataColumn("activityId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnactivityId);
-                this.columnmatricId = new global::System.Data.DataColumn("matricId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmatricId);
+                this.columnmetricId = new global::System.Data.DataColumn("metricId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmetricId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -891,28 +891,28 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblActivityMatricRow NewtblActivityMatricRow() {
-                return ((tblActivityMatricRow)(this.NewRow()));
+            public tblActivityMetricRow NewtblActivityMetricRow() {
+                return ((tblActivityMetricRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tblActivityMatricRow(builder);
+                return new tblActivityMetricRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(tblActivityMatricRow);
+                return typeof(tblActivityMetricRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.tblActivityMatricRowChanged != null)) {
-                    this.tblActivityMatricRowChanged(this, new tblActivityMatricRowChangeEvent(((tblActivityMatricRow)(e.Row)), e.Action));
+                if ((this.tblActivityMetricRowChanged != null)) {
+                    this.tblActivityMetricRowChanged(this, new tblActivityMetricRowChangeEvent(((tblActivityMetricRow)(e.Row)), e.Action));
                 }
             }
             
@@ -920,8 +920,8 @@ namespace Fitness_Tracker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.tblActivityMatricRowChanging != null)) {
-                    this.tblActivityMatricRowChanging(this, new tblActivityMatricRowChangeEvent(((tblActivityMatricRow)(e.Row)), e.Action));
+                if ((this.tblActivityMetricRowChanging != null)) {
+                    this.tblActivityMetricRowChanging(this, new tblActivityMetricRowChangeEvent(((tblActivityMetricRow)(e.Row)), e.Action));
                 }
             }
             
@@ -929,8 +929,8 @@ namespace Fitness_Tracker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.tblActivityMatricRowDeleted != null)) {
-                    this.tblActivityMatricRowDeleted(this, new tblActivityMatricRowChangeEvent(((tblActivityMatricRow)(e.Row)), e.Action));
+                if ((this.tblActivityMetricRowDeleted != null)) {
+                    this.tblActivityMetricRowDeleted(this, new tblActivityMetricRowChangeEvent(((tblActivityMetricRow)(e.Row)), e.Action));
                 }
             }
             
@@ -938,14 +938,14 @@ namespace Fitness_Tracker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.tblActivityMatricRowDeleting != null)) {
-                    this.tblActivityMatricRowDeleting(this, new tblActivityMatricRowChangeEvent(((tblActivityMatricRow)(e.Row)), e.Action));
+                if ((this.tblActivityMetricRowDeleting != null)) {
+                    this.tblActivityMetricRowDeleting(this, new tblActivityMetricRowChangeEvent(((tblActivityMetricRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemovetblActivityMatricRow(tblActivityMatricRow row) {
+            public void RemovetblActivityMetricRow(tblActivityMetricRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -972,7 +972,7 @@ namespace Fitness_Tracker {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tblActivityMatricDataTable";
+                attribute2.FixedValue = "tblActivityMetricDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1026,9 +1026,9 @@ namespace Fitness_Tracker {
             
             private global::System.Data.DataColumn columnuserId;
             
-            private global::System.Data.DataColumn columndateDone;
+            private global::System.Data.DataColumn columnburntCalorie;
             
-            private global::System.Data.DataColumn columnsuccessStatus;
+            private global::System.Data.DataColumn columndateDone;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1089,17 +1089,17 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn dateDoneColumn {
+            public global::System.Data.DataColumn burntCalorieColumn {
                 get {
-                    return this.columndateDone;
+                    return this.columnburntCalorie;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn successStatusColumn {
+            public global::System.Data.DataColumn dateDoneColumn {
                 get {
-                    return this.columnsuccessStatus;
+                    return this.columndateDone;
                 }
             }
             
@@ -1140,19 +1140,19 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblActivityUserRow AddtblActivityUserRow(tblActivityRow parenttblActivityRowByFK__tblActivi__activ__412EB0B6, tblUserRow parenttblUserRowByFK__tblActivi__userI__4222D4EF, System.DateTime dateDone, bool successStatus) {
+            public tblActivityUserRow AddtblActivityUserRow(tblActivityRow parenttblActivityRowByFK__tblActivi__activ__4E88ABD4, tblUserRow parenttblUserRowByFK__tblActivi__userI__4F7CD00D, decimal burntCalorie, System.DateTime dateDone) {
                 tblActivityUserRow rowtblActivityUserRow = ((tblActivityUserRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null,
-                        dateDone,
-                        successStatus};
-                if ((parenttblActivityRowByFK__tblActivi__activ__412EB0B6 != null)) {
-                    columnValuesArray[1] = parenttblActivityRowByFK__tblActivi__activ__412EB0B6[0];
+                        burntCalorie,
+                        dateDone};
+                if ((parenttblActivityRowByFK__tblActivi__activ__4E88ABD4 != null)) {
+                    columnValuesArray[1] = parenttblActivityRowByFK__tblActivi__activ__4E88ABD4[0];
                 }
-                if ((parenttblUserRowByFK__tblActivi__userI__4222D4EF != null)) {
-                    columnValuesArray[2] = parenttblUserRowByFK__tblActivi__userI__4222D4EF[0];
+                if ((parenttblUserRowByFK__tblActivi__userI__4F7CD00D != null)) {
+                    columnValuesArray[2] = parenttblUserRowByFK__tblActivi__userI__4F7CD00D[0];
                 }
                 rowtblActivityUserRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblActivityUserRow);
@@ -1186,8 +1186,8 @@ namespace Fitness_Tracker {
                 this.columnid = base.Columns["id"];
                 this.columnactivityId = base.Columns["activityId"];
                 this.columnuserId = base.Columns["userId"];
+                this.columnburntCalorie = base.Columns["burntCalorie"];
                 this.columndateDone = base.Columns["dateDone"];
-                this.columnsuccessStatus = base.Columns["successStatus"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1199,10 +1199,10 @@ namespace Fitness_Tracker {
                 base.Columns.Add(this.columnactivityId);
                 this.columnuserId = new global::System.Data.DataColumn("userId", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnuserId);
+                this.columnburntCalorie = new global::System.Data.DataColumn("burntCalorie", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnburntCalorie);
                 this.columndateDone = new global::System.Data.DataColumn("dateDone", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndateDone);
-                this.columnsuccessStatus = new global::System.Data.DataColumn("successStatus", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsuccessStatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -1343,18 +1343,18 @@ namespace Fitness_Tracker {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tblMatricDataTable : global::System.Data.TypedTableBase<tblMatricRow> {
+        public partial class tblMetricDataTable : global::System.Data.TypedTableBase<tblMetricRow> {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columnmatricName;
+            private global::System.Data.DataColumn columnmetricName;
             
-            private global::System.Data.DataColumn columnmatricUnit;
+            private global::System.Data.DataColumn columnmetricUnit;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblMatricDataTable() {
-                this.TableName = "tblMatric";
+            public tblMetricDataTable() {
+                this.TableName = "tblMetric";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1362,7 +1362,7 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal tblMatricDataTable(global::System.Data.DataTable table) {
+            internal tblMetricDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1379,7 +1379,7 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected tblMatricDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected tblMetricDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1394,17 +1394,17 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn matricNameColumn {
+            public global::System.Data.DataColumn metricNameColumn {
                 get {
-                    return this.columnmatricName;
+                    return this.columnmetricName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn matricUnitColumn {
+            public global::System.Data.DataColumn metricUnitColumn {
                 get {
-                    return this.columnmatricUnit;
+                    return this.columnmetricUnit;
                 }
             }
             
@@ -1419,54 +1419,54 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblMatricRow this[int index] {
+            public tblMetricRow this[int index] {
                 get {
-                    return ((tblMatricRow)(this.Rows[index]));
+                    return ((tblMetricRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tblMatricRowChangeEventHandler tblMatricRowChanging;
+            public event tblMetricRowChangeEventHandler tblMetricRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tblMatricRowChangeEventHandler tblMatricRowChanged;
+            public event tblMetricRowChangeEventHandler tblMetricRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tblMatricRowChangeEventHandler tblMatricRowDeleting;
+            public event tblMetricRowChangeEventHandler tblMetricRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tblMatricRowChangeEventHandler tblMatricRowDeleted;
+            public event tblMetricRowChangeEventHandler tblMetricRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddtblMatricRow(tblMatricRow row) {
+            public void AddtblMetricRow(tblMetricRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblMatricRow AddtblMatricRow(string matricName, string matricUnit) {
-                tblMatricRow rowtblMatricRow = ((tblMatricRow)(this.NewRow()));
+            public tblMetricRow AddtblMetricRow(string metricName, string metricUnit) {
+                tblMetricRow rowtblMetricRow = ((tblMetricRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        matricName,
-                        matricUnit};
-                rowtblMatricRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtblMatricRow);
-                return rowtblMatricRow;
+                        metricName,
+                        metricUnit};
+                rowtblMetricRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtblMetricRow);
+                return rowtblMetricRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblMatricRow FindByid(int id) {
-                return ((tblMatricRow)(this.Rows.Find(new object[] {
+            public tblMetricRow FindByid(int id) {
+                return ((tblMetricRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                tblMatricDataTable cln = ((tblMatricDataTable)(base.Clone()));
+                tblMetricDataTable cln = ((tblMetricDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1474,15 +1474,15 @@ namespace Fitness_Tracker {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new tblMatricDataTable();
+                return new tblMetricDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
-                this.columnmatricName = base.Columns["matricName"];
-                this.columnmatricUnit = base.Columns["matricUnit"];
+                this.columnmetricName = base.Columns["metricName"];
+                this.columnmetricUnit = base.Columns["metricUnit"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1490,10 +1490,10 @@ namespace Fitness_Tracker {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnmatricName = new global::System.Data.DataColumn("matricName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmatricName);
-                this.columnmatricUnit = new global::System.Data.DataColumn("matricUnit", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmatricUnit);
+                this.columnmetricName = new global::System.Data.DataColumn("metricName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmetricName);
+                this.columnmetricUnit = new global::System.Data.DataColumn("metricUnit", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmetricUnit);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -1502,34 +1502,34 @@ namespace Fitness_Tracker {
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
-                this.columnmatricName.MaxLength = 255;
-                this.columnmatricUnit.MaxLength = 255;
+                this.columnmetricName.MaxLength = 255;
+                this.columnmetricUnit.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblMatricRow NewtblMatricRow() {
-                return ((tblMatricRow)(this.NewRow()));
+            public tblMetricRow NewtblMetricRow() {
+                return ((tblMetricRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tblMatricRow(builder);
+                return new tblMetricRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(tblMatricRow);
+                return typeof(tblMetricRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.tblMatricRowChanged != null)) {
-                    this.tblMatricRowChanged(this, new tblMatricRowChangeEvent(((tblMatricRow)(e.Row)), e.Action));
+                if ((this.tblMetricRowChanged != null)) {
+                    this.tblMetricRowChanged(this, new tblMetricRowChangeEvent(((tblMetricRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1537,8 +1537,8 @@ namespace Fitness_Tracker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.tblMatricRowChanging != null)) {
-                    this.tblMatricRowChanging(this, new tblMatricRowChangeEvent(((tblMatricRow)(e.Row)), e.Action));
+                if ((this.tblMetricRowChanging != null)) {
+                    this.tblMetricRowChanging(this, new tblMetricRowChangeEvent(((tblMetricRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1546,8 +1546,8 @@ namespace Fitness_Tracker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.tblMatricRowDeleted != null)) {
-                    this.tblMatricRowDeleted(this, new tblMatricRowChangeEvent(((tblMatricRow)(e.Row)), e.Action));
+                if ((this.tblMetricRowDeleted != null)) {
+                    this.tblMetricRowDeleted(this, new tblMetricRowChangeEvent(((tblMetricRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1555,14 +1555,14 @@ namespace Fitness_Tracker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.tblMatricRowDeleting != null)) {
-                    this.tblMatricRowDeleting(this, new tblMatricRowChangeEvent(((tblMatricRow)(e.Row)), e.Action));
+                if ((this.tblMetricRowDeleting != null)) {
+                    this.tblMetricRowDeleting(this, new tblMetricRowChangeEvent(((tblMetricRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemovetblMatricRow(tblMatricRow row) {
+            public void RemovetblMetricRow(tblMetricRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1589,7 +1589,7 @@ namespace Fitness_Tracker {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tblMatricDataTable";
+                attribute2.FixedValue = "tblMetricDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2074,23 +2074,23 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblActivityMatricRow[] GettblActivityMatricRows() {
-                if ((this.Table.ChildRelations["FK__tblActivi__activ__3D5E1FD2"] == null)) {
-                    return new tblActivityMatricRow[0];
+            public tblActivityMetricRow[] GettblActivityMetricRows() {
+                if ((this.Table.ChildRelations["FK__tblActivi__activ__4AB81AF0"] == null)) {
+                    return new tblActivityMetricRow[0];
                 }
                 else {
-                    return ((tblActivityMatricRow[])(base.GetChildRows(this.Table.ChildRelations["FK__tblActivi__activ__3D5E1FD2"])));
+                    return ((tblActivityMetricRow[])(base.GetChildRows(this.Table.ChildRelations["FK__tblActivi__activ__4AB81AF0"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tblActivityUserRow[] GettblActivityUserRows() {
-                if ((this.Table.ChildRelations["FK__tblActivi__activ__412EB0B6"] == null)) {
+                if ((this.Table.ChildRelations["FK__tblActivi__activ__4E88ABD4"] == null)) {
                     return new tblActivityUserRow[0];
                 }
                 else {
-                    return ((tblActivityUserRow[])(base.GetChildRows(this.Table.ChildRelations["FK__tblActivi__activ__412EB0B6"])));
+                    return ((tblActivityUserRow[])(base.GetChildRows(this.Table.ChildRelations["FK__tblActivi__activ__4E88ABD4"])));
                 }
             }
         }
@@ -2098,25 +2098,25 @@ namespace Fitness_Tracker {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class tblActivityMatricRow : global::System.Data.DataRow {
+        public partial class tblActivityMetricRow : global::System.Data.DataRow {
             
-            private tblActivityMatricDataTable tabletblActivityMatric;
+            private tblActivityMetricDataTable tabletblActivityMetric;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal tblActivityMatricRow(global::System.Data.DataRowBuilder rb) : 
+            internal tblActivityMetricRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabletblActivityMatric = ((tblActivityMatricDataTable)(this.Table));
+                this.tabletblActivityMetric = ((tblActivityMetricDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tabletblActivityMatric.idColumn]));
+                    return ((int)(this[this.tabletblActivityMetric.idColumn]));
                 }
                 set {
-                    this[this.tabletblActivityMatric.idColumn] = value;
+                    this[this.tabletblActivityMetric.idColumn] = value;
                 }
             }
             
@@ -2125,30 +2125,30 @@ namespace Fitness_Tracker {
             public int activityId {
                 get {
                     try {
-                        return ((int)(this[this.tabletblActivityMatric.activityIdColumn]));
+                        return ((int)(this[this.tabletblActivityMetric.activityIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'activityId\' in table \'tblActivityMatric\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'activityId\' in table \'tblActivityMetric\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblActivityMatric.activityIdColumn] = value;
+                    this[this.tabletblActivityMetric.activityIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int matricId {
+            public int metricId {
                 get {
                     try {
-                        return ((int)(this[this.tabletblActivityMatric.matricIdColumn]));
+                        return ((int)(this[this.tabletblActivityMetric.metricIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'matricId\' in table \'tblActivityMatric\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'metricId\' in table \'tblActivityMetric\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblActivityMatric.matricIdColumn] = value;
+                    this[this.tabletblActivityMetric.metricIdColumn] = value;
                 }
             }
             
@@ -2156,46 +2156,46 @@ namespace Fitness_Tracker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tblActivityRow tblActivityRow {
                 get {
-                    return ((tblActivityRow)(this.GetParentRow(this.Table.ParentRelations["FK__tblActivi__activ__3D5E1FD2"])));
+                    return ((tblActivityRow)(this.GetParentRow(this.Table.ParentRelations["FK__tblActivi__activ__4AB81AF0"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__tblActivi__activ__3D5E1FD2"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__tblActivi__activ__4AB81AF0"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblMatricRow tblMatricRow {
+            public tblMetricRow tblMetricRow {
                 get {
-                    return ((tblMatricRow)(this.GetParentRow(this.Table.ParentRelations["FK__tblActivi__matri__3E52440B"])));
+                    return ((tblMetricRow)(this.GetParentRow(this.Table.ParentRelations["FK__tblActivi__metri__4BAC3F29"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__tblActivi__matri__3E52440B"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__tblActivi__metri__4BAC3F29"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsactivityIdNull() {
-                return this.IsNull(this.tabletblActivityMatric.activityIdColumn);
+                return this.IsNull(this.tabletblActivityMetric.activityIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetactivityIdNull() {
-                this[this.tabletblActivityMatric.activityIdColumn] = global::System.Convert.DBNull;
+                this[this.tabletblActivityMetric.activityIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsmatricIdNull() {
-                return this.IsNull(this.tabletblActivityMatric.matricIdColumn);
+            public bool IsmetricIdNull() {
+                return this.IsNull(this.tabletblActivityMetric.metricIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetmatricIdNull() {
-                this[this.tabletblActivityMatric.matricIdColumn] = global::System.Convert.DBNull;
+            public void SetmetricIdNull() {
+                this[this.tabletblActivityMetric.metricIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2258,6 +2258,22 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal burntCalorie {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabletblActivityUser.burntCalorieColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'burntCalorie\' in table \'tblActivityUser\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblActivityUser.burntCalorieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime dateDone {
                 get {
                     try {
@@ -2274,28 +2290,12 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool successStatus {
-                get {
-                    try {
-                        return ((bool)(this[this.tabletblActivityUser.successStatusColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'successStatus\' in table \'tblActivityUser\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletblActivityUser.successStatusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tblActivityRow tblActivityRow {
                 get {
-                    return ((tblActivityRow)(this.GetParentRow(this.Table.ParentRelations["FK__tblActivi__activ__412EB0B6"])));
+                    return ((tblActivityRow)(this.GetParentRow(this.Table.ParentRelations["FK__tblActivi__activ__4E88ABD4"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__tblActivi__activ__412EB0B6"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__tblActivi__activ__4E88ABD4"]);
                 }
             }
             
@@ -2303,10 +2303,10 @@ namespace Fitness_Tracker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tblUserRow tblUserRow {
                 get {
-                    return ((tblUserRow)(this.GetParentRow(this.Table.ParentRelations["FK__tblActivi__userI__4222D4EF"])));
+                    return ((tblUserRow)(this.GetParentRow(this.Table.ParentRelations["FK__tblActivi__userI__4F7CD00D"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__tblActivi__userI__4222D4EF"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__tblActivi__userI__4F7CD00D"]);
                 }
             }
             
@@ -2336,6 +2336,18 @@ namespace Fitness_Tracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsburntCalorieNull() {
+                return this.IsNull(this.tabletblActivityUser.burntCalorieColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetburntCalorieNull() {
+                this[this.tabletblActivityUser.burntCalorieColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsdateDoneNull() {
                 return this.IsNull(this.tabletblActivityUser.dateDoneColumn);
             }
@@ -2345,109 +2357,97 @@ namespace Fitness_Tracker {
             public void SetdateDoneNull() {
                 this[this.tabletblActivityUser.dateDoneColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IssuccessStatusNull() {
-                return this.IsNull(this.tabletblActivityUser.successStatusColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetsuccessStatusNull() {
-                this[this.tabletblActivityUser.successStatusColumn] = global::System.Convert.DBNull;
-            }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class tblMatricRow : global::System.Data.DataRow {
+        public partial class tblMetricRow : global::System.Data.DataRow {
             
-            private tblMatricDataTable tabletblMatric;
+            private tblMetricDataTable tabletblMetric;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal tblMatricRow(global::System.Data.DataRowBuilder rb) : 
+            internal tblMetricRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabletblMatric = ((tblMatricDataTable)(this.Table));
+                this.tabletblMetric = ((tblMetricDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tabletblMatric.idColumn]));
+                    return ((int)(this[this.tabletblMetric.idColumn]));
                 }
                 set {
-                    this[this.tabletblMatric.idColumn] = value;
+                    this[this.tabletblMetric.idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string matricName {
+            public string metricName {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMatric.matricNameColumn]));
+                        return ((string)(this[this.tabletblMetric.metricNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'matricName\' in table \'tblMatric\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'metricName\' in table \'tblMetric\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMatric.matricNameColumn] = value;
+                    this[this.tabletblMetric.metricNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string matricUnit {
+            public string metricUnit {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMatric.matricUnitColumn]));
+                        return ((string)(this[this.tabletblMetric.metricUnitColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'matricUnit\' in table \'tblMatric\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'metricUnit\' in table \'tblMetric\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMatric.matricUnitColumn] = value;
+                    this[this.tabletblMetric.metricUnitColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsmatricNameNull() {
-                return this.IsNull(this.tabletblMatric.matricNameColumn);
+            public bool IsmetricNameNull() {
+                return this.IsNull(this.tabletblMetric.metricNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetmatricNameNull() {
-                this[this.tabletblMatric.matricNameColumn] = global::System.Convert.DBNull;
+            public void SetmetricNameNull() {
+                this[this.tabletblMetric.metricNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsmatricUnitNull() {
-                return this.IsNull(this.tabletblMatric.matricUnitColumn);
+            public bool IsmetricUnitNull() {
+                return this.IsNull(this.tabletblMetric.metricUnitColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetmatricUnitNull() {
-                this[this.tabletblMatric.matricUnitColumn] = global::System.Convert.DBNull;
+            public void SetmetricUnitNull() {
+                this[this.tabletblMetric.metricUnitColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblActivityMatricRow[] GettblActivityMatricRows() {
-                if ((this.Table.ChildRelations["FK__tblActivi__matri__3E52440B"] == null)) {
-                    return new tblActivityMatricRow[0];
+            public tblActivityMetricRow[] GettblActivityMetricRows() {
+                if ((this.Table.ChildRelations["FK__tblActivi__metri__4BAC3F29"] == null)) {
+                    return new tblActivityMetricRow[0];
                 }
                 else {
-                    return ((tblActivityMatricRow[])(base.GetChildRows(this.Table.ChildRelations["FK__tblActivi__matri__3E52440B"])));
+                    return ((tblActivityMetricRow[])(base.GetChildRows(this.Table.ChildRelations["FK__tblActivi__metri__4BAC3F29"])));
                 }
             }
         }
@@ -2732,11 +2732,11 @@ namespace Fitness_Tracker {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tblActivityUserRow[] GettblActivityUserRows() {
-                if ((this.Table.ChildRelations["FK__tblActivi__userI__4222D4EF"] == null)) {
+                if ((this.Table.ChildRelations["FK__tblActivi__userI__4F7CD00D"] == null)) {
                     return new tblActivityUserRow[0];
                 }
                 else {
-                    return ((tblActivityUserRow[])(base.GetChildRows(this.Table.ChildRelations["FK__tblActivi__userI__4222D4EF"])));
+                    return ((tblActivityUserRow[])(base.GetChildRows(this.Table.ChildRelations["FK__tblActivi__userI__4F7CD00D"])));
                 }
             }
         }
@@ -2779,22 +2779,22 @@ namespace Fitness_Tracker {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class tblActivityMatricRowChangeEvent : global::System.EventArgs {
+        public class tblActivityMetricRowChangeEvent : global::System.EventArgs {
             
-            private tblActivityMatricRow eventRow;
+            private tblActivityMetricRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblActivityMatricRowChangeEvent(tblActivityMatricRow row, global::System.Data.DataRowAction action) {
+            public tblActivityMetricRowChangeEvent(tblActivityMetricRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblActivityMatricRow Row {
+            public tblActivityMetricRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2847,22 +2847,22 @@ namespace Fitness_Tracker {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class tblMatricRowChangeEvent : global::System.EventArgs {
+        public class tblMetricRowChangeEvent : global::System.EventArgs {
             
-            private tblMatricRow eventRow;
+            private tblMetricRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblMatricRowChangeEvent(tblMatricRow row, global::System.Data.DataRowAction action) {
+            public tblMetricRowChangeEvent(tblMetricRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblMatricRow Row {
+            public tblMetricRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3083,12 +3083,12 @@ SELECT id, activityName FROM tblActivity WHERE (id = @id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT id FROM tblActivity WHERE LOWER(activityName) = @activityName;\r\n";
+            this._commandCollection[1].CommandText = "SELECT id\r\nFROM tblActivity \r\nWHERE activityName = @activityName;";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityName", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityName", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "activityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT activityName FROM tblActivity;";
+            this._commandCollection[2].CommandText = "SELECT activityName \r\nFROM tblActivity;";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3266,7 +3266,7 @@ SELECT id, activityName FROM tblActivity WHERE (id = @id)";
         public virtual global::System.Nullable<int> GetActivityIdByName(string activityName) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((activityName == null)) {
-                throw new global::System.ArgumentNullException("activityName");
+                command.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[0].Value = ((string)(activityName));
@@ -3304,7 +3304,7 @@ SELECT id, activityName FROM tblActivity WHERE (id = @id)";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class tblActivityMatricTableAdapter : global::System.ComponentModel.Component {
+    public partial class tblActivityMetricTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3318,7 +3318,7 @@ SELECT id, activityName FROM tblActivity WHERE (id = @id)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public tblActivityMatricTableAdapter() {
+        public tblActivityMetricTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3415,43 +3415,43 @@ SELECT id, activityName FROM tblActivity WHERE (id = @id)";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tblActivityMatric";
+            tableMapping.DataSetTable = "tblActivityMetric";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("activityId", "activityId");
-            tableMapping.ColumnMappings.Add("matricId", "matricId");
+            tableMapping.ColumnMappings.Add("metricId", "metricId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tblActivityMatric] WHERE (([id] = @Original_id) AND ((@IsNull_" +
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tblActivityMetric] WHERE (([id] = @Original_id) AND ((@IsNull_" +
                 "activityId = 1 AND [activityId] IS NULL) OR ([activityId] = @Original_activityId" +
-                ")) AND ((@IsNull_matricId = 1 AND [matricId] IS NULL) OR ([matricId] = @Original" +
-                "_matricId)))";
+                ")) AND ((@IsNull_metricId = 1 AND [metricId] IS NULL) OR ([metricId] = @Original" +
+                "_metricId)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_matricId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_matricId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_metricId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metricId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tblActivityMatric] ([activityId], [matricId]) VALUES (@activit" +
-                "yId, @matricId);\r\nSELECT id, activityId, matricId FROM tblActivityMatric WHERE (" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tblActivityMetric] ([activityId], [metricId]) VALUES (@activit" +
+                "yId, @metricId);\r\nSELECT id, activityId, metricId FROM tblActivityMetric WHERE (" +
                 "id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matricId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metricId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tblActivityMatric] SET [activityId] = @activityId, [matricId] = @matricId WHERE (([id] = @Original_id) AND ((@IsNull_activityId = 1 AND [activityId] IS NULL) OR ([activityId] = @Original_activityId)) AND ((@IsNull_matricId = 1 AND [matricId] IS NULL) OR ([matricId] = @Original_matricId)));
-SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tblActivityMetric] SET [activityId] = @activityId, [metricId] = @metricId WHERE (([id] = @Original_id) AND ((@IsNull_activityId = 1 AND [activityId] IS NULL) OR ([activityId] = @Original_activityId)) AND ((@IsNull_metricId = 1 AND [metricId] IS NULL) OR ([metricId] = @Original_metricId)));
+SELECT id, activityId, metricId FROM tblActivityMetric WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matricId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metricId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_matricId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_matricId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_metricId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metricId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3468,13 +3468,13 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, activityId, matricId FROM dbo.tblActivityMatric";
+            this._commandCollection[0].CommandText = "SELECT id, activityId, metricId FROM dbo.tblActivityMetric";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT m.matricName, m.matricUnit\r\nFROM tblActivity a\r\nJOIN tblActivityMatric am " +
-                "ON a.id = am.activityId\r\nJOIN tblMatric m ON m.id = am.matricId\r\nWHERE a.activit" +
-                "yName = @activityName;\r\n";
+            this._commandCollection[1].CommandText = "SELECT m.metricName, m.metricUnit\r\nFROM tblActivity a\r\nJOIN tblActivityMetric am " +
+                "ON a.id = am.activityId\r\nJOIN tblMetric m ON m.id = am.metricId\r\nWHERE a.activit" +
+                "yName = @activityName;";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityName", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "activityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -3483,7 +3483,7 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DB_Fitness_TrackerDataSet.tblActivityMatricDataTable dataTable) {
+        public virtual int Fill(DB_Fitness_TrackerDataSet.tblActivityMetricDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3496,9 +3496,9 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DB_Fitness_TrackerDataSet.tblActivityMatricDataTable GetData() {
+        public virtual DB_Fitness_TrackerDataSet.tblActivityMetricDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DB_Fitness_TrackerDataSet.tblActivityMatricDataTable dataTable = new DB_Fitness_TrackerDataSet.tblActivityMatricDataTable();
+            DB_Fitness_TrackerDataSet.tblActivityMetricDataTable dataTable = new DB_Fitness_TrackerDataSet.tblActivityMetricDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3507,7 +3507,7 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int GetMatricsByActivityName(DB_Fitness_TrackerDataSet.tblActivityMatricDataTable dataTable, string activityName) {
+        public virtual int GetMetricsByActivityName(DB_Fitness_TrackerDataSet.tblActivityMetricDataTable dataTable, string activityName) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((activityName == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -3525,7 +3525,7 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DB_Fitness_TrackerDataSet.tblActivityMatricDataTable dataTable) {
+        public virtual int Update(DB_Fitness_TrackerDataSet.tblActivityMetricDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -3533,7 +3533,7 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DB_Fitness_TrackerDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "tblActivityMatric");
+            return this.Adapter.Update(dataSet, "tblActivityMetric");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3555,7 +3555,7 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_activityId, global::System.Nullable<int> Original_matricId) {
+        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_activityId, global::System.Nullable<int> Original_metricId) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_activityId.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -3565,9 +3565,9 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_matricId.HasValue == true)) {
+            if ((Original_metricId.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_matricId.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_metricId.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
@@ -3593,15 +3593,15 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> activityId, global::System.Nullable<int> matricId) {
+        public virtual int Insert(global::System.Nullable<int> activityId, global::System.Nullable<int> metricId) {
             if ((activityId.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(activityId.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((matricId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(matricId.Value));
+            if ((metricId.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(metricId.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -3626,15 +3626,15 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> activityId, global::System.Nullable<int> matricId, int Original_id, global::System.Nullable<int> Original_activityId, global::System.Nullable<int> Original_matricId, int id) {
+        public virtual int Update(global::System.Nullable<int> activityId, global::System.Nullable<int> metricId, int Original_id, global::System.Nullable<int> Original_activityId, global::System.Nullable<int> Original_metricId, int id) {
             if ((activityId.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(activityId.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((matricId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(matricId.Value));
+            if ((metricId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(metricId.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -3648,9 +3648,9 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_matricId.HasValue == true)) {
+            if ((Original_metricId.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_matricId.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_metricId.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
@@ -3677,8 +3677,8 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> activityId, global::System.Nullable<int> matricId, int Original_id, global::System.Nullable<int> Original_activityId, global::System.Nullable<int> Original_matricId) {
-            return this.Update(activityId, matricId, Original_id, Original_activityId, Original_matricId, Original_id);
+        public virtual int Update(global::System.Nullable<int> activityId, global::System.Nullable<int> metricId, int Original_id, global::System.Nullable<int> Original_activityId, global::System.Nullable<int> Original_metricId) {
+            return this.Update(activityId, metricId, Original_id, Original_activityId, Original_metricId, Original_id);
         }
     }
     
@@ -3806,51 +3806,51 @@ SELECT id, activityId, matricId FROM tblActivityMatric WHERE (id = @id)";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("activityId", "activityId");
             tableMapping.ColumnMappings.Add("userId", "userId");
+            tableMapping.ColumnMappings.Add("burntCalorie", "burntCalorie");
             tableMapping.ColumnMappings.Add("dateDone", "dateDone");
-            tableMapping.ColumnMappings.Add("successStatus", "successStatus");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[tblActivityUser] WHERE (([id] = @Original_id) AND ((@IsNull_activityId = 1 AND [activityId] IS NULL) OR ([activityId] = @Original_activityId)) AND ((@IsNull_userId = 1 AND [userId] IS NULL) OR ([userId] = @Original_userId)) AND ((@IsNull_dateDone = 1 AND [dateDone] IS NULL) OR ([dateDone] = @Original_dateDone)) AND ((@IsNull_successStatus = 1 AND [successStatus] IS NULL) OR ([successStatus] = @Original_successStatus)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[tblActivityUser] WHERE (([id] = @Original_id) AND ((@IsNull_activityId = 1 AND [activityId] IS NULL) OR ([activityId] = @Original_activityId)) AND ((@IsNull_userId = 1 AND [userId] IS NULL) OR ([userId] = @Original_userId)) AND ((@IsNull_burntCalorie = 1 AND [burntCalorie] IS NULL) OR ([burntCalorie] = @Original_burntCalorie)) AND ((@IsNull_dateDone = 1 AND [dateDone] IS NULL) OR ([dateDone] = @Original_dateDone)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_userId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_userId", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_burntCalorie", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "burntCalorie", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_burntCalorie", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "burntCalorie", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dateDone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateDone", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_successStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_successStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tblActivityUser] ([activityId], [userId], [dateDone], [success" +
-                "Status]) VALUES (@activityId, @userId, @dateDone, @successStatus);\r\nSELECT id, a" +
-                "ctivityId, userId, dateDone, successStatus FROM tblActivityUser WHERE (id = SCOP" +
-                "E_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tblActivityUser] ([activityId], [userId], [burntCalorie], [dat" +
+                "eDone]) VALUES (@activityId, @userId, @burntCalorie, @dateDone);\r\nSELECT id, act" +
+                "ivityId, userId, burntCalorie, dateDone FROM tblActivityUser WHERE (id = SCOPE_I" +
+                "DENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@burntCalorie", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "burntCalorie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateDone", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@successStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tblActivityUser] SET [activityId] = @activityId, [userId] = @userId, [dateDone] = @dateDone, [successStatus] = @successStatus WHERE (([id] = @Original_id) AND ((@IsNull_activityId = 1 AND [activityId] IS NULL) OR ([activityId] = @Original_activityId)) AND ((@IsNull_userId = 1 AND [userId] IS NULL) OR ([userId] = @Original_userId)) AND ((@IsNull_dateDone = 1 AND [dateDone] IS NULL) OR ([dateDone] = @Original_dateDone)) AND ((@IsNull_successStatus = 1 AND [successStatus] IS NULL) OR ([successStatus] = @Original_successStatus)));
-SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tblActivityUser] SET [activityId] = @activityId, [userId] = @userId, [burntCalorie] = @burntCalorie, [dateDone] = @dateDone WHERE (([id] = @Original_id) AND ((@IsNull_activityId = 1 AND [activityId] IS NULL) OR ([activityId] = @Original_activityId)) AND ((@IsNull_userId = 1 AND [userId] IS NULL) OR ([userId] = @Original_userId)) AND ((@IsNull_burntCalorie = 1 AND [burntCalorie] IS NULL) OR ([burntCalorie] = @Original_burntCalorie)) AND ((@IsNull_dateDone = 1 AND [dateDone] IS NULL) OR ([dateDone] = @Original_dateDone)));
+SELECT id, activityId, userId, burntCalorie, dateDone FROM tblActivityUser WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@burntCalorie", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "burntCalorie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateDone", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@successStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_userId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_userId", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_burntCalorie", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "burntCalorie", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_burntCalorie", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "burntCalorie", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dateDone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateDone", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_successStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_successStatus", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3867,26 +3867,26 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, activityId, userId, dateDone, successStatus FROM dbo.tblActivityUser";
+            this._commandCollection[0].CommandText = "SELECT id, activityId, userId, burntCalorie, dateDone FROM dbo.tblActivityUser";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM tblActivityUser\r\nWHERE activityId = @activityId\r\nAND userId = @userId" +
-                ";";
+            this._commandCollection[1].CommandText = "DELETE FROM tblActivityUser\r\nWHERE userId = @userId\r\nAND activityId = @activityId" +
+                "";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[tblActivityUser] ([activityId], [userId], [dateDone], [success" +
-                "Status]) VALUES (@activityId, @userId, @dateDone, @successStatus);\r\nSELECT id, a" +
-                "ctivityId, userId, dateDone, successStatus FROM tblActivityUser WHERE (id = SCOP" +
-                "E_IDENTITY())";
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[tblActivityUser] ([activityId], [userId], [burntCalorie], [dat" +
+                "eDone]) VALUES (@activityId, @userId, @burntCalorie, @dateDone);\r\nSELECT id, act" +
+                "ivityId, userId, burntCalorie, dateDone FROM tblActivityUser WHERE (id = SCOPE_I" +
+                "DENTITY())";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@burntCalorie", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 10, 2, "burntCalorie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateDone", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "dateDone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@successStatus", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "successStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3946,7 +3946,7 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_activityId, string Original_userId, global::System.Nullable<global::System.DateTime> Original_dateDone, global::System.Nullable<bool> Original_successStatus) {
+        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_activityId, string Original_userId, global::System.Nullable<decimal> Original_burntCalorie, global::System.Nullable<global::System.DateTime> Original_dateDone) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_activityId.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -3964,17 +3964,17 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_userId));
             }
-            if ((Original_dateDone.HasValue == true)) {
+            if ((Original_burntCalorie.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_dateDone.Value));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_burntCalorie.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_successStatus.HasValue == true)) {
+            if ((Original_dateDone.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((bool)(Original_successStatus.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_dateDone.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
@@ -4000,7 +4000,7 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> activityId, string userId, global::System.Nullable<global::System.DateTime> dateDone, global::System.Nullable<bool> successStatus) {
+        public virtual int Insert(global::System.Nullable<int> activityId, string userId, global::System.Nullable<decimal> burntCalorie, global::System.Nullable<global::System.DateTime> dateDone) {
             if ((activityId.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(activityId.Value));
             }
@@ -4013,14 +4013,14 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(userId));
             }
-            if ((dateDone.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(dateDone.Value));
+            if ((burntCalorie.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(burntCalorie.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((successStatus.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(successStatus.Value));
+            if ((dateDone.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(dateDone.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -4045,7 +4045,7 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> activityId, string userId, global::System.Nullable<global::System.DateTime> dateDone, global::System.Nullable<bool> successStatus, int Original_id, global::System.Nullable<int> Original_activityId, string Original_userId, global::System.Nullable<global::System.DateTime> Original_dateDone, global::System.Nullable<bool> Original_successStatus, int id) {
+        public virtual int Update(global::System.Nullable<int> activityId, string userId, global::System.Nullable<decimal> burntCalorie, global::System.Nullable<global::System.DateTime> dateDone, int Original_id, global::System.Nullable<int> Original_activityId, string Original_userId, global::System.Nullable<decimal> Original_burntCalorie, global::System.Nullable<global::System.DateTime> Original_dateDone, int id) {
             if ((activityId.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(activityId.Value));
             }
@@ -4058,14 +4058,14 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(userId));
             }
-            if ((dateDone.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(dateDone.Value));
+            if ((burntCalorie.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(burntCalorie.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((successStatus.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(successStatus.Value));
+            if ((dateDone.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(dateDone.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -4087,17 +4087,17 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_userId));
             }
-            if ((Original_dateDone.HasValue == true)) {
+            if ((Original_burntCalorie.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_dateDone.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_burntCalorie.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_successStatus.HasValue == true)) {
+            if ((Original_dateDone.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(Original_successStatus.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_dateDone.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
@@ -4124,27 +4124,27 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> activityId, string userId, global::System.Nullable<global::System.DateTime> dateDone, global::System.Nullable<bool> successStatus, int Original_id, global::System.Nullable<int> Original_activityId, string Original_userId, global::System.Nullable<global::System.DateTime> Original_dateDone, global::System.Nullable<bool> Original_successStatus) {
-            return this.Update(activityId, userId, dateDone, successStatus, Original_id, Original_activityId, Original_userId, Original_dateDone, Original_successStatus, Original_id);
+        public virtual int Update(global::System.Nullable<int> activityId, string userId, global::System.Nullable<decimal> burntCalorie, global::System.Nullable<global::System.DateTime> dateDone, int Original_id, global::System.Nullable<int> Original_activityId, string Original_userId, global::System.Nullable<decimal> Original_burntCalorie, global::System.Nullable<global::System.DateTime> Original_dateDone) {
+            return this.Update(activityId, userId, burntCalorie, dateDone, Original_id, Original_activityId, Original_userId, Original_burntCalorie, Original_dateDone, Original_id);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteUserActivity(global::System.Nullable<int> activityId, string userId) {
+        public virtual int DeleteUserActivity(string userId, global::System.Nullable<int> activityId) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            if ((activityId.HasValue == true)) {
-                command.Parameters[0].Value = ((int)(activityId.Value));
-            }
-            else {
+            if ((userId == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((userId == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
+            else {
+                command.Parameters[0].Value = ((string)(userId));
+            }
+            if ((activityId.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(activityId.Value));
             }
             else {
-                command.Parameters[1].Value = ((string)(userId));
+                command.Parameters[1].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4167,7 +4167,7 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertUserActivity(global::System.Nullable<int> activityId, string userId, global::System.Nullable<global::System.DateTime> dateDone, global::System.Nullable<bool> successStatus) {
+        public virtual int InsertUserActivity(global::System.Nullable<int> activityId, string userId, global::System.Nullable<decimal> burntCalorie, global::System.Nullable<global::System.DateTime> dateDone) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((activityId.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(activityId.Value));
@@ -4181,14 +4181,14 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
             else {
                 command.Parameters[1].Value = ((string)(userId));
             }
-            if ((dateDone.HasValue == true)) {
-                command.Parameters[2].Value = ((System.DateTime)(dateDone.Value));
+            if ((burntCalorie.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(burntCalorie.Value));
             }
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((successStatus.HasValue == true)) {
-                command.Parameters[3].Value = ((bool)(successStatus.Value));
+            if ((dateDone.HasValue == true)) {
+                command.Parameters[3].Value = ((System.DateTime)(dateDone.Value));
             }
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
@@ -4220,7 +4220,7 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class tblMatricTableAdapter : global::System.ComponentModel.Component {
+    public partial class tblMetricTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -4234,7 +4234,7 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public tblMatricTableAdapter() {
+        public tblMetricTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -4331,43 +4331,43 @@ SELECT id, activityId, userId, dateDone, successStatus FROM tblActivityUser WHER
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tblMatric";
+            tableMapping.DataSetTable = "tblMetric";
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("matricName", "matricName");
-            tableMapping.ColumnMappings.Add("matricUnit", "matricUnit");
+            tableMapping.ColumnMappings.Add("metricName", "metricName");
+            tableMapping.ColumnMappings.Add("metricUnit", "metricUnit");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tblMatric] WHERE (([id] = @Original_id) AND ((@IsNull_matricNa" +
-                "me = 1 AND [matricName] IS NULL) OR ([matricName] = @Original_matricName)) AND (" +
-                "(@IsNull_matricUnit = 1 AND [matricUnit] IS NULL) OR ([matricUnit] = @Original_m" +
-                "atricUnit)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tblMetric] WHERE (([id] = @Original_id) AND ((@IsNull_metricNa" +
+                "me = 1 AND [metricName] IS NULL) OR ([metricName] = @Original_metricName)) AND (" +
+                "(@IsNull_metricUnit = 1 AND [metricUnit] IS NULL) OR ([metricUnit] = @Original_m" +
+                "etricUnit)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_matricName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_matricName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_matricUnit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricUnit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_matricUnit", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricUnit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_metricName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metricName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_metricUnit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricUnit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metricUnit", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricUnit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tblMatric] ([matricName], [matricUnit]) VALUES (@matricName, @" +
-                "matricUnit);\r\nSELECT id, matricName, matricUnit FROM tblMatric WHERE (id = SCOPE" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tblMetric] ([metricName], [metricUnit]) VALUES (@metricName, @" +
+                "metricUnit);\r\nSELECT id, metricName, metricUnit FROM tblMetric WHERE (id = SCOPE" +
                 "_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matricName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matricUnit", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricUnit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metricName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metricUnit", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricUnit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tblMatric] SET [matricName] = @matricName, [matricUnit] = @matricUnit WHERE (([id] = @Original_id) AND ((@IsNull_matricName = 1 AND [matricName] IS NULL) OR ([matricName] = @Original_matricName)) AND ((@IsNull_matricUnit = 1 AND [matricUnit] IS NULL) OR ([matricUnit] = @Original_matricUnit)));
-SELECT id, matricName, matricUnit FROM tblMatric WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tblMetric] SET [metricName] = @metricName, [metricUnit] = @metricUnit WHERE (([id] = @Original_id) AND ((@IsNull_metricName = 1 AND [metricName] IS NULL) OR ([metricName] = @Original_metricName)) AND ((@IsNull_metricUnit = 1 AND [metricUnit] IS NULL) OR ([metricUnit] = @Original_metricUnit)));
+SELECT id, metricName, metricUnit FROM tblMetric WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matricName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matricUnit", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricUnit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metricName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metricUnit", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricUnit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_matricName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_matricName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_matricUnit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricUnit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_matricUnit", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricUnit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_metricName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metricName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_metricUnit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricUnit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metricUnit", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metricUnit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4384,7 +4384,7 @@ SELECT id, matricName, matricUnit FROM tblMatric WHERE (id = @id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, matricName, matricUnit FROM dbo.tblMatric";
+            this._commandCollection[0].CommandText = "SELECT id, metricName, metricUnit FROM dbo.tblMetric";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4392,7 +4392,7 @@ SELECT id, matricName, matricUnit FROM tblMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DB_Fitness_TrackerDataSet.tblMatricDataTable dataTable) {
+        public virtual int Fill(DB_Fitness_TrackerDataSet.tblMetricDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4405,9 +4405,9 @@ SELECT id, matricName, matricUnit FROM tblMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DB_Fitness_TrackerDataSet.tblMatricDataTable GetData() {
+        public virtual DB_Fitness_TrackerDataSet.tblMetricDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DB_Fitness_TrackerDataSet.tblMatricDataTable dataTable = new DB_Fitness_TrackerDataSet.tblMatricDataTable();
+            DB_Fitness_TrackerDataSet.tblMetricDataTable dataTable = new DB_Fitness_TrackerDataSet.tblMetricDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4415,7 +4415,7 @@ SELECT id, matricName, matricUnit FROM tblMatric WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DB_Fitness_TrackerDataSet.tblMatricDataTable dataTable) {
+        public virtual int Update(DB_Fitness_TrackerDataSet.tblMetricDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -4423,7 +4423,7 @@ SELECT id, matricName, matricUnit FROM tblMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DB_Fitness_TrackerDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "tblMatric");
+            return this.Adapter.Update(dataSet, "tblMetric");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4445,23 +4445,23 @@ SELECT id, matricName, matricUnit FROM tblMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_matricName, string Original_matricUnit) {
+        public virtual int Delete(int Original_id, string Original_metricName, string Original_metricUnit) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
-            if ((Original_matricName == null)) {
+            if ((Original_metricName == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_matricName));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_metricName));
             }
-            if ((Original_matricUnit == null)) {
+            if ((Original_metricUnit == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_matricUnit));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_metricUnit));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4483,18 +4483,18 @@ SELECT id, matricName, matricUnit FROM tblMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string matricName, string matricUnit) {
-            if ((matricName == null)) {
+        public virtual int Insert(string metricName, string metricUnit) {
+            if ((metricName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(matricName));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(metricName));
             }
-            if ((matricUnit == null)) {
+            if ((metricUnit == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(matricUnit));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(metricUnit));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4516,35 +4516,35 @@ SELECT id, matricName, matricUnit FROM tblMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string matricName, string matricUnit, int Original_id, string Original_matricName, string Original_matricUnit, int id) {
-            if ((matricName == null)) {
+        public virtual int Update(string metricName, string metricUnit, int Original_id, string Original_metricName, string Original_metricUnit, int id) {
+            if ((metricName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(matricName));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(metricName));
             }
-            if ((matricUnit == null)) {
+            if ((metricUnit == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(matricUnit));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(metricUnit));
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_id));
-            if ((Original_matricName == null)) {
+            if ((Original_metricName == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_matricName));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_metricName));
             }
-            if ((Original_matricUnit == null)) {
+            if ((Original_metricUnit == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_matricUnit));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_metricUnit));
             }
             this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
@@ -4567,8 +4567,8 @@ SELECT id, matricName, matricUnit FROM tblMatric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string matricName, string matricUnit, int Original_id, string Original_matricName, string Original_matricUnit) {
-            return this.Update(matricName, matricUnit, Original_id, Original_matricName, Original_matricUnit, Original_id);
+        public virtual int Update(string metricName, string metricUnit, int Original_id, string Original_metricName, string Original_metricUnit) {
+            return this.Update(metricName, metricUnit, Original_id, Original_metricName, Original_metricUnit, Original_id);
         }
     }
     
@@ -4796,12 +4796,12 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT id FROM tblUser WHERE username = @username;";
+            this._commandCollection[1].CommandText = "SELECT id \r\nFROM tblUser\r\nWHERE username = @username;";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE tblUser \r\nSET dailyCalorie = @dailyCalorie\r\nWHERE username = @username;";
+            this._commandCollection[2].CommandText = "UPDATE tblUser\r\nSET dailyCalorie = @dailyCalorie\r\nWHERE username = @username;";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dailyCalorie", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "dailyCalorie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5330,11 +5330,11 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
         
         private tblActivityTableAdapter _tblActivityTableAdapter;
         
-        private tblActivityMatricTableAdapter _tblActivityMatricTableAdapter;
+        private tblActivityMetricTableAdapter _tblActivityMetricTableAdapter;
         
         private tblActivityUserTableAdapter _tblActivityUserTableAdapter;
         
-        private tblMatricTableAdapter _tblMatricTableAdapter;
+        private tblMetricTableAdapter _tblMetricTableAdapter;
         
         private tblUserTableAdapter _tblUserTableAdapter;
         
@@ -5372,12 +5372,12 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public tblActivityMatricTableAdapter tblActivityMatricTableAdapter {
+        public tblActivityMetricTableAdapter tblActivityMetricTableAdapter {
             get {
-                return this._tblActivityMatricTableAdapter;
+                return this._tblActivityMetricTableAdapter;
             }
             set {
-                this._tblActivityMatricTableAdapter = value;
+                this._tblActivityMetricTableAdapter = value;
             }
         }
         
@@ -5400,12 +5400,12 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public tblMatricTableAdapter tblMatricTableAdapter {
+        public tblMetricTableAdapter tblMetricTableAdapter {
             get {
-                return this._tblMatricTableAdapter;
+                return this._tblMetricTableAdapter;
             }
             set {
-                this._tblMatricTableAdapter = value;
+                this._tblMetricTableAdapter = value;
             }
         }
         
@@ -5446,17 +5446,17 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                             && (this._tblActivityTableAdapter.Connection != null))) {
                     return this._tblActivityTableAdapter.Connection;
                 }
-                if (((this._tblActivityMatricTableAdapter != null) 
-                            && (this._tblActivityMatricTableAdapter.Connection != null))) {
-                    return this._tblActivityMatricTableAdapter.Connection;
+                if (((this._tblActivityMetricTableAdapter != null) 
+                            && (this._tblActivityMetricTableAdapter.Connection != null))) {
+                    return this._tblActivityMetricTableAdapter.Connection;
                 }
                 if (((this._tblActivityUserTableAdapter != null) 
                             && (this._tblActivityUserTableAdapter.Connection != null))) {
                     return this._tblActivityUserTableAdapter.Connection;
                 }
-                if (((this._tblMatricTableAdapter != null) 
-                            && (this._tblMatricTableAdapter.Connection != null))) {
-                    return this._tblMatricTableAdapter.Connection;
+                if (((this._tblMetricTableAdapter != null) 
+                            && (this._tblMetricTableAdapter.Connection != null))) {
+                    return this._tblMetricTableAdapter.Connection;
                 }
                 if (((this._tblUserTableAdapter != null) 
                             && (this._tblUserTableAdapter.Connection != null))) {
@@ -5478,13 +5478,13 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                 if ((this._tblActivityTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._tblActivityMatricTableAdapter != null)) {
+                if ((this._tblActivityMetricTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._tblActivityUserTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._tblMatricTableAdapter != null)) {
+                if ((this._tblMetricTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._tblUserTableAdapter != null)) {
@@ -5510,12 +5510,12 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tblMatricTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tblMatric.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tblMetricTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblMetric.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tblMatricTableAdapter.Update(updatedRows));
+                    result = (result + this._tblMetricTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -5528,12 +5528,12 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tblActivityMatricTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tblActivityMatric.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tblActivityMetricTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblActivityMetric.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tblActivityMatricTableAdapter.Update(updatedRows));
+                    result = (result + this._tblActivityMetricTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -5564,11 +5564,11 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tblMatricTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tblMatric.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tblMetricTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblMetric.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tblMatricTableAdapter.Update(addedRows));
+                    result = (result + this._tblMetricTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -5580,11 +5580,11 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tblActivityMatricTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tblActivityMatric.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tblActivityMetricTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblActivityMetric.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tblActivityMatricTableAdapter.Update(addedRows));
+                    result = (result + this._tblActivityMetricTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -5614,11 +5614,11 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tblActivityMatricTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblActivityMatric.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tblActivityMetricTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblActivityMetric.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tblActivityMatricTableAdapter.Update(deletedRows));
+                    result = (result + this._tblActivityMetricTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5630,11 +5630,11 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tblMatricTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblMatric.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tblMetricTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblMetric.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tblMatricTableAdapter.Update(deletedRows));
+                    result = (result + this._tblMetricTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5690,8 +5690,8 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._tblActivityMatricTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tblActivityMatricTableAdapter.Connection) == false))) {
+            if (((this._tblActivityMetricTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tblActivityMetricTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -5700,8 +5700,8 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._tblMatricTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tblMatricTableAdapter.Connection) == false))) {
+            if (((this._tblMetricTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tblMetricTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -5751,13 +5751,13 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tblActivityTableAdapter.Adapter);
                     }
                 }
-                if ((this._tblActivityMatricTableAdapter != null)) {
-                    revertConnections.Add(this._tblActivityMatricTableAdapter, this._tblActivityMatricTableAdapter.Connection);
-                    this._tblActivityMatricTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tblActivityMatricTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tblActivityMatricTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tblActivityMatricTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tblActivityMatricTableAdapter.Adapter);
+                if ((this._tblActivityMetricTableAdapter != null)) {
+                    revertConnections.Add(this._tblActivityMetricTableAdapter, this._tblActivityMetricTableAdapter.Connection);
+                    this._tblActivityMetricTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tblActivityMetricTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tblActivityMetricTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tblActivityMetricTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tblActivityMetricTableAdapter.Adapter);
                     }
                 }
                 if ((this._tblActivityUserTableAdapter != null)) {
@@ -5769,13 +5769,13 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tblActivityUserTableAdapter.Adapter);
                     }
                 }
-                if ((this._tblMatricTableAdapter != null)) {
-                    revertConnections.Add(this._tblMatricTableAdapter, this._tblMatricTableAdapter.Connection);
-                    this._tblMatricTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tblMatricTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tblMatricTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tblMatricTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tblMatricTableAdapter.Adapter);
+                if ((this._tblMetricTableAdapter != null)) {
+                    revertConnections.Add(this._tblMetricTableAdapter, this._tblMetricTableAdapter.Connection);
+                    this._tblMetricTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tblMetricTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tblMetricTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tblMetricTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tblMetricTableAdapter.Adapter);
                     }
                 }
                 if ((this._tblUserTableAdapter != null)) {
@@ -5849,17 +5849,17 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
                     this._tblActivityTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblActivityTableAdapter]));
                     this._tblActivityTableAdapter.Transaction = null;
                 }
-                if ((this._tblActivityMatricTableAdapter != null)) {
-                    this._tblActivityMatricTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblActivityMatricTableAdapter]));
-                    this._tblActivityMatricTableAdapter.Transaction = null;
+                if ((this._tblActivityMetricTableAdapter != null)) {
+                    this._tblActivityMetricTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblActivityMetricTableAdapter]));
+                    this._tblActivityMetricTableAdapter.Transaction = null;
                 }
                 if ((this._tblActivityUserTableAdapter != null)) {
                     this._tblActivityUserTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblActivityUserTableAdapter]));
                     this._tblActivityUserTableAdapter.Transaction = null;
                 }
-                if ((this._tblMatricTableAdapter != null)) {
-                    this._tblMatricTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblMatricTableAdapter]));
-                    this._tblMatricTableAdapter.Transaction = null;
+                if ((this._tblMetricTableAdapter != null)) {
+                    this._tblMetricTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblMetricTableAdapter]));
+                    this._tblMetricTableAdapter.Transaction = null;
                 }
                 if ((this._tblUserTableAdapter != null)) {
                     this._tblUserTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblUserTableAdapter]));

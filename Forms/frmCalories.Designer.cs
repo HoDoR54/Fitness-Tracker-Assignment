@@ -33,21 +33,21 @@
             this.lblToday = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
             this.lblGoal = new System.Windows.Forms.Label();
-            this.lblMatric1 = new System.Windows.Forms.Label();
-            this.lblMatric2 = new System.Windows.Forms.Label();
-            this.lblMatric3 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.lblMetric1 = new System.Windows.Forms.Label();
+            this.lblMetric2 = new System.Windows.Forms.Label();
+            this.lblMetric3 = new System.Windows.Forms.Label();
+            this.numMet1 = new System.Windows.Forms.NumericUpDown();
+            this.numMet2 = new System.Windows.Forms.NumericUpDown();
+            this.numMet3 = new System.Windows.Forms.NumericUpDown();
             this.lblUnit3 = new System.Windows.Forms.Label();
             this.lblUnit2 = new System.Windows.Forms.Label();
             this.lblUnit1 = new System.Windows.Forms.Label();
             this.btnResult = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddAct = new System.Windows.Forms.Button();
             this.cboActivities = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMet3)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -102,62 +102,62 @@
             this.lblGoal.Text = "Goal";
             this.lblGoal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblMatric1
+            // lblMetric1
             // 
-            this.lblMatric1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblMatric1.AutoSize = true;
-            this.lblMatric1.Location = new System.Drawing.Point(416, 172);
-            this.lblMatric1.Name = "lblMatric1";
-            this.lblMatric1.Size = new System.Drawing.Size(94, 26);
-            this.lblMatric1.TabIndex = 6;
-            this.lblMatric1.Text = "Matric 1:";
-            this.lblMatric1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMetric1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMetric1.AutoSize = true;
+            this.lblMetric1.Location = new System.Drawing.Point(416, 172);
+            this.lblMetric1.Name = "lblMetric1";
+            this.lblMetric1.Size = new System.Drawing.Size(94, 26);
+            this.lblMetric1.TabIndex = 6;
+            this.lblMetric1.Text = "Metric 1:";
+            this.lblMetric1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblMatric2
+            // lblMetric2
             // 
-            this.lblMatric2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblMatric2.AutoSize = true;
-            this.lblMatric2.Location = new System.Drawing.Point(416, 215);
-            this.lblMatric2.Name = "lblMatric2";
-            this.lblMatric2.Size = new System.Drawing.Size(94, 26);
-            this.lblMatric2.TabIndex = 7;
-            this.lblMatric2.Text = "Matric 2:";
-            this.lblMatric2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMetric2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMetric2.AutoSize = true;
+            this.lblMetric2.Location = new System.Drawing.Point(416, 215);
+            this.lblMetric2.Name = "lblMetric2";
+            this.lblMetric2.Size = new System.Drawing.Size(94, 26);
+            this.lblMetric2.TabIndex = 7;
+            this.lblMetric2.Text = "Metric 2:";
+            this.lblMetric2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblMatric3
+            // lblMetric3
             // 
-            this.lblMatric3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblMatric3.AutoSize = true;
-            this.lblMatric3.Location = new System.Drawing.Point(416, 255);
-            this.lblMatric3.Name = "lblMatric3";
-            this.lblMatric3.Size = new System.Drawing.Size(94, 26);
-            this.lblMatric3.TabIndex = 8;
-            this.lblMatric3.Text = "Matric 3:";
-            this.lblMatric3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMetric3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMetric3.AutoSize = true;
+            this.lblMetric3.Location = new System.Drawing.Point(416, 255);
+            this.lblMetric3.Name = "lblMetric3";
+            this.lblMetric3.Size = new System.Drawing.Size(94, 26);
+            this.lblMetric3.TabIndex = 8;
+            this.lblMetric3.Text = "Metric 3:";
+            this.lblMetric3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // numericUpDown1
+            // numMet1
             // 
-            this.numericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numericUpDown1.Location = new System.Drawing.Point(564, 170);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 34);
-            this.numericUpDown1.TabIndex = 9;
+            this.numMet1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numMet1.Location = new System.Drawing.Point(564, 170);
+            this.numMet1.Name = "numMet1";
+            this.numMet1.Size = new System.Drawing.Size(120, 34);
+            this.numMet1.TabIndex = 9;
             // 
-            // numericUpDown2
+            // numMet2
             // 
-            this.numericUpDown2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numericUpDown2.Location = new System.Drawing.Point(564, 213);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 34);
-            this.numericUpDown2.TabIndex = 10;
+            this.numMet2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numMet2.Location = new System.Drawing.Point(564, 213);
+            this.numMet2.Name = "numMet2";
+            this.numMet2.Size = new System.Drawing.Size(120, 34);
+            this.numMet2.TabIndex = 10;
             // 
-            // numericUpDown3
+            // numMet3
             // 
-            this.numericUpDown3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numericUpDown3.Location = new System.Drawing.Point(564, 253);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 34);
-            this.numericUpDown3.TabIndex = 11;
+            this.numMet3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numMet3.Location = new System.Drawing.Point(564, 253);
+            this.numMet3.Name = "numMet3";
+            this.numMet3.Size = new System.Drawing.Size(120, 34);
+            this.numMet3.TabIndex = 11;
             // 
             // lblUnit3
             // 
@@ -202,15 +202,16 @@
             this.btnResult.Text = "See results";
             this.btnResult.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAddAct
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(476, 333);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 46);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Add activity";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddAct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddAct.Location = new System.Drawing.Point(476, 333);
+            this.btnAddAct.Name = "btnAddAct";
+            this.btnAddAct.Size = new System.Drawing.Size(145, 46);
+            this.btnAddAct.TabIndex = 16;
+            this.btnAddAct.Text = "Add activity";
+            this.btnAddAct.UseVisualStyleBackColor = true;
+            this.btnAddAct.Click += new System.EventHandler(this.btnAddAct_Click);
             // 
             // cboActivities
             // 
@@ -227,17 +228,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 391);
             this.Controls.Add(this.cboActivities);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAddAct);
             this.Controls.Add(this.btnResult);
             this.Controls.Add(this.lblUnit1);
             this.Controls.Add(this.lblUnit2);
             this.Controls.Add(this.lblUnit3);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.lblMatric3);
-            this.Controls.Add(this.lblMatric2);
-            this.Controls.Add(this.lblMatric1);
+            this.Controls.Add(this.numMet3);
+            this.Controls.Add(this.numMet2);
+            this.Controls.Add(this.numMet1);
+            this.Controls.Add(this.lblMetric3);
+            this.Controls.Add(this.lblMetric2);
+            this.Controls.Add(this.lblMetric1);
             this.Controls.Add(this.lblGoal);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.lblToday);
@@ -250,9 +251,9 @@
             this.Text = "Calories burnt";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCalories_FormClosing);
             this.Load += new System.EventHandler(this.frmCalories_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMet3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,17 +265,17 @@
         private System.Windows.Forms.Label lblToday;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Label lblGoal;
-        private System.Windows.Forms.Label lblMatric1;
-        private System.Windows.Forms.Label lblMatric2;
-        private System.Windows.Forms.Label lblMatric3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.Label lblMetric1;
+        private System.Windows.Forms.Label lblMetric2;
+        private System.Windows.Forms.Label lblMetric3;
+        private System.Windows.Forms.NumericUpDown numMet1;
+        private System.Windows.Forms.NumericUpDown numMet2;
+        private System.Windows.Forms.NumericUpDown numMet3;
         private System.Windows.Forms.Label lblUnit3;
         private System.Windows.Forms.Label lblUnit2;
         private System.Windows.Forms.Label lblUnit1;
         private System.Windows.Forms.Button btnResult;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddAct;
         private System.Windows.Forms.ComboBox cboActivities;
     }
 }

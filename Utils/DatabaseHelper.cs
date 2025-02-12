@@ -115,22 +115,6 @@ namespace Fitness_Tracker.Utils
             }
         }
 
-        public bool DeleteUserActivity(string activity, string username)
-        {
-            try
-            {
-                int? activityId = actAdapter.GetActivityIdByName(activity);
-                string userId = userAdapter.GetIdByUsername(username);
-                int rowsInserted = auAdapter.DeleteUserActivity(userId, activityId);
-                return rowsInserted > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-        }
-
         public List<string> GetAllActivities ()
         {
             DB_Fitness_TrackerDataSet.tblActivityDataTable activityData = new DB_Fitness_TrackerDataSet.tblActivityDataTable();
@@ -159,5 +143,31 @@ namespace Fitness_Tracker.Utils
             }
             return metrics;
         }
+
+        public decimal GetTodayCalories()
+        {
+            DateTime today = DateTime.Today;
+            DB_Fitness_TrackerDataSet.tblActivityUserDataTable actUserData = new DB_Fitness_TrackerDataSet.tblActivityUserDataTable();
+            try
+            {
+                int rowCount = auAdapter.GetTodayCalories(actUserData, today.ToString("yyyy-MM-dd"));
+
+                decimal totalCalories = 0;
+                foreach (DataRow row in actUserData.Rows)
+                {
+                    if (row["burntCalorie"] != DBNull.Value)
+                    {
+                        totalCalories += Convert.ToDecimal(row["burntCalorie"]);
+                    }
+                }
+                return decimal.Round(totalCalories, 2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+        }
+
     }
 }

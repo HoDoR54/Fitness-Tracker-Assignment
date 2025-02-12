@@ -1,4 +1,5 @@
-﻿using Fitness_Tracker.Utils;
+﻿using Fitness_Tracker.Services;
+using Fitness_Tracker.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,10 @@ namespace Fitness_Tracker.Forms
     public partial class frmCalories : Form
     {
         static DatabaseHelper databaseHelper = new DatabaseHelper();
-        clsUser currentUser;
+        private clsUser currentUser;
+        private List<Dictionary<string, List<decimal>>> activitiesMetricsValues = new List<Dictionary<string, List<decimal>>>();
+        private HashSet<string> addedActivities = new HashSet<string>();
+
         public frmCalories(clsUser user)
         {
             InitializeComponent();
@@ -26,7 +30,7 @@ namespace Fitness_Tracker.Forms
             this.Hide();
         }
 
-        List<string> activities = databaseHelper.GetAllActivities();
+        private List<string> activities = databaseHelper.GetAllActivities();
 
         private void frmCalories_Load(object sender, EventArgs e)
         {
@@ -38,16 +42,13 @@ namespace Fitness_Tracker.Forms
             {
                 cboActivities.DataSource = activities;
                 cboActivities.SelectedIndex = 0;
+                UpdateUI(activities[0]);
             }
-
-            UpdateUI(activities[0]);
         }
 
-        public void UpdateUI (string activity)
+        public void UpdateUI(string activity)
         {
-            Dictionary<string, List<Dictionary<string, string>>> activityMetrics = new Dictionary<string, List<Dictionary<string, string>>>();
-            activityMetrics[activity] = databaseHelper.GetMetricsByActivityName(activity);
-            var metrics = activityMetrics[activity];
+            var metrics = databaseHelper.GetMetricsByActivityName(activity);
 
             lblMetric1.Text = $"{metrics[0].Keys.First()}:";
             lblUnit1.Text = metrics[0].Values.First();
@@ -68,57 +69,87 @@ namespace Fitness_Tracker.Forms
             UpdateUI(cboActivities.SelectedItem.ToString().ToLower());
         }
 
-        List<Dictionary<string, List<decimal>>> activitiesMetricsValues = new List<Dictionary<string, List<decimal>>>(); // list to store today's activities and respective metric values
-
         private void btnAddAct_Click(object sender, EventArgs e)
         {
-            Dictionary<string, List<decimal>> activityMetricValues = new Dictionary<string, List<decimal>>();
-            string activity = cboActivities.SelectedItem.ToString().ToLower();
+            string activity = cboActivities.SelectedItem.ToString().Trim().ToLower();
 
-
-            // list to store the values
-            List<decimal> metricValues = new List<decimal>();
-            metricValues.Add(numMet1.Value);
-            metricValues.Add(numMet2.Value);
-            metricValues.Add(numMet3.Value);
-
-            // assign the list to the dictionary
-            activityMetricValues.Add(activity, metricValues);
-
-            //assign the dictionary to the list
-            if (ValidateActivityInput())
+            if (ValidateActivityInput(activity))
             {
-                activitiesMetricsValues.Add(activityMetricValues);
-                UpdateListDisplay(activitiesMetricsValues);
+                // Update the list
+                List<decimal> metricValues = new List<decimal>
+                {
+                    numMet1.Value,
+                    numMet2.Value,
+                    numMet3.Value
+                };
 
+                Dictionary<string, List<decimal>> activityMetricValues = new Dictionary<string, List<decimal>>
+                {
+                    { activity, metricValues }
+                };
+
+                activitiesMetricsValues.Add(activityMetricValues);
+                addedActivities.Add(activity); 
+
+
+                // Update UI
+                UpdateListDisplay();
+
+                // Calculate calories burnt behind the scene
+                decimal caloriesBurnt = CalorieCalculator.CalculateCalories(activityMetricValues, activity, currentUser.CurrentWeight);
+
+                // Update the database
+                databaseHelper.AddUserActivity(activity, currentUser.Username, caloriesBurnt);
             }
         }
 
-        public bool ValidateActivityInput ()
+        public bool ValidateActivityInput(string activity)
         {
-            bool isValid = true;
-
             if (numMet1.Value <= 0 && numMet2.Value <= 0 && numMet3.Value <= 0)
             {
                 MessageBox.Show("Please fill the metric values.", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                isValid = false;
+                return false;
             }
 
-            return isValid;
+            if (addedActivities.Contains(activity))
+            {
+                MessageBox.Show("You have already added this activity.", "Duplicated activity", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            return true;
         }
 
-        public void UpdateListDisplay (List<Dictionary<string, List<decimal>>> activitiesMetricsValues)
+        public void UpdateListDisplay()
         {
-            List<string> addedActivities = new List<string>();
-            foreach (var activityDict in activitiesMetricsValues)
-            {
-                foreach (var key in activityDict.Keys)
-                {
-                    addedActivities.Add(key);
-                }
-            }
             lblResult.TextAlign = ContentAlignment.TopLeft;
             lblResult.Text = string.Join("\n", addedActivities);
+        }
+
+        private void btnResult_Click(object sender, EventArgs e)
+        {
+            lblResult.TextAlign = ContentAlignment.MiddleCenter;
+            decimal totalCalories = CalorieCalculator.GetTotalCalories(activitiesMetricsValues, currentUser.CurrentWeight);
+            lblResult.Text = $"Total calories burnt: {totalCalories}\n";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lblResult.TextAlign = ContentAlignment.MiddleCenter;
+
+            decimal? totalCaloriesBurntToday = databaseHelper.GetTodayCalories();
+
+            lblResult.Text = $"Total calories burnt today: {totalCaloriesBurntToday.Value}\n" +
+                $"Your daily calories burning goal: {currentUser.CalorieGoal}\n";
+
+            if (totalCaloriesBurntToday >= currentUser.CalorieGoal)
+            {
+                lblResult.Text += "Status: Successful";
+            }
+            else
+            {
+                lblResult.Text += "Status: Failed";
+            }
         }
     }
 }

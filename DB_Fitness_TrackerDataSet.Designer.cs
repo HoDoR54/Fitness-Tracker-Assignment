@@ -3871,11 +3871,10 @@ SELECT id, activityId, userId, burntCalorie, dateDone FROM tblActivityUser WHERE
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM tblActivityUser\r\nWHERE userId = @userId\r\nAND activityId = @activityId" +
-                "";
+            this._commandCollection[1].CommandText = "SELECT *\r\nFROM tblActivityUser\r\nWHERE CONVERT(DATE, dateDone) = CONVERT(DATE, @da" +
+                "teDone);";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "activityId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateDone", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "INSERT INTO [dbo].[tblActivityUser] ([activityId], [userId], [burntCalorie], [dat" +
@@ -3911,6 +3910,25 @@ SELECT id, activityId, userId, burntCalorie, dateDone FROM tblActivityUser WHERE
             DB_Fitness_TrackerDataSet.tblActivityUserDataTable dataTable = new DB_Fitness_TrackerDataSet.tblActivityUserDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int GetTodayCalories(DB_Fitness_TrackerDataSet.tblActivityUserDataTable dataTable, string dateDone) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((dateDone == null)) {
+                throw new global::System.ArgumentNullException("dateDone");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(dateDone));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4126,41 +4144,6 @@ SELECT id, activityId, userId, burntCalorie, dateDone FROM tblActivityUser WHERE
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<int> activityId, string userId, global::System.Nullable<decimal> burntCalorie, global::System.Nullable<global::System.DateTime> dateDone, int Original_id, global::System.Nullable<int> Original_activityId, string Original_userId, global::System.Nullable<decimal> Original_burntCalorie, global::System.Nullable<global::System.DateTime> Original_dateDone) {
             return this.Update(activityId, userId, burntCalorie, dateDone, Original_id, Original_activityId, Original_userId, Original_burntCalorie, Original_dateDone, Original_id);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteUserActivity(string userId, global::System.Nullable<int> activityId) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            if ((userId == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[0].Value = ((string)(userId));
-            }
-            if ((activityId.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(activityId.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

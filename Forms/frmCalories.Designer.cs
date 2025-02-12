@@ -45,6 +45,7 @@
             this.btnResult = new System.Windows.Forms.Button();
             this.btnAddAct = new System.Windows.Forms.Button();
             this.cboActivities = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numMet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMet3)).BeginInit();
@@ -63,7 +64,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(415, 112);
+            this.label1.Location = new System.Drawing.Point(414, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 26);
             this.label1.TabIndex = 2;
@@ -76,7 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblToday.Location = new System.Drawing.Point(392, 9);
             this.lblToday.Name = "lblToday";
-            this.lblToday.Size = new System.Drawing.Size(185, 26);
+            this.lblToday.Size = new System.Drawing.Size(183, 26);
             this.lblToday.TabIndex = 3;
             this.lblToday.Text = "Today";
             this.lblToday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -85,17 +86,17 @@
             // 
             this.lblResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblResult.Location = new System.Drawing.Point(12, 90);
+            this.lblResult.Location = new System.Drawing.Point(11, 90);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(358, 218);
+            this.lblResult.Size = new System.Drawing.Size(358, 210);
             this.lblResult.TabIndex = 4;
-            this.lblResult.Text = "See whether your efforts \r\nare paying off!";
+            this.lblResult.Text = "Check if your hard work\r\nis paying off!";
             this.lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblGoal
             // 
             this.lblGoal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblGoal.Location = new System.Drawing.Point(592, 9);
+            this.lblGoal.Location = new System.Drawing.Point(590, 9);
             this.lblGoal.Name = "lblGoal";
             this.lblGoal.Size = new System.Drawing.Size(180, 21);
             this.lblGoal.TabIndex = 5;
@@ -106,7 +107,7 @@
             // 
             this.lblMetric1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMetric1.AutoSize = true;
-            this.lblMetric1.Location = new System.Drawing.Point(416, 172);
+            this.lblMetric1.Location = new System.Drawing.Point(415, 168);
             this.lblMetric1.Name = "lblMetric1";
             this.lblMetric1.Size = new System.Drawing.Size(94, 26);
             this.lblMetric1.TabIndex = 6;
@@ -117,7 +118,7 @@
             // 
             this.lblMetric2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMetric2.AutoSize = true;
-            this.lblMetric2.Location = new System.Drawing.Point(416, 215);
+            this.lblMetric2.Location = new System.Drawing.Point(415, 211);
             this.lblMetric2.Name = "lblMetric2";
             this.lblMetric2.Size = new System.Drawing.Size(94, 26);
             this.lblMetric2.TabIndex = 7;
@@ -128,7 +129,7 @@
             // 
             this.lblMetric3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMetric3.AutoSize = true;
-            this.lblMetric3.Location = new System.Drawing.Point(416, 255);
+            this.lblMetric3.Location = new System.Drawing.Point(415, 251);
             this.lblMetric3.Name = "lblMetric3";
             this.lblMetric3.Size = new System.Drawing.Size(94, 26);
             this.lblMetric3.TabIndex = 8;
@@ -138,7 +139,12 @@
             // numMet1
             // 
             this.numMet1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numMet1.Location = new System.Drawing.Point(564, 170);
+            this.numMet1.Location = new System.Drawing.Point(563, 166);
+            this.numMet1.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
             this.numMet1.Name = "numMet1";
             this.numMet1.Size = new System.Drawing.Size(120, 34);
             this.numMet1.TabIndex = 9;
@@ -146,7 +152,12 @@
             // numMet2
             // 
             this.numMet2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numMet2.Location = new System.Drawing.Point(564, 213);
+            this.numMet2.Location = new System.Drawing.Point(563, 209);
+            this.numMet2.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
             this.numMet2.Name = "numMet2";
             this.numMet2.Size = new System.Drawing.Size(120, 34);
             this.numMet2.TabIndex = 10;
@@ -154,7 +165,12 @@
             // numMet3
             // 
             this.numMet3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numMet3.Location = new System.Drawing.Point(564, 253);
+            this.numMet3.Location = new System.Drawing.Point(563, 249);
+            this.numMet3.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
             this.numMet3.Name = "numMet3";
             this.numMet3.Size = new System.Drawing.Size(120, 34);
             this.numMet3.TabIndex = 11;
@@ -163,7 +179,7 @@
             // 
             this.lblUnit3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnit3.AutoSize = true;
-            this.lblUnit3.Location = new System.Drawing.Point(690, 255);
+            this.lblUnit3.Location = new System.Drawing.Point(689, 251);
             this.lblUnit3.Name = "lblUnit3";
             this.lblUnit3.Size = new System.Drawing.Size(51, 26);
             this.lblUnit3.TabIndex = 12;
@@ -174,7 +190,7 @@
             // 
             this.lblUnit2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnit2.AutoSize = true;
-            this.lblUnit2.Location = new System.Drawing.Point(690, 215);
+            this.lblUnit2.Location = new System.Drawing.Point(689, 211);
             this.lblUnit2.Name = "lblUnit2";
             this.lblUnit2.Size = new System.Drawing.Size(51, 26);
             this.lblUnit2.TabIndex = 13;
@@ -185,7 +201,7 @@
             // 
             this.lblUnit1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnit1.AutoSize = true;
-            this.lblUnit1.Location = new System.Drawing.Point(690, 172);
+            this.lblUnit1.Location = new System.Drawing.Point(689, 168);
             this.lblUnit1.Name = "lblUnit1";
             this.lblUnit1.Size = new System.Drawing.Size(51, 26);
             this.lblUnit1.TabIndex = 14;
@@ -195,17 +211,18 @@
             // btnResult
             // 
             this.btnResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnResult.Location = new System.Drawing.Point(627, 333);
+            this.btnResult.Location = new System.Drawing.Point(474, 325);
             this.btnResult.Name = "btnResult";
             this.btnResult.Size = new System.Drawing.Size(145, 46);
             this.btnResult.TabIndex = 15;
             this.btnResult.Text = "See results";
             this.btnResult.UseVisualStyleBackColor = true;
+            this.btnResult.Click += new System.EventHandler(this.btnResult_Click);
             // 
             // btnAddAct
             // 
             this.btnAddAct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddAct.Location = new System.Drawing.Point(476, 333);
+            this.btnAddAct.Location = new System.Drawing.Point(323, 325);
             this.btnAddAct.Name = "btnAddAct";
             this.btnAddAct.Size = new System.Drawing.Size(145, 46);
             this.btnAddAct.TabIndex = 16;
@@ -215,6 +232,7 @@
             // 
             // cboActivities
             // 
+            this.cboActivities.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboActivities.FormattingEnabled = true;
             this.cboActivities.Location = new System.Drawing.Point(532, 109);
             this.cboActivities.Name = "cboActivities";
@@ -222,11 +240,23 @@
             this.cboActivities.TabIndex = 17;
             this.cboActivities.SelectedIndexChanged += new System.EventHandler(this.cboActivities_SelectedIndexChanged);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(625, 325);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(145, 46);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Today\'s total";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmCalories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 391);
+            this.ClientSize = new System.Drawing.Size(782, 383);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cboActivities);
             this.Controls.Add(this.btnAddAct);
             this.Controls.Add(this.btnResult);
@@ -277,5 +307,6 @@
         private System.Windows.Forms.Button btnResult;
         private System.Windows.Forms.Button btnAddAct;
         private System.Windows.Forms.ComboBox cboActivities;
+        private System.Windows.Forms.Button button1;
     }
 }

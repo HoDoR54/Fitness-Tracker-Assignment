@@ -13,6 +13,7 @@ namespace Fitness_Tracker.Forms
 {
     public partial class frmRegistration : Form
     {
+        DatabaseHelper databaseHelper = new DatabaseHelper();
         public frmRegistration()
         {
             InitializeComponent();
@@ -95,6 +96,12 @@ namespace Fitness_Tracker.Forms
                 txtUsername.Clear();
                 txtUsername.Focus();
             }
+            else if (databaseHelper.CheckAccountExistence(txtUsername.Text.Trim()))
+            {
+                MessageBox.Show("A user with this username already exists.", "Duplicated username", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+                txtUsername.Clear();
+                txtUsername.Focus();
+            }
             else if (string.IsNullOrEmpty(txtName.Text.Trim()))
             {
                 MessageBox.Show("A name is required", "Empty name", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
@@ -145,11 +152,6 @@ namespace Fitness_Tracker.Forms
                 frmMain.Show();
                 this.Hide();
             }
-
-        }
-
-        private void frmRegistration_Load(object sender, EventArgs e)
-        {
 
         }
     }

@@ -57,12 +57,18 @@ namespace Fitness_Tracker.Forms
                 txtPassword.Clear();
                 txtPassword.Focus();
             }
-            else if (!databaseHelper.CheckAccountExistence(txtUsername.Text.Trim(), txtPassword.Text.Trim()))
+            else if (!databaseHelper.CheckAccountExistence(txtUsername.Text.Trim()))
             {
                 MessageBox.Show("User does not exist in the database. try agian.", "Non-existant user", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
                 txtPassword.Clear();
                 txtUsername.Clear();
                 txtUsername.Focus();
+            }
+            else if (!databaseHelper.CheckPassword(txtUsername.Text.Trim() ,txtPassword.Text.Trim()))
+            {
+                MessageBox.Show("Incorrect password. Try again", "Incorrect password", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+                txtPassword.Clear();
+                txtPassword.Focus();
             }
             else
             {

@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB_Fitness_TrackerDataSet.cs">
+      <DependentUpon>DB_Fitness_TrackerDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DB_Fitness_TrackerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

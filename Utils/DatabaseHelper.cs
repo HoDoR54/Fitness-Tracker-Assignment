@@ -49,16 +49,17 @@ namespace Fitness_Tracker.Utils
             }
         }
 
-        public bool CheckAccountExistence(string username, string password)
+        public bool CheckAccountExistence (string username)
         {
             clsUser user = GetUserByUsername(username);
-
-            if (user == null)
-                return false;
-
-            return user.Password == password;
+            return user == null ? false : true;
         }
 
+        public bool CheckPassword (string username, string password)
+        {
+            clsUser user = GetUserByUsername(username);
+            return user.Username == username ? true : false;
+        }
 
         public clsUser GetUserByUsername(string username)
         {
@@ -169,19 +170,36 @@ namespace Fitness_Tracker.Utils
             }
         }
 
-        public DB_Fitness_TrackerDataSet.tblActivityUserDataTable GetActivityHistory ()
+        public DB_Fitness_TrackerDataSet.GetHistoryDataTable GetActivityHistory ()
         {
-            DB_Fitness_TrackerDataSet.tblActivityUserDataTable auData = new DB_Fitness_TrackerDataSet.tblActivityUserDataTable ();
+            GetHistoryTableAdapter historyAdapter = new GetHistoryTableAdapter();
+            DB_Fitness_TrackerDataSet.GetHistoryDataTable historyData = new DB_Fitness_TrackerDataSet.GetHistoryDataTable();
             try
             {
-                auData = auAdapter.GetData();
-                MessageBox.Show($"Columns: {auData.Columns.Count}");
-                return auData.Rows.Count > 0 ? auData : null;
+                historyData = historyAdapter.GetHistory();
+                return historyData.Rows.Count > 0 ? historyData : null;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
+            }
+        }
+
+        public void DeleteAccount (string username)
+        {
+            try
+            {
+                // delete the related data first
+                string userId = userAdapter.GetIdByUsername(username);
+                auAdapter.DeleteUserActivity(userId);
+
+                // delete the account
+                userAdapter.DeleteAccount(username);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

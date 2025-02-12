@@ -45,7 +45,7 @@ namespace Fitness_Tracker.Forms
 
         private void btnToAccount_Click(object sender, EventArgs e)
         {
-            frmAccountMgmt frmAccountMgmt = new frmAccountMgmt();
+            frmAccountMgmt frmAccountMgmt = new frmAccountMgmt(currentUser);
             frmAccountMgmt.ShowDialog();
         }
 

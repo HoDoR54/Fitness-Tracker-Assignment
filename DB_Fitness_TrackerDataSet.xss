@@ -8,12 +8,12 @@
   <Shapes>
     <Shape ID="DesignTable:tblActivity" ZOrder="3" X="70" Y="70" Height="181" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
     <Shape ID="DesignTable:tblActivityMetric" ZOrder="2" X="381" Y="70" Height="181" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
-    <Shape ID="DesignTable:tblActivityUser" ZOrder="1" X="381" Y="298" Height="250" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
-    <Shape ID="DesignTable:tblMetric" ZOrder="9" X="739" Y="70" Height="158" Width="232" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
-    <Shape ID="DesignTable:tblUser" ZOrder="8" X="724" Y="298" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="260" />
+    <Shape ID="DesignTable:tblActivityUser" ZOrder="1" X="381" Y="298" Height="204" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
+    <Shape ID="DesignTable:tblMetric" ZOrder="7" X="739" Y="70" Height="158" Width="232" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
+    <Shape ID="DesignTable:tblUser" ZOrder="6" X="724" Y="298" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="260" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:FK__tblActivi__activ__4AB81AF0" ZOrder="7" LineWidth="11">
+    <Connector ID="DesignRelation:FK__tblActivi__activ__4AB81AF0" ZOrder="5" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>370</X>
@@ -25,7 +25,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK__tblActivi__metri__4BAC3F29" ZOrder="6" LineWidth="11">
+    <Connector ID="DesignRelation:FK__tblActivi__metri__4BAC3F29" ZOrder="4" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>739</X>
@@ -34,34 +34,6 @@
         <Point>
           <X>681</X>
           <Y>149</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK__tblActivi__activ__4E88ABD4" ZOrder="5" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>294</X>
-          <Y>251</Y>
-        </Point>
-        <Point>
-          <X>294</X>
-          <Y>315</Y>
-        </Point>
-        <Point>
-          <X>381</X>
-          <Y>315</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK__tblActivi__userI__4F7CD00D" ZOrder="4" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>724</X>
-          <Y>400</Y>
-        </Point>
-        <Point>
-          <X>681</X>
-          <Y>400</Y>
         </Point>
       </RoutePoints>
     </Connector>

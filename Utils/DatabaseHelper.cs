@@ -169,5 +169,21 @@ namespace Fitness_Tracker.Utils
             }
         }
 
+        public DB_Fitness_TrackerDataSet.tblActivityUserDataTable GetActivityHistory ()
+        {
+            DB_Fitness_TrackerDataSet.tblActivityUserDataTable auData = new DB_Fitness_TrackerDataSet.tblActivityUserDataTable ();
+            try
+            {
+                auData = auAdapter.GetData();
+                MessageBox.Show($"Columns: {auData.Columns.Count}");
+                return auData.Rows.Count > 0 ? auData : null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
     }
 }

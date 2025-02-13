@@ -55,6 +55,7 @@
             this.dgvHistory.RowTemplate.Height = 24;
             this.dgvHistory.Size = new System.Drawing.Size(668, 317);
             this.dgvHistory.TabIndex = 2;
+            this.dgvHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistory_CellContentClick);
             // 
             // frmHistory
             // 
@@ -63,7 +64,7 @@
             this.ClientSize = new System.Drawing.Size(692, 393);
             this.Controls.Add(this.dgvHistory);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(710, 440);
             this.Name = "frmHistory";
             this.Text = "History";

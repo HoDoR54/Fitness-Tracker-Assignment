@@ -170,13 +170,14 @@ namespace Fitness_Tracker.Utils
             }
         }
 
-        public DB_Fitness_TrackerDataSet.GetHistoryDataTable GetActivityHistory ()
+        public DB_Fitness_TrackerDataSet.GetHistoryDataTable GetActivityHistory (clsUser currentUser)
         {
             GetHistoryTableAdapter historyAdapter = new GetHistoryTableAdapter();
             DB_Fitness_TrackerDataSet.GetHistoryDataTable historyData = new DB_Fitness_TrackerDataSet.GetHistoryDataTable();
+            string userId = userAdapter.GetIdByUsername(currentUser.Username);
             try
             {
-                historyData = historyAdapter.GetHistory();
+                historyData = historyAdapter.GetHistory(userId);
                 return historyData.Rows.Count > 0 ? historyData : null;
             }
             catch (Exception ex)

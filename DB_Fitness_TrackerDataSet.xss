@@ -8,10 +8,10 @@
   <Shapes>
     <Shape ID="DesignTable:tblActivity" ZOrder="6" X="70" Y="70" Height="181" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
     <Shape ID="DesignTable:tblActivityMetric" ZOrder="5" X="401" Y="66" Height="181" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
-    <Shape ID="DesignTable:tblActivityUser" ZOrder="2" X="349" Y="306" Height="273" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
+    <Shape ID="DesignTable:tblActivityUser" ZOrder="1" X="349" Y="306" Height="273" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
     <Shape ID="DesignTable:tblMetric" ZOrder="10" X="739" Y="70" Height="158" Width="232" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:tblUser" ZOrder="9" X="724" Y="298" Height="388" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="260" />
-    <Shape ID="DesignTable:GetHistory" ZOrder="1" X="58" Y="315" Height="158" Width="248" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
+    <Shape ID="DesignTable:GetHistory" ZOrder="2" X="58" Y="315" Height="158" Width="243" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK__tblActivi__activ__4AB81AF0" ZOrder="8" LineWidth="11">

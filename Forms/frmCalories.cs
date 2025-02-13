@@ -133,11 +133,11 @@ namespace Fitness_Tracker.Forms
             lblResult.Text = $"Total calories burnt: {totalCalories}\n";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnTodaysTotal_Click(object sender, EventArgs e)
         {
             lblResult.TextAlign = ContentAlignment.MiddleCenter;
 
-            decimal? totalCaloriesBurntToday = databaseHelper.GetTodayCalories();
+            decimal? totalCaloriesBurntToday = databaseHelper.GetTodayCalories(currentUser);
 
             lblResult.Text = $"Total calories burnt today: {totalCaloriesBurntToday.Value}\n" +
                 $"Your daily calories burning goal: {currentUser.CalorieGoal}\n";

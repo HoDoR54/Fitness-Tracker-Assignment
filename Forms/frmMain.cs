@@ -57,7 +57,7 @@ namespace Fitness_Tracker.Forms
 
         private void btnToHistory_Click(object sender, EventArgs e)
         {
-            frmHistory frmHistory = new frmHistory();
+            frmHistory frmHistory = new frmHistory(currentUser);
             frmHistory.ShowDialog();
         }
     }

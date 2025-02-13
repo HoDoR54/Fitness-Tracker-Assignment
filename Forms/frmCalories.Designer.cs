@@ -45,7 +45,7 @@
             this.btnResult = new System.Windows.Forms.Button();
             this.btnAddAct = new System.Windows.Forms.Button();
             this.cboActivities = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTodaysTotal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numMet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMet3)).BeginInit();
@@ -240,23 +240,23 @@
             this.cboActivities.TabIndex = 17;
             this.cboActivities.SelectedIndexChanged += new System.EventHandler(this.cboActivities_SelectedIndexChanged);
             // 
-            // button1
+            // btnTodaysTotal
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(625, 325);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 46);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Today\'s total";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnTodaysTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTodaysTotal.Location = new System.Drawing.Point(625, 325);
+            this.btnTodaysTotal.Name = "btnTodaysTotal";
+            this.btnTodaysTotal.Size = new System.Drawing.Size(145, 46);
+            this.btnTodaysTotal.TabIndex = 18;
+            this.btnTodaysTotal.Text = "Today\'s total";
+            this.btnTodaysTotal.UseVisualStyleBackColor = true;
+            this.btnTodaysTotal.Click += new System.EventHandler(this.btnTodaysTotal_Click);
             // 
             // frmCalories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 383);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnTodaysTotal);
             this.Controls.Add(this.cboActivities);
             this.Controls.Add(this.btnAddAct);
             this.Controls.Add(this.btnResult);
@@ -307,6 +307,6 @@
         private System.Windows.Forms.Button btnResult;
         private System.Windows.Forms.Button btnAddAct;
         private System.Windows.Forms.ComboBox cboActivities;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTodaysTotal;
     }
 }

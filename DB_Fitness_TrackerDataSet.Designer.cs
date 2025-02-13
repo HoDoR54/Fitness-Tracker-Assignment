@@ -4277,10 +4277,12 @@ SELECT id, activityId, metricId FROM tblActivityMetric WHERE (id = @id)";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT activityId, burntCalorie, dateDone, id, userId FROM tblActivityUser WHERE " +
-                "(CONVERT (DATE, dateDone) = CONVERT (DATE, @dateDone))";
+            this._commandCollection[2].CommandText = "SELECT activityId, burntCalorie, dateDone, id, userId \r\nFROM tblActivityUser \r\nWH" +
+                "ERE (CONVERT (DATE, dateDone) = CONVERT (DATE, @dateDone))\r\nAND userId = @userId" +
+                ";";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateDone", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "INSERT INTO [dbo].[tblActivityUser] ([activityId], [userId], [burntCalorie], [dat" +
@@ -4322,13 +4324,19 @@ SELECT id, activityId, metricId FROM tblActivityMetric WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int GetTodayCalories(DB_Fitness_TrackerDataSet.tblActivityUserDataTable dataTable, string dateDone) {
+        public virtual int GetTodayCalories(DB_Fitness_TrackerDataSet.tblActivityUserDataTable dataTable, string dateDone, string userId) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((dateDone == null)) {
                 throw new global::System.ArgumentNullException("dateDone");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(dateDone));
+            }
+            if ((userId == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(userId));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5694,16 +5702,23 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT a.activityName, au.burntCalorie, au.dateDone\r\nFROM tblActivity a\r\nJOIN tbl" +
-                "ActivityUser au\r\nON a.id = au.activityId;";
+                "ActivityUser au\r\nON a.id = au.activityId\r\nWHERE au.userId = @userId;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DB_Fitness_TrackerDataSet.GetHistoryDataTable GetHistory() {
+        public virtual DB_Fitness_TrackerDataSet.GetHistoryDataTable GetHistory(string userId) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((userId == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(userId));
+            }
             DB_Fitness_TrackerDataSet.GetHistoryDataTable dataTable = new DB_Fitness_TrackerDataSet.GetHistoryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

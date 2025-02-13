@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
@@ -145,13 +146,14 @@ namespace Fitness_Tracker.Utils
             return metrics;
         }
 
-        public decimal GetTodayCalories()
+        public decimal GetTodayCalories(clsUser currentUser)
         {
             DateTime today = DateTime.Today;
             DB_Fitness_TrackerDataSet.tblActivityUserDataTable actUserData = new DB_Fitness_TrackerDataSet.tblActivityUserDataTable();
+            string userId = userAdapter.GetIdByUsername(currentUser.Username);
             try
             {
-                int rowCount = auAdapter.GetTodayCalories(actUserData, today.ToString("yyyy-MM-dd"));
+                int rowCount = auAdapter.GetTodayCalories(actUserData, today.ToString("yyyy-MM-dd"), userId);
 
                 decimal totalCalories = 0;
                 foreach (DataRow row in actUserData.Rows)
@@ -170,13 +172,14 @@ namespace Fitness_Tracker.Utils
             }
         }
 
-        public DB_Fitness_TrackerDataSet.GetHistoryDataTable GetActivityHistory ()
+        public DB_Fitness_TrackerDataSet.GetHistoryDataTable GetActivityHistory (clsUser currentUser)
         {
             GetHistoryTableAdapter historyAdapter = new GetHistoryTableAdapter();
             DB_Fitness_TrackerDataSet.GetHistoryDataTable historyData = new DB_Fitness_TrackerDataSet.GetHistoryDataTable();
+            string userId = userAdapter.GetIdByUsername(currentUser.Username);
             try
             {
-                historyData = historyAdapter.GetHistory();
+                historyData = historyAdapter.GetHistory(userId);
                 return historyData.Rows.Count > 0 ? historyData : null;
             }
             catch (Exception ex)

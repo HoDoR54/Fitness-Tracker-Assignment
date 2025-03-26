@@ -24,11 +24,6 @@ namespace Fitness_Tracker.Forms
             Application.Exit();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmLogin frmLogin = new frmLogin();
@@ -36,7 +31,7 @@ namespace Fitness_Tracker.Forms
             this.Hide();
         }
 
-        public static bool ValidateRegisPw(string password)
+        public bool ValidateRegisPw(string password)
         {
             bool isValid = true;
             List<string> alertMessages = new List<string>();

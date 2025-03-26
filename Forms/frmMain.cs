@@ -27,7 +27,9 @@ namespace Fitness_Tracker.Forms
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            lblUsername.Text = $"Username: {currentUser.Username}";
+            lblUsername.Text = $"Welcome, {currentUser.Username}";
+            char usernameFirstLetter = currentUser.Username[0];
+            btnToAccount.Text = $"{usernameFirstLetter}";
             UpdateCalorieGoal(currentUser.CalorieGoal);
         }
 

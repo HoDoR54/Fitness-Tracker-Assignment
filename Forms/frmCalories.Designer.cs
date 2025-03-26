@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblUsername = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblToday = new System.Windows.Forms.Label();
-            this.lblResult = new System.Windows.Forms.Label();
             this.lblGoal = new System.Windows.Forms.Label();
             this.lblMetric1 = new System.Windows.Forms.Label();
             this.lblMetric2 = new System.Windows.Forms.Label();
@@ -42,144 +40,129 @@
             this.lblUnit3 = new System.Windows.Forms.Label();
             this.lblUnit2 = new System.Windows.Forms.Label();
             this.lblUnit1 = new System.Windows.Forms.Label();
-            this.btnResult = new System.Windows.Forms.Button();
             this.btnAddAct = new System.Windows.Forms.Button();
             this.cboActivities = new System.Windows.Forms.ComboBox();
-            this.btnTodaysTotal = new System.Windows.Forms.Button();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.btnHistory = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numMet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMet3)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(12, 9);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(104, 26);
-            this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "Username";
-            // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(414, 108);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(56, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 26);
+            this.label1.Size = new System.Drawing.Size(70, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Activities: ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblToday
             // 
-            this.lblToday.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblToday.Location = new System.Drawing.Point(392, 9);
+            this.lblToday.BackColor = System.Drawing.Color.Transparent;
+            this.lblToday.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToday.Location = new System.Drawing.Point(311, 9);
             this.lblToday.Name = "lblToday";
-            this.lblToday.Size = new System.Drawing.Size(183, 26);
+            this.lblToday.Size = new System.Drawing.Size(209, 26);
             this.lblToday.TabIndex = 3;
             this.lblToday.Text = "Today";
             this.lblToday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblResult
-            // 
-            this.lblResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lblResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblResult.Location = new System.Drawing.Point(11, 90);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(358, 210);
-            this.lblResult.TabIndex = 4;
-            this.lblResult.Text = "Check if your hard work\r\nis paying off!";
-            this.lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblGoal
             // 
-            this.lblGoal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblGoal.Location = new System.Drawing.Point(590, 9);
+            this.lblGoal.BackColor = System.Drawing.Color.Transparent;
+            this.lblGoal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGoal.Location = new System.Drawing.Point(12, 9);
             this.lblGoal.Name = "lblGoal";
-            this.lblGoal.Size = new System.Drawing.Size(180, 21);
+            this.lblGoal.Size = new System.Drawing.Size(256, 26);
             this.lblGoal.TabIndex = 5;
             this.lblGoal.Text = "Goal";
-            this.lblGoal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblGoal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblMetric1
             // 
-            this.lblMetric1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMetric1.AutoSize = true;
-            this.lblMetric1.Location = new System.Drawing.Point(415, 168);
+            this.lblMetric1.BackColor = System.Drawing.Color.Transparent;
+            this.lblMetric1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMetric1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblMetric1.Location = new System.Drawing.Point(56, 170);
             this.lblMetric1.Name = "lblMetric1";
-            this.lblMetric1.Size = new System.Drawing.Size(94, 26);
+            this.lblMetric1.Size = new System.Drawing.Size(61, 17);
             this.lblMetric1.TabIndex = 6;
             this.lblMetric1.Text = "Metric 1:";
             this.lblMetric1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMetric2
             // 
-            this.lblMetric2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMetric2.AutoSize = true;
-            this.lblMetric2.Location = new System.Drawing.Point(415, 211);
+            this.lblMetric2.BackColor = System.Drawing.Color.Transparent;
+            this.lblMetric2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMetric2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblMetric2.Location = new System.Drawing.Point(56, 232);
             this.lblMetric2.Name = "lblMetric2";
-            this.lblMetric2.Size = new System.Drawing.Size(94, 26);
+            this.lblMetric2.Size = new System.Drawing.Size(61, 17);
             this.lblMetric2.TabIndex = 7;
             this.lblMetric2.Text = "Metric 2:";
             this.lblMetric2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMetric3
             // 
-            this.lblMetric3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMetric3.AutoSize = true;
-            this.lblMetric3.Location = new System.Drawing.Point(415, 251);
+            this.lblMetric3.BackColor = System.Drawing.Color.Transparent;
+            this.lblMetric3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMetric3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblMetric3.Location = new System.Drawing.Point(56, 296);
             this.lblMetric3.Name = "lblMetric3";
-            this.lblMetric3.Size = new System.Drawing.Size(94, 26);
+            this.lblMetric3.Size = new System.Drawing.Size(61, 17);
             this.lblMetric3.TabIndex = 8;
             this.lblMetric3.Text = "Metric 3:";
             this.lblMetric3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // numMet1
             // 
-            this.numMet1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numMet1.Location = new System.Drawing.Point(563, 166);
+            this.numMet1.Location = new System.Drawing.Point(59, 190);
             this.numMet1.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
             this.numMet1.Name = "numMet1";
-            this.numMet1.Size = new System.Drawing.Size(120, 34);
+            this.numMet1.Size = new System.Drawing.Size(163, 34);
             this.numMet1.TabIndex = 9;
             // 
             // numMet2
             // 
-            this.numMet2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numMet2.Location = new System.Drawing.Point(563, 209);
+            this.numMet2.Location = new System.Drawing.Point(59, 252);
             this.numMet2.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
             this.numMet2.Name = "numMet2";
-            this.numMet2.Size = new System.Drawing.Size(120, 34);
+            this.numMet2.Size = new System.Drawing.Size(163, 34);
             this.numMet2.TabIndex = 10;
             // 
             // numMet3
             // 
-            this.numMet3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numMet3.Location = new System.Drawing.Point(563, 249);
+            this.numMet3.Location = new System.Drawing.Point(59, 316);
             this.numMet3.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
             this.numMet3.Name = "numMet3";
-            this.numMet3.Size = new System.Drawing.Size(120, 34);
+            this.numMet3.Size = new System.Drawing.Size(163, 34);
             this.numMet3.TabIndex = 11;
             // 
             // lblUnit3
             // 
-            this.lblUnit3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnit3.AutoSize = true;
-            this.lblUnit3.Location = new System.Drawing.Point(689, 251);
+            this.lblUnit3.Location = new System.Drawing.Point(228, 324);
             this.lblUnit3.Name = "lblUnit3";
             this.lblUnit3.Size = new System.Drawing.Size(51, 26);
             this.lblUnit3.TabIndex = 12;
@@ -188,9 +171,8 @@
             // 
             // lblUnit2
             // 
-            this.lblUnit2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnit2.AutoSize = true;
-            this.lblUnit2.Location = new System.Drawing.Point(689, 211);
+            this.lblUnit2.Location = new System.Drawing.Point(228, 262);
             this.lblUnit2.Name = "lblUnit2";
             this.lblUnit2.Size = new System.Drawing.Size(51, 26);
             this.lblUnit2.TabIndex = 13;
@@ -199,67 +181,67 @@
             // 
             // lblUnit1
             // 
-            this.lblUnit1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnit1.AutoSize = true;
-            this.lblUnit1.Location = new System.Drawing.Point(689, 168);
+            this.lblUnit1.Location = new System.Drawing.Point(226, 198);
             this.lblUnit1.Name = "lblUnit1";
             this.lblUnit1.Size = new System.Drawing.Size(51, 26);
             this.lblUnit1.TabIndex = 14;
             this.lblUnit1.Text = "Unit";
             this.lblUnit1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnResult
-            // 
-            this.btnResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnResult.Location = new System.Drawing.Point(474, 325);
-            this.btnResult.Name = "btnResult";
-            this.btnResult.Size = new System.Drawing.Size(145, 46);
-            this.btnResult.TabIndex = 15;
-            this.btnResult.Text = "See results";
-            this.btnResult.UseVisualStyleBackColor = true;
-            this.btnResult.Click += new System.EventHandler(this.btnResult_Click);
-            // 
             // btnAddAct
             // 
-            this.btnAddAct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddAct.Location = new System.Drawing.Point(323, 325);
+            this.btnAddAct.BackColor = System.Drawing.Color.Navy;
+            this.btnAddAct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddAct.ForeColor = System.Drawing.Color.White;
+            this.btnAddAct.Location = new System.Drawing.Point(327, 309);
             this.btnAddAct.Name = "btnAddAct";
-            this.btnAddAct.Size = new System.Drawing.Size(145, 46);
+            this.btnAddAct.Size = new System.Drawing.Size(144, 41);
             this.btnAddAct.TabIndex = 16;
             this.btnAddAct.Text = "Add activity";
-            this.btnAddAct.UseVisualStyleBackColor = true;
+            this.btnAddAct.UseVisualStyleBackColor = false;
             this.btnAddAct.Click += new System.EventHandler(this.btnAddAct_Click);
             // 
             // cboActivities
             // 
-            this.cboActivities.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboActivities.FormattingEnabled = true;
-            this.cboActivities.Location = new System.Drawing.Point(532, 109);
+            this.cboActivities.Location = new System.Drawing.Point(59, 128);
             this.cboActivities.Name = "cboActivities";
-            this.cboActivities.Size = new System.Drawing.Size(209, 34);
+            this.cboActivities.Size = new System.Drawing.Size(220, 34);
             this.cboActivities.TabIndex = 17;
             this.cboActivities.SelectedIndexChanged += new System.EventHandler(this.cboActivities_SelectedIndexChanged);
             // 
-            // btnTodaysTotal
+            // progressBar
             // 
-            this.btnTodaysTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTodaysTotal.Location = new System.Drawing.Point(625, 325);
-            this.btnTodaysTotal.Name = "btnTodaysTotal";
-            this.btnTodaysTotal.Size = new System.Drawing.Size(145, 46);
-            this.btnTodaysTotal.TabIndex = 18;
-            this.btnTodaysTotal.Text = "Today\'s total";
-            this.btnTodaysTotal.UseVisualStyleBackColor = true;
-            this.btnTodaysTotal.Click += new System.EventHandler(this.btnTodaysTotal_Click);
+            this.progressBar.Location = new System.Drawing.Point(55, 67);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(416, 26);
+            this.progressBar.TabIndex = 19;
+            // 
+            // btnHistory
+            // 
+            this.btnHistory.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistory.ForeColor = System.Drawing.Color.Navy;
+            this.btnHistory.Location = new System.Drawing.Point(327, 257);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(144, 41);
+            this.btnHistory.TabIndex = 20;
+            this.btnHistory.Text = "Recents";
+            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // frmCalories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 383);
-            this.Controls.Add(this.btnTodaysTotal);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(532, 391);
+            this.Controls.Add(this.btnHistory);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.cboActivities);
             this.Controls.Add(this.btnAddAct);
-            this.Controls.Add(this.btnResult);
             this.Controls.Add(this.lblUnit1);
             this.Controls.Add(this.lblUnit2);
             this.Controls.Add(this.lblUnit3);
@@ -270,13 +252,10 @@
             this.Controls.Add(this.lblMetric2);
             this.Controls.Add(this.lblMetric1);
             this.Controls.Add(this.lblGoal);
-            this.Controls.Add(this.lblResult);
             this.Controls.Add(this.lblToday);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblUsername);
             this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.MinimumSize = new System.Drawing.Size(800, 430);
             this.Name = "frmCalories";
             this.Text = "Calories burnt";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCalories_FormClosing);
@@ -290,10 +269,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblToday;
-        private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Label lblGoal;
         private System.Windows.Forms.Label lblMetric1;
         private System.Windows.Forms.Label lblMetric2;
@@ -304,9 +281,9 @@
         private System.Windows.Forms.Label lblUnit3;
         private System.Windows.Forms.Label lblUnit2;
         private System.Windows.Forms.Label lblUnit1;
-        private System.Windows.Forms.Button btnResult;
         private System.Windows.Forms.Button btnAddAct;
         private System.Windows.Forms.ComboBox cboActivities;
-        private System.Windows.Forms.Button btnTodaysTotal;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Button btnHistory;
     }
 }

@@ -40,20 +40,20 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(12, 9);
+            this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(49, 19);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(117, 17);
+            this.lblUsername.Size = new System.Drawing.Size(155, 22);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Username Display";
             // 
             // lblCalories
             // 
             this.lblCalories.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCalories.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalories.Location = new System.Drawing.Point(347, 9);
+            this.lblCalories.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalories.Location = new System.Drawing.Point(446, 19);
             this.lblCalories.Name = "lblCalories";
-            this.lblCalories.Size = new System.Drawing.Size(300, 20);
+            this.lblCalories.Size = new System.Drawing.Size(254, 17);
             this.lblCalories.TabIndex = 0;
             this.lblCalories.Text = "Daily calorie burn goal";
             this.lblCalories.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -61,53 +61,76 @@
             // btnToGoal
             // 
             this.btnToGoal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnToGoal.Location = new System.Drawing.Point(16, 118);
+            this.btnToGoal.BackColor = System.Drawing.Color.Navy;
+            this.btnToGoal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToGoal.FlatAppearance.BorderSize = 0;
+            this.btnToGoal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToGoal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToGoal.ForeColor = System.Drawing.Color.White;
+            this.btnToGoal.Location = new System.Drawing.Point(234, 283);
             this.btnToGoal.Name = "btnToGoal";
-            this.btnToGoal.Size = new System.Drawing.Size(309, 89);
+            this.btnToGoal.Size = new System.Drawing.Size(236, 57);
             this.btnToGoal.TabIndex = 1;
             this.btnToGoal.Text = "Fitness goals";
-            this.btnToGoal.UseVisualStyleBackColor = true;
+            this.btnToGoal.UseVisualStyleBackColor = false;
             this.btnToGoal.Click += new System.EventHandler(this.btnToGoal_Click);
             // 
             // btnToCalories
             // 
             this.btnToCalories.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnToCalories.Location = new System.Drawing.Point(340, 118);
+            this.btnToCalories.BackColor = System.Drawing.Color.Navy;
+            this.btnToCalories.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToCalories.FlatAppearance.BorderSize = 0;
+            this.btnToCalories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToCalories.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToCalories.ForeColor = System.Drawing.Color.White;
+            this.btnToCalories.Location = new System.Drawing.Point(234, 137);
             this.btnToCalories.Name = "btnToCalories";
-            this.btnToCalories.Size = new System.Drawing.Size(307, 89);
+            this.btnToCalories.Size = new System.Drawing.Size(236, 57);
             this.btnToCalories.TabIndex = 2;
             this.btnToCalories.Text = "Calories burnt";
-            this.btnToCalories.UseVisualStyleBackColor = true;
+            this.btnToCalories.UseVisualStyleBackColor = false;
             this.btnToCalories.Click += new System.EventHandler(this.btnToCalories_Click);
             // 
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(119, 65);
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(97, 70);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(376, 44);
+            this.label10.Size = new System.Drawing.Size(550, 64);
             this.label10.TabIndex = 23;
             this.label10.Text = "\"The body achieves what the mind believes.\"\n\n";
             // 
             // btnToAccount
             // 
-            this.btnToAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnToAccount.Location = new System.Drawing.Point(340, 227);
+            this.btnToAccount.BackColor = System.Drawing.Color.Chocolate;
+            this.btnToAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToAccount.FlatAppearance.BorderSize = 0;
+            this.btnToAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToAccount.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToAccount.ForeColor = System.Drawing.Color.White;
+            this.btnToAccount.Location = new System.Drawing.Point(10, 11);
             this.btnToAccount.Name = "btnToAccount";
-            this.btnToAccount.Size = new System.Drawing.Size(309, 89);
+            this.btnToAccount.Size = new System.Drawing.Size(34, 34);
             this.btnToAccount.TabIndex = 27;
-            this.btnToAccount.Text = "Manage account";
-            this.btnToAccount.UseVisualStyleBackColor = true;
+            this.btnToAccount.Text = "U";
+            this.btnToAccount.UseVisualStyleBackColor = false;
             this.btnToAccount.Click += new System.EventHandler(this.btnToAccount_Click);
             // 
             // btnToHistory
             // 
             this.btnToHistory.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnToHistory.Location = new System.Drawing.Point(16, 227);
+            this.btnToHistory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToHistory.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnToHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToHistory.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToHistory.ForeColor = System.Drawing.Color.Navy;
+            this.btnToHistory.Location = new System.Drawing.Point(234, 211);
             this.btnToHistory.Name = "btnToHistory";
-            this.btnToHistory.Size = new System.Drawing.Size(309, 89);
+            this.btnToHistory.Size = new System.Drawing.Size(236, 57);
             this.btnToHistory.TabIndex = 28;
             this.btnToHistory.Text = "History";
             this.btnToHistory.UseVisualStyleBackColor = true;
@@ -115,9 +138,10 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 341);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(710, 391);
             this.Controls.Add(this.btnToHistory);
             this.Controls.Add(this.btnToAccount);
             this.Controls.Add(this.label10);
@@ -125,12 +149,11 @@
             this.Controls.Add(this.btnToGoal);
             this.Controls.Add(this.lblCalories);
             this.Controls.Add(this.lblUsername);
-            this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.MinimumSize = new System.Drawing.Size(675, 380);
+            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.MinimumSize = new System.Drawing.Size(728, 438);
             this.Name = "frmMain";
             this.Text = "Fitness Assistant";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);

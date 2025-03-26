@@ -37,9 +37,7 @@ namespace Fitness_Tracker.Forms
                 databaseHelper.DeleteAccount(currentUser.Username);
                 MessageBox.Show($"Account '{currentUser.Username}' has been successfully deleted.", "Account deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                frmRegistration frmRegistration = new frmRegistration();
-                frmRegistration.Show();
-                this.Hide();
+                Application.Restart();
             }
         }
 
@@ -51,6 +49,8 @@ namespace Fitness_Tracker.Forms
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            frmMain existingMainForm = Application.OpenForms.OfType<frmMain>().FirstOrDefault();
+            existingMainForm.Hide();
             frmRegistration frmRegistration = new frmRegistration();
             frmRegistration.Show();
             this.Hide();
@@ -58,9 +58,16 @@ namespace Fitness_Tracker.Forms
 
         private void btnAnthAcc_Click(object sender, EventArgs e)
         {
+            frmMain existingMainForm = Application.OpenForms.OfType<frmMain>().FirstOrDefault();
+            existingMainForm.Hide();
             frmLogin frmLogin = new frmLogin();
             frmLogin.Show();
             this.Hide();
+        }
+
+        private void btnNewAcc_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

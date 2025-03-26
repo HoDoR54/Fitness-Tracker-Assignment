@@ -35,7 +35,6 @@ namespace Fitness_Tracker.Forms
         private void frmCalories_Load(object sender, EventArgs e)
         {
             lblToday.Text = DateTime.Today.ToString("yyyy-MM-dd");
-            lblUsername.Text = $"Username: {currentUser.Username}";
             lblGoal.Text = $"Calorie goal: {currentUser.CalorieGoal}";
 
             if (activities.Count > 0)
@@ -92,9 +91,6 @@ namespace Fitness_Tracker.Forms
                 addedActivities.Add(activity); 
 
 
-                // Update UI
-                UpdateListDisplay();
-
                 // Calculate calories burnt behind the scene
                 decimal caloriesBurnt = CalorieCalculator.CalculateCalories(activityMetricValues, activity, currentUser.CurrentWeight);
 
@@ -120,36 +116,10 @@ namespace Fitness_Tracker.Forms
             return true;
         }
 
-        public void UpdateListDisplay()
+        private void btnHistory_Click(object sender, EventArgs e)
         {
-            lblResult.TextAlign = ContentAlignment.TopLeft;
-            lblResult.Text = string.Join("\n", addedActivities);
-        }
-
-        private void btnResult_Click(object sender, EventArgs e)
-        {
-            lblResult.TextAlign = ContentAlignment.MiddleCenter;
-            decimal totalCalories = CalorieCalculator.GetTotalCalories(activitiesMetricsValues, currentUser.CurrentWeight);
-            lblResult.Text = $"Total calories burnt: {totalCalories}\n";
-        }
-
-        private void btnTodaysTotal_Click(object sender, EventArgs e)
-        {
-            lblResult.TextAlign = ContentAlignment.MiddleCenter;
-
-            decimal? totalCaloriesBurntToday = databaseHelper.GetTodayCalories(currentUser);
-
-            lblResult.Text = $"Total calories burnt today: {totalCaloriesBurntToday.Value}\n" +
-                $"Your daily calories burning goal: {currentUser.CalorieGoal}\n";
-
-            if (totalCaloriesBurntToday >= currentUser.CalorieGoal)
-            {
-                lblResult.Text += "Status: Successful";
-            }
-            else
-            {
-                lblResult.Text += "Status: Failed";
-            }
+            frmHistory frmHistory = new frmHistory(currentUser);
+            frmHistory.ShowDialog();
         }
     }
 }

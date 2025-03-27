@@ -23,7 +23,12 @@ namespace Fitness_Tracker.Forms
 
         private void frmGoalSetting_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Hide();
+            frmMain existingMainForm = Application.OpenForms.OfType<frmMain>().FirstOrDefault();
+            if (existingMainForm != null)
+            {
+                existingMainForm.Close();
+            }
+
             frmMain mainForm = new frmMain(databaseHelper.GetUserByUsername(currentUser.Username));
             mainForm.Show();
             this.Hide();
@@ -76,8 +81,11 @@ namespace Fitness_Tracker.Forms
                 frmMain existingMainForm = Application.OpenForms.OfType<frmMain>().FirstOrDefault();
                 if (existingMainForm != null)
                 {
-                    existingMainForm.UpdateCalorieGoal(goal);
+                    existingMainForm.Close();
                 }
+
+                frmMain mainForm = new frmMain(databaseHelper.GetUserByUsername(currentUser.Username));
+                mainForm.Show();
 
                 this.Close();
             }

@@ -98,7 +98,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(97, 70);
+            this.label10.Location = new System.Drawing.Point(117, 70);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(550, 64);
             this.label10.TabIndex = 23;
@@ -153,8 +153,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MinimumSize = new System.Drawing.Size(728, 438);
             this.Name = "frmMain";
-            this.Text = "Fitness Assistant";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
+            this.Text = "Fitness Tracker";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -41,7 +41,7 @@
             this.lblName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(88, 40);
+            this.lblName.Location = new System.Drawing.Point(98, 40);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(184, 25);
             this.lblName.TabIndex = 0;
@@ -141,7 +141,7 @@
             this.MaximumSize = new System.Drawing.Size(391, 447);
             this.MinimumSize = new System.Drawing.Size(391, 447);
             this.Name = "frmAccountMgmt";
-            this.Text = "Manage your account";
+            this.Text = "Account";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAccountMgmt_FormClosing);
             this.Load += new System.EventHandler(this.frmAccountMgmt_Load);
             this.ResumeLayout(false);

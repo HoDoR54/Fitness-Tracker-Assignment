@@ -20,11 +20,6 @@ namespace Fitness_Tracker.Forms
             currentUser = user;
         }
 
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             lblUsername.Text = $"Welcome, {currentUser.Username}";

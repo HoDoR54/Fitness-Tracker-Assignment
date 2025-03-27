@@ -43,6 +43,25 @@ namespace Fitness_Tracker.Forms
                 cboActivities.SelectedIndex = 0;
                 UpdateUI(activities[0]);
             }
+
+            UpdateProgress();
+        }
+
+        public void UpdateProgress()
+        {
+            decimal todayCalories = databaseHelper.GetTodayCalories(currentUser);
+            decimal progressPercent = (todayCalories / currentUser.CalorieGoal) * 100;
+            progressBar.Value = (int)(progressPercent);
+            if (todayCalories < currentUser.CalorieGoal)
+            {
+                lblPercent.Text = $"{todayCalories} / {currentUser.CalorieGoal} kcals ({Math.Round(progressPercent, 2)}%)";
+            }
+
+            if (todayCalories >= currentUser.CalorieGoal)
+            {
+                lblPercent.Text = $"{currentUser.CalorieGoal}/{currentUser.CalorieGoal} kcals (100%)";
+                MessageBox.Show("Congratulations! You have reached your daily calorie goal.", "Goal reached", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         public void UpdateUI(string activity)
@@ -91,11 +110,14 @@ namespace Fitness_Tracker.Forms
                 addedActivities.Add(activity); 
 
 
-                // Calculate calories burnt behind the scene
+                // Calculate calories burnt
                 decimal caloriesBurnt = CalorieCalculator.CalculateCalories(activityMetricValues, activity, currentUser.CurrentWeight);
 
                 // Update the database
                 databaseHelper.AddUserActivity(activity, currentUser.Username, caloriesBurnt);
+
+                // Update the progress bar
+                UpdateProgress();
             }
         }
 

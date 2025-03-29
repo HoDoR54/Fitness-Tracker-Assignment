@@ -1,0 +1,154 @@
+﻿using Fitness_Tracker.Services;
+using Fitness_Tracker.Utils;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Fitness_Tracker.Forms
+{
+    public partial class CalorieCalculationForm : Form
+    {
+        private static DatabaseHelper _dbHelper = new DatabaseHelper();
+        private User _currentUser;
+        private List<Dictionary<string, List<decimal>>> _activitiesMetricsValues = new List<Dictionary<string, List<decimal>>>();
+        private HashSet<string> _addedActivities = new HashSet<string>();
+
+        public CalorieCalculationForm(User user)
+        {
+            InitializeComponent();
+            _currentUser = user;
+        }
+
+        private void frmCalories_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+        }
+
+        private List<string> activities = _dbHelper.GetAllActivities();
+
+        private void frmCalories_Load(object sender, EventArgs e)
+        {
+            lblToday.Text = DateTime.Today.ToString("yyyy-MM-dd");
+            lblGoal.Text = $"Calorie goal: {_currentUser.CalorieGoal}";
+
+            if (activities.Count > 0)
+            {
+                activityComboBox.DataSource = activities;
+                activityComboBox.SelectedIndex = 0;
+                UpdateUI(activities[0]);
+            }
+
+            UpdateProgress(false);
+        }
+
+        public void UpdateProgress(bool isAdding)
+        {
+            decimal todayCalories = _dbHelper.GetTodayCalories(_currentUser);
+            decimal progressPercent = (todayCalories / _currentUser.CalorieGoal) * 100;
+            progressBar.Minimum = 0;
+            progressBar.Maximum = 100;
+            progressBar.Value = progressPercent >= 100 ? 100 : Convert.ToInt32(progressPercent);
+            if (todayCalories < _currentUser.CalorieGoal)
+            {
+                percentLabel.Text = $"{todayCalories} / {_currentUser.CalorieGoal} kcals ({Math.Round(progressPercent, 2)}%)";
+            }
+
+            if (todayCalories >= _currentUser.CalorieGoal && isAdding)
+            {
+                percentLabel.Text = $"{_currentUser.CalorieGoal}/{_currentUser.CalorieGoal} kcals (100%)";
+                MessageBox.Show("Congratulations! You have reached your daily calorie goal.", "Goal reached", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        public void UpdateUI(string activity)
+        {
+            var metrics = _dbHelper.GetMetricsByActivityName(activity);
+
+            metricOneLabel.Text = $"{metrics[0].Keys.First()}:";
+            unitOneLabel.Text = metrics[0].Values.First();
+
+            metricTwoLabel.Text = $"{metrics[1].Keys.First()}:";
+            unitTwoLabel.Text = metrics[1].Values.First();
+
+            metricThreeLabel.Text = $"{metrics[2].Keys.First()}:";
+            unitThreeLabel.Text = metrics[2].Values.First();
+
+            metricOne.Value = 0;
+            metricTwo.Value = 0;
+            metricThree.Value = 0;
+        }
+
+        private void cboActivities_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateUI(activityComboBox.SelectedItem.ToString().ToLower());
+        }
+
+        private void btnAddAct_Click(object sender, EventArgs e)
+        {
+            string activity = activityComboBox.SelectedItem.ToString().Trim().ToLower();
+
+            if (ValidateActivityInput(activity))
+            {
+                // Update the list
+                List<decimal> metricValues = new List<decimal>
+                {
+                    metricOne.Value,
+                    metricTwo.Value,
+                    metricThree.Value
+                };
+
+                Dictionary<string, List<decimal>> activityMetricValues = new Dictionary<string, List<decimal>>
+                {
+                    { activity, metricValues }
+                };
+
+                _activitiesMetricsValues.Add(activityMetricValues);
+                _addedActivities.Add(activity); 
+
+
+                // Calculate calories burnt
+                decimal caloriesBurnt = CalorieCalculator.CalculateCalories(activityMetricValues, activity, _currentUser.CurrentWeight);
+
+                // Update the database
+                _dbHelper.AddUserActivity(activity, _currentUser.Username, caloriesBurnt);
+
+                // Update the progress bar
+                UpdateProgress(true);
+
+                // Clear the fields
+                metricOne.Value = 0;
+                metricTwo.Value = 0;
+                metricThree.Value = 0;
+            }
+        }
+
+        public bool ValidateActivityInput(string activity)
+        {
+            if (metricOne.Value <= 0 && metricTwo.Value <= 0 && metricThree.Value <= 0)
+            {
+                MessageBox.Show("Please fill the metric values.", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if (_addedActivities.Contains(activity))
+            {
+                MessageBox.Show("You have already added this activity.", "Duplicated activity", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            HistoryForm historyForm = new HistoryForm(_currentUser);
+            historyForm.ShowDialog();
+        }
+    }
+}

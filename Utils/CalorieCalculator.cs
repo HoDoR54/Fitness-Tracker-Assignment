@@ -29,7 +29,7 @@ namespace Fitness_Tracker.Services
                 decimal metric2 = metrics[1];
                 decimal metric3 = metrics[2];
 
-                decimal MET = GetMETForActivity(activity);
+                decimal metValue = GetMETForActivity(activity);
                 decimal timeInHours;
 
                 switch (activity.ToLower())
@@ -37,51 +37,51 @@ namespace Fitness_Tracker.Services
                     case "walking":
                         // Walking: metrics -> steps, distance, time taken (using MET)
                         timeInHours = metric3 / 60;
-                        caloriesBurned = MET * weight * timeInHours;
+                        caloriesBurned = metValue * weight * timeInHours;
                         break;
 
                     case "swimming":
                         // Swimming: metrics -> laps, time taken, average heart rate
                         timeInHours = metric2 / 60;
-                        caloriesBurned = MET * weight * timeInHours;
+                        caloriesBurned = metValue * weight * timeInHours;
                         break;
 
                     case "running":
                         // Running: metrics -> speed in m/s, distance in meters, average heart rate
                         decimal timeInSeconds = metric2 / metric1;
                         timeInHours = timeInSeconds / 3600;
-                        caloriesBurned = MET * weight * timeInHours; 
+                        caloriesBurned = metValue * weight * timeInHours; 
                         break;
 
                     case "cycling":
                         // Cycling: metrics -> speed in m/s, distance, average heart rate
                         timeInSeconds = metric2 / metric1;
                         timeInHours = timeInSeconds / 3600;
-                        caloriesBurned = MET * weight * timeInHours;
+                        caloriesBurned = metValue * weight * timeInHours;
                         break;
 
                     case "jump rope":
                         // Jump Rope: metrics -> reps, time taken, average heart rate
                         timeInHours = metric2 / 60;
-                        caloriesBurned = MET * weight * timeInHours;
+                        caloriesBurned = metValue * weight * timeInHours;
                         break;
 
                     case "squatting":
                         // Squatting: metrics -> reps, time taken, average heart rate
                         timeInHours = metric2 / 60;
-                        caloriesBurned = MET * weight * timeInHours;
+                        caloriesBurned = metValue * weight * timeInHours;
                         break;
 
                     case "burpee":
                         // Burpee: metrics -> reps, time taken, average heart rate
                         timeInHours = metric2 / 60;
-                        caloriesBurned = MET * weight * timeInHours;
+                        caloriesBurned = metValue * weight * timeInHours;
                         break;
 
                     case "jumping jack":
                         // Jumping Jack: metrics -> reps, time taken, average heart rate
                         timeInHours = metric2 / 60;
-                        caloriesBurned = MET * weight * timeInHours;
+                        caloriesBurned = metValue * weight * timeInHours;
                         break;
 
                     default:

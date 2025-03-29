@@ -36,7 +36,7 @@ namespace Fitness_Tracker.Utils
 
             return trainerId;
         }
-        public bool InsertUser(clsUser user)
+        public bool InsertUser(User user)
         {
             try
             {
@@ -52,17 +52,17 @@ namespace Fitness_Tracker.Utils
 
         public bool CheckAccountExistence (string username)
         {
-            clsUser user = GetUserByUsername(username);
+            User user = GetUserByUsername(username);
             return user == null ? false : true;
         }
 
         public bool CheckPassword (string username, string password)
         {
-            clsUser user = GetUserByUsername(username);
+            User user = GetUserByUsername(username);
             return user.Password == password ? true : false;
         }
 
-        public clsUser GetUserByUsername(string username)
+        public User GetUserByUsername(string username)
         {
             userData = userAdapter.GetData();
 
@@ -70,7 +70,7 @@ namespace Fitness_Tracker.Utils
                 .FirstOrDefault(row => row["username"].ToString() == username);
             if (matchedRow != null)
             {
-                return new clsUser(
+                return new User(
                     username: matchedRow["username"].ToString(),
                     name: matchedRow["name"].ToString(),
                     dateOfBirth: Convert.ToDateTime(matchedRow["dateOfBirth"]),
@@ -146,7 +146,7 @@ namespace Fitness_Tracker.Utils
             return metrics;
         }
 
-        public decimal GetTodayCalories(clsUser currentUser)
+        public decimal GetTodayCalories(User currentUser)
         {
             DateTime today = DateTime.Today;
             DB_Fitness_TrackerDataSet.tblActivityUserDataTable actUserData = new DB_Fitness_TrackerDataSet.tblActivityUserDataTable();
@@ -172,7 +172,7 @@ namespace Fitness_Tracker.Utils
             }
         }
 
-        public DB_Fitness_TrackerDataSet.GetHistoryDataTable GetActivityHistory (clsUser currentUser)
+        public DB_Fitness_TrackerDataSet.GetHistoryDataTable GetActivityHistory (User currentUser)
         {
             GetHistoryTableAdapter historyAdapter = new GetHistoryTableAdapter();
             string userId = userAdapter.GetIdByUsername(currentUser.Username);

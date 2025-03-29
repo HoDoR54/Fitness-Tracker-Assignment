@@ -63,9 +63,9 @@ namespace Fitness_Tracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _7818 {
+        internal static System.Drawing.Bitmap Jogging_Girl {
             get {
-                object obj = ResourceManager.GetObject("7818", resourceCulture);
+                object obj = ResourceManager.GetObject("Jogging Girl", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

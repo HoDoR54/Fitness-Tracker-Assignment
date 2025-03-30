@@ -40,7 +40,7 @@ namespace Fitness_Tracker.Utils
         {
             try
             {
-                int dataInserted = userAdapter.Insert(AutoGenerateId(), user.Username, user.Name, user.DateOfBirth, user.Gender, user.CurrentWeight, user.WeightGoal, user.HeightInCm, user.CalorieGoal, user.Password);
+                int dataInserted = userAdapter.Insert(AutoGenerateId(), user.GetUsername(), user.GetName(), user.GetDateOfBirth(), user.GetGender(), user.GetCurrentWeight(), user.GetWeightGoal(), user.GetHeightInCm(), user.GetCalorieGoal(), user.GetPassword());
                 return dataInserted > 0;
             }
             catch (Exception ex)
@@ -59,7 +59,7 @@ namespace Fitness_Tracker.Utils
         public bool CheckPassword (string username, string password)
         {
             User user = GetUserByUsername(username);
-            return user.Password == password ? true : false;
+            return user.GetPassword() == password ? true : false;
         }
 
         public User GetUserByUsername(string username)
@@ -150,7 +150,7 @@ namespace Fitness_Tracker.Utils
         {
             DateTime today = DateTime.Today;
             DB_Fitness_TrackerDataSet.tblActivityUserDataTable actUserData = new DB_Fitness_TrackerDataSet.tblActivityUserDataTable();
-            string userId = userAdapter.GetIdByUsername(currentUser.Username);
+            string userId = userAdapter.GetIdByUsername(currentUser.GetUsername());
             try
             {
                 int rowCount = auAdapter.GetTodayCalories(actUserData, today.ToString("yyyy-MM-dd"), userId);
@@ -175,7 +175,7 @@ namespace Fitness_Tracker.Utils
         public DB_Fitness_TrackerDataSet.GetHistoryDataTable GetActivityHistory (User currentUser)
         {
             GetHistoryTableAdapter historyAdapter = new GetHistoryTableAdapter();
-            string userId = userAdapter.GetIdByUsername(currentUser.Username);
+            string userId = userAdapter.GetIdByUsername(currentUser.GetUsername());
             try
             {
                 DB_Fitness_TrackerDataSet.GetHistoryDataTable historyData = historyAdapter.GetHistory(userId);

@@ -22,10 +22,10 @@ namespace Fitness_Tracker.Forms
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            usernameLabel.Text = $"Welcome, {_currentUser.Username}";
-            char usernameFirstLetter = _currentUser.Username[0];
+            usernameLabel.Text = $"Welcome, {_currentUser.GetUsername()}";
+            char usernameFirstLetter = _currentUser.GetUsername()[0];
             toAccountButton.Text = $"{usernameFirstLetter}";
-            UpdateCalorieGoal(_currentUser.CalorieGoal);
+            UpdateCalorieGoal(_currentUser.GetCalorieGoal());
         }
 
         public void UpdateCalorieGoal(int goal)

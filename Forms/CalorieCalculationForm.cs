@@ -35,7 +35,7 @@ namespace Fitness_Tracker.Forms
         private void frmCalories_Load(object sender, EventArgs e)
         {
             lblToday.Text = DateTime.Today.ToString("yyyy-MM-dd");
-            lblGoal.Text = $"Calorie goal: {_currentUser.CalorieGoal}";
+            lblGoal.Text = $"Calorie goal: {_currentUser.GetCalorieGoal()}";
 
             if (activities.Count > 0)
             {
@@ -50,18 +50,18 @@ namespace Fitness_Tracker.Forms
         public void UpdateProgress(bool isAdding)
         {
             decimal todayCalories = _dbHelper.GetTodayCalories(_currentUser);
-            decimal progressPercent = (todayCalories / _currentUser.CalorieGoal) * 100;
+            decimal progressPercent = (todayCalories / _currentUser.GetCalorieGoal()) * 100;
             progressBar.Minimum = 0;
             progressBar.Maximum = 100;
             progressBar.Value = progressPercent >= 100 ? 100 : Convert.ToInt32(progressPercent);
-            if (todayCalories < _currentUser.CalorieGoal)
+            if (todayCalories < _currentUser.GetCalorieGoal())
             {
-                percentLabel.Text = $"{todayCalories} / {_currentUser.CalorieGoal} kcals ({Math.Round(progressPercent, 2)}%)";
+                percentLabel.Text = $"{todayCalories} / {_currentUser.GetCalorieGoal()} kcals ({Math.Round(progressPercent, 2)}%)";
             }
 
-            if (todayCalories >= _currentUser.CalorieGoal && isAdding)
+            if (todayCalories >= _currentUser.GetCalorieGoal() && isAdding)
             {
-                percentLabel.Text = $"{_currentUser.CalorieGoal}/{_currentUser.CalorieGoal} kcals (100%)";
+                percentLabel.Text = $"{_currentUser.GetCalorieGoal()}/{_currentUser.GetCalorieGoal()} kcals (100%)";
                 MessageBox.Show("Congratulations! You have reached your daily calorie goal.", "Goal reached", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -113,10 +113,10 @@ namespace Fitness_Tracker.Forms
 
 
                 // Calculate calories burnt
-                decimal caloriesBurnt = CalorieCalculator.CalculateCalories(activityMetricValues, activity, _currentUser.CurrentWeight);
+                decimal caloriesBurnt = CalorieCalculator.CalculateCalories(activityMetricValues, activity, _currentUser.GetCurrentWeight());
 
                 // Update the database
-                _dbHelper.AddUserActivity(activity, _currentUser.Username, caloriesBurnt);
+                _dbHelper.AddUserActivity(activity, _currentUser.GetUsername(), caloriesBurnt);
 
                 // Update the progress bar
                 UpdateProgress(true);

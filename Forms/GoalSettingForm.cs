@@ -29,7 +29,7 @@ namespace Fitness_Tracker.Forms
                 existingMainForm.Close();
             }
 
-            HomeForm mainForm = new HomeForm(databaseHelper.GetUserByUsername(_currentUser.Username));
+            HomeForm mainForm = new HomeForm(databaseHelper.GetUserByUsername(_currentUser.GetUsername()));
             mainForm.Show();
             this.Hide();
         }
@@ -73,8 +73,8 @@ namespace Fitness_Tracker.Forms
             }
             else
             {
-                _currentUser.CalorieGoal = goal;
-                databaseHelper.UpdateUserCalGoal(goal, _currentUser.Username);
+                _currentUser.SetCalorieGoal(goal);
+                databaseHelper.UpdateUserCalGoal(goal, _currentUser.GetUsername());
 
                 MessageBox.Show("Goal set successfully!", "Goal set", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -84,7 +84,7 @@ namespace Fitness_Tracker.Forms
                     existingMainForm.Close();
                 }
 
-                HomeForm mainForm = new HomeForm(databaseHelper.GetUserByUsername(_currentUser.Username));
+                HomeForm mainForm = new HomeForm(databaseHelper.GetUserByUsername(_currentUser.GetUsername()));
                 mainForm.Show();
 
                 this.Close();

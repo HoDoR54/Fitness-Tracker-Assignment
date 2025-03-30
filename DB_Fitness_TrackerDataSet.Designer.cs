@@ -5702,7 +5702,8 @@ SELECT id, username, name, dateOfBirth, gender, currentWeight, weightGoal, heigh
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT a.activityName, au.burntCalorie, au.dateDone\r\nFROM tblActivity a\r\nJOIN tbl" +
-                "ActivityUser au\r\nON a.id = au.activityId\r\nWHERE au.userId = @userId;";
+                "ActivityUser au\r\nON a.id = au.activityId\r\nWHERE au.userId = @userId\r\nORDER BY au" +
+                ".dateDone DESC;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userId", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "userId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

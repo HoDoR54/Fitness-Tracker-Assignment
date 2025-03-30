@@ -34,8 +34,8 @@ namespace Fitness_Tracker.Forms
 
             if (result == DialogResult.Yes)
             {
-                _dbHelper.DeleteAccount(_currentUser.Username);
-                MessageBox.Show($"Account '{_currentUser.Username}' has been successfully deleted.", "Account deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _dbHelper.DeleteAccount(_currentUser.GetUsername());
+                MessageBox.Show($"Account '{_currentUser.GetUsername()}' has been successfully deleted.", "Account deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 Application.Restart();
             }
@@ -43,8 +43,8 @@ namespace Fitness_Tracker.Forms
 
         private void frmAccountMgmt_Load(object sender, EventArgs e)
         {
-            nameLabel.Text = _currentUser.Name;
-            usernameLabel.Text = $"Username: {_currentUser.Username}";
+            nameLabel.Text = _currentUser.GetName();
+            usernameLabel.Text = $"Username: {_currentUser.GetUsername()}";
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

@@ -1,34 +1,58 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Fitness_Tracker.Utils
 {
     public class User
     {
-            public string Username { get; set; }
-            public string Name { get; set; }
-            public string Password { get; set; }
-            public string Gender { get; set; }
-            public DateTime DateOfBirth { get; set; }
-            public decimal CurrentWeight { get; set; }
-            public decimal WeightGoal { get; set; }
-            public decimal HeightInCm { get; set; }
-            public int CalorieGoal {  get; set; }
+        private string _username;
+        private string _name;
+        private string _password;
+        private string _gender;
+        private DateTime _dateOfBirth;
+        private decimal _currentWeightInKg;
+        private decimal _weightGoalInKg;
+        private decimal _heightInCm;
+        private int _calorieGoal;
 
         public User(string username, string name, string password, string gender, DateTime dateOfBirth, decimal currentWeight, decimal weightGoal, decimal heightInCm, int calorieGoal)
         {
-            Username = username;
-            Name = name;
-            Password = password;
-            Gender = gender;
-            DateOfBirth = dateOfBirth;
-            CurrentWeight = currentWeight;
-            WeightGoal = weightGoal;
-            HeightInCm = heightInCm;
-            CalorieGoal = calorieGoal;
+            _username = username;
+            _name = name;
+            _password = password;
+            _gender = gender;
+            _dateOfBirth = dateOfBirth;
+            _currentWeightInKg = currentWeight;
+            _weightGoalInKg = weightGoal;
+            _heightInCm = heightInCm;
+            _calorieGoal = calorieGoal;
+        }
+
+        public string GetUsername() => _username;
+        public string GetName() => _name;
+        public string GetGender() => _gender;
+        public DateTime GetDateOfBirth() => _dateOfBirth;
+        public decimal GetCurrentWeight() => _currentWeightInKg;
+        public decimal GetWeightGoal() => _weightGoalInKg;
+        public decimal GetHeightInCm() => _heightInCm;
+        public int GetCalorieGoal() => _calorieGoal;
+
+        public string GetPassword() => _password;
+
+        public bool VerifyPassword(string password) => _password == password;
+
+        public void SetCurrentWeight(decimal newWeight)
+        {
+            if (newWeight > 0) _currentWeightInKg = newWeight;
+        }
+
+        public void SetWeightGoal(decimal newGoal)
+        {
+            if (newGoal > 0) _weightGoalInKg = newGoal;
+        }
+
+        public void SetCalorieGoal(int newGoal)
+        {
+            if (newGoal > 0) _calorieGoal = newGoal;
         }
     }
 }

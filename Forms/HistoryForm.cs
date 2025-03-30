@@ -23,7 +23,7 @@ namespace Fitness_Tracker.Forms
 
         private void frmHistory_Load(object sender, EventArgs e)
         {
-            historyGridView.DataSource = databaseHelper.GetActivityHistory(currentUser);
+            historyGridView.DataSource = databaseHelper.GetActivityHistory(_currentUser);
         }
     }
 }

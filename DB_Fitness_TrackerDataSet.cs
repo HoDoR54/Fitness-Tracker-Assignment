@@ -4,6 +4,9 @@
 
     partial class DB_Fitness_TrackerDataSet
     {
+        partial class GetHistoryDataTable
+        {
+        }
     }
 }
 

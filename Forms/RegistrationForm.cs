@@ -138,7 +138,7 @@ namespace Fitness_Tracker.Forms
                     weightGoal: numGoalWeight.Value,
                     password: passwordTextBox.Text.Trim(),
                     gender: gender ? "Female" : "Male",
-                    calorieGoal: 0
+                    dailyCalorie: 0
                 );
                 DatabaseHelper databaseHelper = new DatabaseHelper();
                 databaseHelper.InsertUser(newUser);

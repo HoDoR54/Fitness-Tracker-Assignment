@@ -14,15 +14,13 @@ namespace Fitness_Tracker.Utils
 {
     internal class DatabaseHelper
     {
-        tblUserTableAdapter userAdapter = new tblUserTableAdapter();
-        DataTable userData = new DataTable();
+        private tblUserTableAdapter userAdapter = new tblUserTableAdapter();
+        private DataTable userData = new DataTable(); 
+        private tblActivityUserTableAdapter auAdapter = new tblActivityUserTableAdapter();
+        private tblActivityTableAdapter actAdapter = new tblActivityTableAdapter();
+        private tblActivityMetricTableAdapter amAdapter = new tblActivityMetricTableAdapter();
 
-        tblActivityUserTableAdapter auAdapter = new tblActivityUserTableAdapter();
-        tblActivityTableAdapter actAdapter = new tblActivityTableAdapter();
-        tblActivityMetricTableAdapter amAdapter = new tblActivityMetricTableAdapter();
-
-
-        public string AutoGenerateId()
+        public string AutoGenerateUserId()
         {
             string trainerId = "FIT001";
             userData = userAdapter.GetData();
@@ -40,7 +38,7 @@ namespace Fitness_Tracker.Utils
         {
             try
             {
-                int dataInserted = userAdapter.Insert(AutoGenerateId(), user.GetUsername(), user.GetName(), user.GetDateOfBirth(), user.GetGender(), user.GetCurrentWeight(), user.GetWeightGoal(), user.GetHeightInCm(), user.GetCalorieGoal(), user.GetPassword());
+                int dataInserted = userAdapter.Insert(AutoGenerateUserId(), user.GetUsername(), user.GetName(), user.GetDateOfBirth(), user.GetGender(), user.GetCurrentWeight(), user.GetWeightGoal(), user.GetHeightInCm(), user.GetCalorieGoal(), user.GetPassword());
                 return dataInserted > 0;
             }
             catch (Exception ex)
@@ -79,7 +77,7 @@ namespace Fitness_Tracker.Utils
                     weightGoal: Convert.ToDecimal(matchedRow["weightGoal"]),
                     heightInCm: Convert.ToInt32(matchedRow["height"]),
                     password: matchedRow["password"].ToString(),
-                    calorieGoal: Convert.ToInt32(matchedRow["dailyCalorie"])
+                    dailyCalorie: Convert.ToInt32(matchedRow["dailyCalorie"])
                 );
             }
 
@@ -187,6 +185,24 @@ namespace Fitness_Tracker.Utils
                 return null;
             }
         }
+
+        public DB_Fitness_TrackerDataSet.GetHistoryDataTable GetHistoryByActivity(User currentUser, string activity)
+        {
+            GetHistoryTableAdapter historyAdapter = new GetHistoryTableAdapter();
+            string userId = userAdapter.GetIdByUsername(currentUser.GetUsername());
+
+            try
+            {
+                DB_Fitness_TrackerDataSet.GetHistoryDataTable historyData = historyAdapter.GetHistoryByActivity(userId, activity.ToLower());
+                return historyData.Rows.Count > 0 ? historyData : null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
 
         public void DeleteAccount (string username)
         {

@@ -13,7 +13,7 @@ namespace Fitness_Tracker.Forms
 {
     public partial class HistoryForm : Form
     {
-        DatabaseHelper databaseHelper = new DatabaseHelper();
+        DatabaseHelper _databaseHelper = new DatabaseHelper();
         private User _currentUser;
         public HistoryForm(User user)
         {
@@ -23,7 +23,38 @@ namespace Fitness_Tracker.Forms
 
         private void frmHistory_Load(object sender, EventArgs e)
         {
-            historyGridView.DataSource = databaseHelper.GetActivityHistory(_currentUser);
+            historyGridView.DataSource = _databaseHelper.GetActivityHistory(_currentUser);
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            string searchText = searchInput.Text.Trim().ToLower();
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                MessageBox.Show("Please enter a search term.", "Empty search", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                if (_databaseHelper.GetHistoryByActivity(_currentUser, searchText) == null)
+                {
+                    MessageBox.Show("No results found.", "Search result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    historyGridView.DataSource = _databaseHelper.GetActivityHistory(_currentUser);
+                    searchInput.Text = string.Empty;
+                    searchInput.Focus();
+                } else
+                {
+                    historyGridView.DataSource = _databaseHelper.GetHistoryByActivity(_currentUser, searchText);
+                }
+            }
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            historyGridView.DataSource = _databaseHelper.GetActivityHistory(_currentUser);
+            searchInput.Text = string.Empty;
+            searchInput.Focus();
         }
     }
 }

@@ -113,7 +113,7 @@ namespace Fitness_Tracker.Forms
 
 
                 // Calculate calories burnt
-                decimal caloriesBurnt = CalorieCalculator.CalculateCalories(activityMetricValues, activity, _currentUser.GetCurrentWeight());
+                decimal caloriesBurnt = CalorieHelper.CalculateCalories(activityMetricValues, activity, _currentUser.GetCurrentWeight());
 
                 // Update the database
                 _dbHelper.AddUserActivity(activity, _currentUser.GetUsername(), caloriesBurnt);

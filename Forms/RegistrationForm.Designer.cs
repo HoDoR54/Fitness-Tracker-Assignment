@@ -484,6 +484,7 @@
             this.Name = "RegistrationForm";
             this.Text = "Create a new account";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRegisteration_FormClosing);
+            //this.Load += new System.EventHandler(this.RegistrationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numCurrentWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGoalWeight)).EndInit();

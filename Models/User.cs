@@ -12,9 +12,9 @@ namespace Fitness_Tracker.Utils
         private decimal _currentWeightInKg;
         private decimal _weightGoalInKg;
         private decimal _heightInCm;
-        private int _calorieGoal;
+        private int _dailyCalorie;
 
-        public User(string username, string name, string password, string gender, DateTime dateOfBirth, decimal currentWeight, decimal weightGoal, decimal heightInCm, int calorieGoal)
+        public User(string username, string name, string password, string gender, DateTime dateOfBirth, decimal currentWeight, decimal weightGoal, decimal heightInCm, int dailyCalorie)
         {
             _username = username;
             _name = name;
@@ -24,7 +24,7 @@ namespace Fitness_Tracker.Utils
             _currentWeightInKg = currentWeight;
             _weightGoalInKg = weightGoal;
             _heightInCm = heightInCm;
-            _calorieGoal = calorieGoal;
+            _dailyCalorie = dailyCalorie;
         }
 
         public string GetUsername() => _username;
@@ -34,7 +34,7 @@ namespace Fitness_Tracker.Utils
         public decimal GetCurrentWeight() => _currentWeightInKg;
         public decimal GetWeightGoal() => _weightGoalInKg;
         public decimal GetHeightInCm() => _heightInCm;
-        public int GetCalorieGoal() => _calorieGoal;
+        public int GetCalorieGoal() => _dailyCalorie;
 
         public string GetPassword() => _password;
 
@@ -52,7 +52,7 @@ namespace Fitness_Tracker.Utils
 
         public void SetCalorieGoal(int newGoal)
         {
-            if (newGoal > 0) _calorieGoal = newGoal;
+            if (newGoal > 0) _dailyCalorie = newGoal;
         }
     }
 }

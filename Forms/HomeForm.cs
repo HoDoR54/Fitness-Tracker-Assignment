@@ -48,8 +48,20 @@ namespace Fitness_Tracker.Forms
 
         private void btnToCalories_Click(object sender, EventArgs e)
         {
-            CalorieCalculationForm calorieForm = new CalorieCalculationForm(_currentUser);
-            calorieForm.ShowDialog();
+            if (_currentUser.GetCalorieGoal() != 0)
+            {
+                CalorieCalculationForm calorieForm = new CalorieCalculationForm(_currentUser);
+                calorieForm.ShowDialog();
+            } else
+            {
+                DialogResult result = MessageBox.Show("You must set a goal first", "Lacking a goal", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    GoalSettingForm goalSettingForm = new GoalSettingForm(_currentUser);
+                    goalSettingForm.ShowDialog();
+                    this.Hide();
+                }
+            }
         }
 
         private void btnToHistory_Click(object sender, EventArgs e)

@@ -5,19 +5,9 @@ using System.Windows.Forms;
 
 namespace Fitness_Tracker.Services
 {
-    internal class CalorieCalculator
+    internal class CalorieHelper
     {
-        public static decimal GetTotalCalories(List<Dictionary<string, List<decimal>>> activitiesMetricsValues, decimal weight)
-        {
-            decimal totalCalories = 0;
-            foreach (var actDict in activitiesMetricsValues)
-            {
-                string activity = actDict.Keys.FirstOrDefault();
-                decimal actCalories = CalculateCalories(actDict, activity, weight);
-                totalCalories += actCalories;
-            }
-            return decimal.Round(totalCalories, 2);
-        }
+
         public static decimal CalculateCalories(Dictionary<string, List<decimal>> activityMetricValues, string activity, decimal weight)
         {
             decimal caloriesBurned = 0;

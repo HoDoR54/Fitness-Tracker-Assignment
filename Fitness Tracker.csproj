@@ -103,7 +103,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Utils\CalorieCalculator.cs" />
+    <Compile Include="Testing\Testing.cs" />
+    <Compile Include="Utils\CalorieHelper.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Utils\DatabaseHelper.cs" />
     <EmbeddedResource Include="Forms\AccountManagementForm.resx">
@@ -159,6 +160,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\Jogging Girl.jpg" />
+    <None Include="Resources\refresh icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

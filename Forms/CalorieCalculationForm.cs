@@ -130,18 +130,11 @@ namespace Fitness_Tracker.Forms
 
         public bool ValidateActivityInput(string activity)
         {
-            if (metricOne.Value <= 0 && metricTwo.Value <= 0 && metricThree.Value <= 0)
+            if (metricOne.Value <= 0 || metricTwo.Value <= 0 || metricThree.Value <= 0)
             {
                 MessageBox.Show("Please fill the metric values.", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
-
-            if (_addedActivities.Contains(activity))
-            {
-                MessageBox.Show("You have already added this activity.", "Duplicated activity", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
-
             return true;
         }
 

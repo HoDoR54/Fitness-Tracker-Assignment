@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.toRegisButton = new System.Windows.Forms.LinkLabel();
+            this.toRegisLink = new System.Windows.Forms.LinkLabel();
             this.cancelButton = new System.Windows.Forms.Button();
             this.logInButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -82,18 +82,18 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Password";
             // 
-            // toRegisButton
+            // toRegisLink
             // 
-            this.toRegisButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.toRegisButton.AutoSize = true;
-            this.toRegisButton.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toRegisButton.Location = new System.Drawing.Point(263, 241);
-            this.toRegisButton.Name = "toRegisButton";
-            this.toRegisButton.Size = new System.Drawing.Size(51, 17);
-            this.toRegisButton.TabIndex = 25;
-            this.toRegisButton.TabStop = true;
-            this.toRegisButton.Text = "Sign up";
-            this.toRegisButton.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogin_LinkClicked);
+            this.toRegisLink.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.toRegisLink.AutoSize = true;
+            this.toRegisLink.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toRegisLink.Location = new System.Drawing.Point(263, 241);
+            this.toRegisLink.Name = "toRegisLink";
+            this.toRegisLink.Size = new System.Drawing.Size(51, 17);
+            this.toRegisLink.TabIndex = 25;
+            this.toRegisLink.TabStop = true;
+            this.toRegisLink.Text = "Sign up";
+            this.toRegisLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogin_LinkClicked);
             // 
             // cancelButton
             // 
@@ -161,7 +161,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.logInButton);
-            this.Controls.Add(this.toRegisButton);
+            this.Controls.Add(this.toRegisLink);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.usernameTextBox);
@@ -183,7 +183,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel toRegisButton;
+        private System.Windows.Forms.LinkLabel toRegisLink;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button logInButton;
         private System.Windows.Forms.Label label3;

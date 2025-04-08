@@ -30,7 +30,7 @@
         {
             this.usernameLabel = new System.Windows.Forms.Label();
             this.calorieGoalLabel = new System.Windows.Forms.Label();
-            this.toGoalHistory = new System.Windows.Forms.Button();
+            this.toGoalButton = new System.Windows.Forms.Button();
             this.toCaloriesButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.toAccountButton = new System.Windows.Forms.Button();
@@ -58,22 +58,22 @@
             this.calorieGoalLabel.Text = "Daily calorie burn goal";
             this.calorieGoalLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // toGoalHistory
+            // toGoalButton
             // 
-            this.toGoalHistory.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.toGoalHistory.BackColor = System.Drawing.Color.Navy;
-            this.toGoalHistory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.toGoalHistory.FlatAppearance.BorderSize = 0;
-            this.toGoalHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.toGoalHistory.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toGoalHistory.ForeColor = System.Drawing.Color.White;
-            this.toGoalHistory.Location = new System.Drawing.Point(234, 283);
-            this.toGoalHistory.Name = "toGoalHistory";
-            this.toGoalHistory.Size = new System.Drawing.Size(236, 57);
-            this.toGoalHistory.TabIndex = 1;
-            this.toGoalHistory.Text = "Fitness goals";
-            this.toGoalHistory.UseVisualStyleBackColor = false;
-            this.toGoalHistory.Click += new System.EventHandler(this.btnToGoal_Click);
+            this.toGoalButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.toGoalButton.BackColor = System.Drawing.Color.Navy;
+            this.toGoalButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.toGoalButton.FlatAppearance.BorderSize = 0;
+            this.toGoalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.toGoalButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toGoalButton.ForeColor = System.Drawing.Color.White;
+            this.toGoalButton.Location = new System.Drawing.Point(234, 283);
+            this.toGoalButton.Name = "toGoalButton";
+            this.toGoalButton.Size = new System.Drawing.Size(236, 57);
+            this.toGoalButton.TabIndex = 1;
+            this.toGoalButton.Text = "Fitness goals";
+            this.toGoalButton.UseVisualStyleBackColor = false;
+            this.toGoalButton.Click += new System.EventHandler(this.btnToGoal_Click);
             // 
             // toCaloriesButton
             // 
@@ -146,7 +146,7 @@
             this.Controls.Add(this.toAccountButton);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.toCaloriesButton);
-            this.Controls.Add(this.toGoalHistory);
+            this.Controls.Add(this.toGoalButton);
             this.Controls.Add(this.calorieGoalLabel);
             this.Controls.Add(this.usernameLabel);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -164,7 +164,7 @@
 
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label calorieGoalLabel;
-        private System.Windows.Forms.Button toGoalHistory;
+        private System.Windows.Forms.Button toGoalButton;
         private System.Windows.Forms.Button toCaloriesButton;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button toAccountButton;

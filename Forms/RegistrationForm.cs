@@ -85,9 +85,15 @@ namespace Fitness_Tracker.Forms
                 MessageBox.Show("You are making too many attempts.", "Too many attempts", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Application.Exit();
             }
-            else if (string.IsNullOrEmpty(usernameTextBox.Text.Trim()) || usernameTextBox.Text.Contains(" "))
+            else if (string.IsNullOrEmpty(usernameTextBox.Text.Trim()))
             {
-                MessageBox.Show("A username is required and must not contain space.", "Empty username", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+                MessageBox.Show("A username is required.", "Empty username", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+                usernameTextBox.Clear();
+                usernameTextBox.Focus();
+            }
+            else if (usernameTextBox.Text.Contains(" "))
+            {
+                MessageBox.Show("A username must not contain any space.", "Empty username", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
                 usernameTextBox.Clear();
                 usernameTextBox.Focus();
             }
@@ -125,6 +131,11 @@ namespace Fitness_Tracker.Forms
                 passwordTextBox.Clear();
                 return;
             }
+            else if (DOB.Value > DateTime.Today.AddYears(-15))
+            {
+                MessageBox.Show("You must be at least 15 years old to register.", "Invalid date of birth", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+                DOB.Focus();
+            }
             else
             {
                 bool gender = femaleRadio.Checked;
@@ -132,7 +143,7 @@ namespace Fitness_Tracker.Forms
                 User newUser = new User(
                     username: usernameTextBox.Text.Trim(),
                     name: fullNameTextBox.Text.Trim(),
-                    dateOfBirth: dtpDob.Value,
+                    dateOfBirth: DOB.Value,
                     heightInCm: numHeight.Value,
                     currentWeight: numCurrentWeight.Value,
                     weightGoal: numGoalWeight.Value,

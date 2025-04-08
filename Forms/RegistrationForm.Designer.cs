@@ -36,13 +36,13 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.signUpButton = new System.Windows.Forms.Button();
-            this.toLogInButton = new System.Windows.Forms.LinkLabel();
+            this.toLogInLink = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dtpDob = new System.Windows.Forms.DateTimePicker();
+            this.DOB = new System.Windows.Forms.DateTimePicker();
             this.maleRadio = new System.Windows.Forms.RadioButton();
             this.femaleRadio = new System.Windows.Forms.RadioButton();
             this.numCurrentWeight = new System.Windows.Forms.NumericUpDown();
@@ -144,20 +144,20 @@
             this.signUpButton.UseVisualStyleBackColor = true;
             this.signUpButton.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
-            // toLogInButton
+            // toLogInLink
             // 
-            this.toLogInButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.toLogInButton.AutoSize = true;
-            this.toLogInButton.BackColor = System.Drawing.Color.Transparent;
-            this.toLogInButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toLogInButton.ForeColor = System.Drawing.Color.White;
-            this.toLogInButton.Location = new System.Drawing.Point(433, 496);
-            this.toLogInButton.Name = "toLogInButton";
-            this.toLogInButton.Size = new System.Drawing.Size(53, 19);
-            this.toLogInButton.TabIndex = 23;
-            this.toLogInButton.TabStop = true;
-            this.toLogInButton.Text = "Log in";
-            this.toLogInButton.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogin_LinkClicked);
+            this.toLogInLink.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.toLogInLink.AutoSize = true;
+            this.toLogInLink.BackColor = System.Drawing.Color.Transparent;
+            this.toLogInLink.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toLogInLink.ForeColor = System.Drawing.Color.White;
+            this.toLogInLink.Location = new System.Drawing.Point(433, 496);
+            this.toLogInLink.Name = "toLogInLink";
+            this.toLogInLink.Size = new System.Drawing.Size(53, 19);
+            this.toLogInLink.TabIndex = 23;
+            this.toLogInLink.TabStop = true;
+            this.toLogInLink.Text = "Log in";
+            this.toLogInLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogin_LinkClicked);
             // 
             // label3
             // 
@@ -224,14 +224,14 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Gender";
             // 
-            // dtpDob
+            // DOB
             // 
-            this.dtpDob.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpDob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDob.Location = new System.Drawing.Point(39, 285);
-            this.dtpDob.Name = "dtpDob";
-            this.dtpDob.Size = new System.Drawing.Size(346, 34);
-            this.dtpDob.TabIndex = 9;
+            this.DOB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DOB.Location = new System.Drawing.Point(39, 285);
+            this.DOB.Name = "DOB";
+            this.DOB.Size = new System.Drawing.Size(346, 34);
+            this.DOB.TabIndex = 9;
             // 
             // maleRadio
             // 
@@ -457,7 +457,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.toLogInButton);
+            this.Controls.Add(this.toLogInLink);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.passwordTextBox);
@@ -468,7 +468,7 @@
             this.Controls.Add(this.numCurrentWeight);
             this.Controls.Add(this.femaleRadio);
             this.Controls.Add(this.maleRadio);
-            this.Controls.Add(this.dtpDob);
+            this.Controls.Add(this.DOB);
             this.Controls.Add(this.fullNameTextBox);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.label7);
@@ -484,7 +484,6 @@
             this.Name = "RegistrationForm";
             this.Text = "Create a new account";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRegisteration_FormClosing);
-            //this.Load += new System.EventHandler(this.RegistrationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numCurrentWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGoalWeight)).EndInit();
@@ -503,13 +502,13 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button signUpButton;
-        private System.Windows.Forms.LinkLabel toLogInButton;
+        private System.Windows.Forms.LinkLabel toLogInLink;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dtpDob;
+        private System.Windows.Forms.DateTimePicker DOB;
         private System.Windows.Forms.RadioButton maleRadio;
         private System.Windows.Forms.RadioButton femaleRadio;
         private System.Windows.Forms.NumericUpDown numCurrentWeight;

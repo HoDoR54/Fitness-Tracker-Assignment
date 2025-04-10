@@ -1,4 +1,5 @@
 ﻿using Fitness_Tracker.Forms;
+using Fitness_Tracker.Testing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace Fitness_Tracker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new RegistrationForm());
+
+            //Tests tests = new Tests();
         }
     }
 }

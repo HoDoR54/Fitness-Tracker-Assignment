@@ -20,25 +20,40 @@ namespace Fitness_Tracker.Utils
         private tblActivityTableAdapter actAdapter = new tblActivityTableAdapter();
         private tblActivityMetricTableAdapter amAdapter = new tblActivityMetricTableAdapter();
 
-        public string AutoGenerateUserId()
+        public string AutoGenerateUserId(string lastUserId)
         {
-            string trainerId = "FIT001";
-            userData = userAdapter.GetData();
+            string userId = "FIT001";
 
-            if (userData.Rows.Count > 0)
+            if (!string.IsNullOrEmpty(lastUserId))
             {
-                string lastId = userData.Rows[userData.Rows.Count - 1]["id"].ToString();
-                int numericPart = int.Parse(lastId.Substring(3)) + 1;
-                trainerId = "FIT" + numericPart.ToString("D3");
+                if (lastUserId.Length < 6 || !lastUserId.StartsWith("FIT"))
+                {
+                    return null;
+                }
+
+                int lastUserNumericPart = int.Parse(lastUserId.Substring(3));
+
+                int numericPart = lastUserNumericPart + 1;
+                userId = "FIT" + numericPart.ToString("D3");
             }
 
-            return trainerId;
+            return userId;
         }
+
+
         public bool InsertUser(User user)
         {
             try
             {
-                int dataInserted = userAdapter.Insert(AutoGenerateUserId(), user.GetUsername(), user.GetName(), user.GetDateOfBirth(), user.GetGender(), user.GetCurrentWeight(), user.GetWeightGoal(), user.GetHeightInCm(), user.GetCalorieGoal(), user.GetPassword());
+                userData = userAdapter.GetData();
+                string lastUserId = userData.Rows.Count > 0 ? userData.Rows[userData.Rows.Count - 1]["userId"].ToString() : null;
+                string newId = AutoGenerateUserId(lastUserId);
+                if (newId == null)
+                {
+                    return false;
+                }
+
+                int dataInserted = userAdapter.Insert(AutoGenerateUserId(lastUserId), user.GetUsername(), user.GetName(), user.GetDateOfBirth(), user.GetGender(), user.GetCurrentWeight(), user.GetWeightGoal(), user.GetHeightInCm(), user.GetCalorieGoal(), user.GetPassword());
                 return dataInserted > 0;
             }
             catch (Exception ex)

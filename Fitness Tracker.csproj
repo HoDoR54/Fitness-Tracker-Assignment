@@ -103,7 +103,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Testing\Testing.cs" />
+    <Compile Include="Testing\Tests.cs" />
     <Compile Include="Utils\CalorieHelper.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Utils\DatabaseHelper.cs" />

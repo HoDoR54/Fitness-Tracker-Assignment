@@ -15,9 +15,8 @@ namespace Fitness_Tracker.Forms
     public partial class CalorieCalculationForm : Form
     {
         private static DatabaseHelper _dbHelper = new DatabaseHelper();
+        private static CalorieHelper _calorieHelper = new CalorieHelper();
         private User _currentUser;
-        private List<Dictionary<string, List<decimal>>> _activitiesMetricsValues = new List<Dictionary<string, List<decimal>>>();
-        private HashSet<string> _addedActivities = new HashSet<string>();
 
         public CalorieCalculationForm(User user)
         {
@@ -108,12 +107,14 @@ namespace Fitness_Tracker.Forms
                     { activity, metricValues }
                 };
 
-                _activitiesMetricsValues.Add(activityMetricValues);
-                _addedActivities.Add(activity); 
-
-
                 // Calculate calories burnt
-                decimal caloriesBurnt = CalorieHelper.CalculateCalories(activityMetricValues, activity, _currentUser.GetCurrentWeight());
+                decimal metValue = _calorieHelper.GetMETForActivity(activity);
+                if (metValue == 0)
+                {
+                    MessageBox.Show("Invalid activity or metric values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                decimal caloriesBurnt = _calorieHelper.CalculateCalories(activityMetricValues, metValue, _currentUser.GetCurrentWeight());
 
                 // Update the database
                 _dbHelper.AddUserActivity(activity, _currentUser.GetUsername(), caloriesBurnt);

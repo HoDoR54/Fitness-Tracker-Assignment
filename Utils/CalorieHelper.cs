@@ -8,87 +8,92 @@ namespace Fitness_Tracker.Services
     internal class CalorieHelper
     {
 
-        public static decimal CalculateCalories(Dictionary<string, List<decimal>> activityMetricValues, string activity, decimal weight)
+        public decimal CalculateCalories(Dictionary<string, List<decimal>> activityMetricValues, decimal metValue, decimal weight)
         {
             decimal caloriesBurned = 0;
 
-            if (activityMetricValues.ContainsKey(activity))
+            string activityName = activityMetricValues.Keys.First();
+            List<decimal> metrics = activityMetricValues[activityName];
+            if (metrics == null || metrics.Count < 3)
             {
-                List<decimal> metrics = activityMetricValues[activity];
-                decimal metric1 = metrics[0];
-                decimal metric2 = metrics[1];
-                decimal metric3 = metrics[2];
+                return 0;
+            }
+            decimal metric1 = metrics[0];
+            decimal metric2 = metrics[1];
+            decimal metric3 = metrics[2];
 
-                decimal metValue = GetMETForActivity(activity);
-                decimal timeInHours;
+            decimal timeInHours;
 
-                switch (activity.ToLower())
-                {
-                    case "walking":
-                        // Walking: metrics -> steps, distance, time taken (using MET)
-                        timeInHours = metric3 / 60;
-                        caloriesBurned = metValue * weight * timeInHours;
-                        break;
+            switch (activityName.ToLower())
+            {
+                case "walking":
+                    // Walking: metrics -> steps, distance, time taken (using MET)
+                    timeInHours = metric3 / 60;
+                    caloriesBurned = metValue * weight * timeInHours;
+                    break;
 
-                    case "swimming":
-                        // Swimming: metrics -> laps, time taken, average heart rate
-                        timeInHours = metric2 / 60;
-                        caloriesBurned = metValue * weight * timeInHours;
-                        break;
+                case "swimming":
+                    // Swimming: metrics -> laps, time taken, average heart rate
+                    timeInHours = metric2 / 60;
+                    caloriesBurned = metValue * weight * timeInHours;
+                    break;
 
-                    case "running":
-                        // Running: metrics -> speed in m/s, distance in meters, average heart rate
-                        decimal timeInSeconds = metric2 / metric1;
-                        timeInHours = timeInSeconds / 3600;
-                        caloriesBurned = metValue * weight * timeInHours; 
-                        break;
+                case "running":
+                    // Running: metrics -> speed in m/s, distance in meters, average heart rate
+                    decimal timeInSeconds = metric2 / metric1;
+                    timeInHours = timeInSeconds / 3600;
+                    caloriesBurned = metValue * weight * timeInHours; 
+                    break;
 
-                    case "cycling":
-                        // Cycling: metrics -> speed in m/s, distance, average heart rate
-                        timeInSeconds = metric2 / metric1;
-                        timeInHours = timeInSeconds / 3600;
-                        caloriesBurned = metValue * weight * timeInHours;
-                        break;
+                case "cycling":
+                    // Cycling: metrics -> speed in m/s, distance, average heart rate
+                    timeInSeconds = metric2 / metric1;
+                    timeInHours = timeInSeconds / 3600;
+                    caloriesBurned = metValue * weight * timeInHours;
+                    break;
 
-                    case "jump rope":
-                        // Jump Rope: metrics -> reps, time taken, average heart rate
-                        timeInHours = metric2 / 60;
-                        caloriesBurned = metValue * weight * timeInHours;
-                        break;
+                case "jump rope":
+                    // Jump Rope: metrics -> reps, time taken, average heart rate
+                    timeInHours = metric2 / 60;
+                    caloriesBurned = metValue * weight * timeInHours;
+                    break;
 
-                    case "squatting":
-                        // Squatting: metrics -> reps, time taken, average heart rate
-                        timeInHours = metric2 / 60;
-                        caloriesBurned = metValue * weight * timeInHours;
-                        break;
+                case "squatting":
+                    // Squatting: metrics -> reps, time taken, average heart rate
+                    timeInHours = metric2 / 60;
+                    caloriesBurned = metValue * weight * timeInHours;
+                    break;
 
-                    case "burpee":
-                        // Burpee: metrics -> reps, time taken, average heart rate
-                        timeInHours = metric2 / 60;
-                        caloriesBurned = metValue * weight * timeInHours;
-                        break;
+                case "burpee":
+                    // Burpee: metrics -> reps, time taken, average heart rate
+                    timeInHours = metric2 / 60;
+                    caloriesBurned = metValue * weight * timeInHours;
+                    break;
 
-                    case "jumping jack":
-                        // Jumping Jack: metrics -> reps, time taken, average heart rate
-                        timeInHours = metric2 / 60;
-                        caloriesBurned = metValue * weight * timeInHours;
-                        break;
+                case "jumping jack":
+                    // Jumping Jack: metrics -> reps, time taken, average heart rate
+                    timeInHours = metric2 / 60;
+                    caloriesBurned = metValue * weight * timeInHours;
+                    break;
 
-                    default:
-                        // If activity is unknown, return 0
-                        caloriesBurned = 0;
-                        break;
-                }
+                default:
+                    // If activity is unknown, return 0
+                    caloriesBurned = 0;
+                    break;
             }
 
             return caloriesBurned;
         }
-        private static decimal GetMETForActivity(string activity)
+        public decimal GetMETForActivity(string activity)
         {
+            if (string.IsNullOrEmpty(activity))
+            {
+                return 0m;
+            }
             switch (activity.ToLower())
             {
                 case "walking":
-                    return 3.8m;  
+                    return 3.8m;
                 case "swimming":
                     return 7.0m;
                 case "running":

@@ -85,7 +85,7 @@ namespace Fitness_Tracker.Forms
                 MessageBox.Show("You are making too many attempts.", "Too many attempts", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Application.Exit();
             }
-            else if (string.IsNullOrEmpty(usernameTextBox.Text.Trim()))
+            if (string.IsNullOrEmpty(usernameTextBox.Text.Trim()))
             {
                 MessageBox.Show("A username is required.", "Empty username", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
                 usernameTextBox.Clear();

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.lblToday = new System.Windows.Forms.Label();
-            this.lblGoal = new System.Windows.Forms.Label();
+            this.dateDisplay = new System.Windows.Forms.Label();
+            this.goalDisplay = new System.Windows.Forms.Label();
             this.metricOneLabel = new System.Windows.Forms.Label();
             this.metricTwoLabel = new System.Windows.Forms.Label();
             this.metricThreeLabel = new System.Windows.Forms.Label();
@@ -65,25 +65,25 @@
             // 
             // lblToday
             // 
-            this.lblToday.BackColor = System.Drawing.Color.Transparent;
-            this.lblToday.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToday.Location = new System.Drawing.Point(311, 9);
-            this.lblToday.Name = "lblToday";
-            this.lblToday.Size = new System.Drawing.Size(209, 26);
-            this.lblToday.TabIndex = 3;
-            this.lblToday.Text = "Today";
-            this.lblToday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dateDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.dateDisplay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateDisplay.Location = new System.Drawing.Point(311, 9);
+            this.dateDisplay.Name = "lblToday";
+            this.dateDisplay.Size = new System.Drawing.Size(209, 26);
+            this.dateDisplay.TabIndex = 3;
+            this.dateDisplay.Text = "Today";
+            this.dateDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblGoal
             // 
-            this.lblGoal.BackColor = System.Drawing.Color.Transparent;
-            this.lblGoal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGoal.Location = new System.Drawing.Point(12, 9);
-            this.lblGoal.Name = "lblGoal";
-            this.lblGoal.Size = new System.Drawing.Size(256, 26);
-            this.lblGoal.TabIndex = 5;
-            this.lblGoal.Text = "Goal";
-            this.lblGoal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.goalDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.goalDisplay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.goalDisplay.Location = new System.Drawing.Point(12, 9);
+            this.goalDisplay.Name = "lblGoal";
+            this.goalDisplay.Size = new System.Drawing.Size(256, 26);
+            this.goalDisplay.TabIndex = 5;
+            this.goalDisplay.Text = "Goal";
+            this.goalDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // metricOneLabel
             // 
@@ -203,7 +203,7 @@
             this.addActivityButton.TabIndex = 6;
             this.addActivityButton.Text = "Add activity";
             this.addActivityButton.UseVisualStyleBackColor = false;
-            this.addActivityButton.Click += new System.EventHandler(this.btnAddAct_Click);
+            this.addActivityButton.Click += new System.EventHandler(this.addActivityButton_Click);
             // 
             // activityComboBox
             // 
@@ -212,7 +212,7 @@
             this.activityComboBox.Name = "activityComboBox";
             this.activityComboBox.Size = new System.Drawing.Size(220, 34);
             this.activityComboBox.TabIndex = 1;
-            this.activityComboBox.SelectedIndexChanged += new System.EventHandler(this.cboActivities_SelectedIndexChanged);
+            this.activityComboBox.SelectedIndexChanged += new System.EventHandler(this.activityComboBox_SelectedIndexChanged);
             // 
             // progressBar
             // 
@@ -233,7 +233,7 @@
             this.toHistoryButton.TabIndex = 5;
             this.toHistoryButton.Text = "Recents";
             this.toHistoryButton.UseVisualStyleBackColor = true;
-            this.toHistoryButton.Click += new System.EventHandler(this.btnHistory_Click);
+            this.toHistoryButton.Click += new System.EventHandler(this.toHistoryButton_Click);
             // 
             // percentLabel
             // 
@@ -265,8 +265,8 @@
             this.Controls.Add(this.metricThreeLabel);
             this.Controls.Add(this.metricTwoLabel);
             this.Controls.Add(this.metricOneLabel);
-            this.Controls.Add(this.lblGoal);
-            this.Controls.Add(this.lblToday);
+            this.Controls.Add(this.goalDisplay);
+            this.Controls.Add(this.dateDisplay);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -274,8 +274,8 @@
             this.MinimumSize = new System.Drawing.Size(550, 500);
             this.Name = "CalorieCalculationForm";
             this.Text = "Your progress";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCalories_FormClosing);
-            this.Load += new System.EventHandler(this.frmCalories_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CalorieCalculationForm_FormClosing);
+            this.Load += new System.EventHandler(this.CalorieCalculationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metricOne)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metricTwo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metricThree)).EndInit();
@@ -286,8 +286,8 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblToday;
-        private System.Windows.Forms.Label lblGoal;
+        private System.Windows.Forms.Label dateDisplay;
+        private System.Windows.Forms.Label goalDisplay;
         private System.Windows.Forms.Label metricOneLabel;
         private System.Windows.Forms.Label metricTwoLabel;
         private System.Windows.Forms.Label metricThreeLabel;

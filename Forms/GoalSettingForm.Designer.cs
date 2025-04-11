@@ -77,7 +77,7 @@
             this.cancelButton.TabIndex = 15;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
-            this.cancelButton.Click += new System.EventHandler(this.btnCancel_Click);
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // setGoalButton
             // 
@@ -95,7 +95,7 @@
             this.setGoalButton.TabIndex = 16;
             this.setGoalButton.Text = "Set goal";
             this.setGoalButton.UseVisualStyleBackColor = false;
-            this.setGoalButton.Click += new System.EventHandler(this.btnSetGoal_Click);
+            this.setGoalButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // calorieIntake
             // 
@@ -143,7 +143,7 @@
             this.MinimumSize = new System.Drawing.Size(433, 387);
             this.Name = "GoalSettingForm";
             this.Text = "Set a goal";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGoalSetting_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GoalSettingForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.calorieIntake)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calorieBurningGoal)).EndInit();
             this.ResumeLayout(false);

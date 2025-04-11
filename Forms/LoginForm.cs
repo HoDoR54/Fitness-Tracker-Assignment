@@ -14,33 +14,32 @@ namespace Fitness_Tracker.Forms
     public partial class LoginForm : Form
     {
         private DatabaseHelper _dbHelper = new DatabaseHelper();
+        private int _attemptCount = 0;
 
         public LoginForm()
         {
             InitializeComponent();        }
 
-        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void toRegisLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             RegistrationForm registrationForm = new RegistrationForm();
             registrationForm.Show();
             this.Hide();
         }
-
-        int attemptCount = 0;
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void logInButton_Click(object sender, EventArgs e)
         {
-            attemptCount++;
-            if (attemptCount >= 3)
+            _attemptCount++;
+            if (_attemptCount >= 3)
             {
                 MessageBox.Show("You are making too many attempts.", "Too many attempts", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Application.Exit();

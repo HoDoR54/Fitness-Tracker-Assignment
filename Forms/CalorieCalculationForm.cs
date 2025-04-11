@@ -17,6 +17,7 @@ namespace Fitness_Tracker.Forms
         private static DatabaseHelper _dbHelper = new DatabaseHelper();
         private static CalorieHelper _calorieHelper = new CalorieHelper();
         private User _currentUser;
+        private List<string> _activities = _dbHelper.GetAllActivities();
 
         public CalorieCalculationForm(User user)
         {
@@ -24,23 +25,22 @@ namespace Fitness_Tracker.Forms
             _currentUser = user;
         }
 
-        private void frmCalories_FormClosing(object sender, FormClosingEventArgs e)
+        private void CalorieCalculationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
         }
 
-        private List<string> activities = _dbHelper.GetAllActivities();
 
-        private void frmCalories_Load(object sender, EventArgs e)
+        private void CalorieCalculationForm_Load(object sender, EventArgs e)
         {
-            lblToday.Text = DateTime.Today.ToString("yyyy-MM-dd");
-            lblGoal.Text = $"Calorie goal: {_currentUser.GetCalorieGoal()}";
+            dateDisplay.Text = DateTime.Today.ToString("yyyy-MM-dd");
+            goalDisplay.Text = $"Calorie goal: {_currentUser.GetCalorieGoal()}";
 
-            if (activities.Count > 0)
+            if (_activities.Count > 0)
             {
-                activityComboBox.DataSource = activities;
+                activityComboBox.DataSource = _activities;
                 activityComboBox.SelectedIndex = 0;
-                UpdateUI(activities[0]);
+                UpdateUI(_activities[0]);
             }
 
             UpdateProgress(false);
@@ -83,12 +83,12 @@ namespace Fitness_Tracker.Forms
             metricThree.Value = 0;
         }
 
-        private void cboActivities_SelectedIndexChanged(object sender, EventArgs e)
+        private void activityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateUI(activityComboBox.SelectedItem.ToString().ToLower());
         }
 
-        private void btnAddAct_Click(object sender, EventArgs e)
+        private void addActivityButton_Click(object sender, EventArgs e)
         {
             string activity = activityComboBox.SelectedItem.ToString().Trim().ToLower();
 
@@ -139,7 +139,7 @@ namespace Fitness_Tracker.Forms
             return true;
         }
 
-        private void btnHistory_Click(object sender, EventArgs e)
+        private void toHistoryButton_Click(object sender, EventArgs e)
         {
             HistoryForm historyForm = new HistoryForm(_currentUser);
             historyForm.ShowDialog();

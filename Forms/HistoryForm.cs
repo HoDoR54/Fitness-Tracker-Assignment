@@ -13,7 +13,7 @@ namespace Fitness_Tracker.Forms
 {
     public partial class HistoryForm : Form
     {
-        DatabaseHelper _databaseHelper = new DatabaseHelper();
+        DatabaseHelper _dbHelper = new DatabaseHelper();
         private User _currentUser;
         public HistoryForm(User user)
         {
@@ -21,9 +21,9 @@ namespace Fitness_Tracker.Forms
             _currentUser = user;
         }
 
-        private void frmHistory_Load(object sender, EventArgs e)
+        private void HistoryForm_Load(object sender, EventArgs e)
         {
-            historyGridView.DataSource = _databaseHelper.GetActivityHistory(_currentUser);
+            historyGridView.DataSource = _dbHelper.GetActivityHistory(_currentUser);
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -37,22 +37,22 @@ namespace Fitness_Tracker.Forms
             }
             else
             {
-                if (_databaseHelper.GetHistoryByActivity(_currentUser, searchText) == null)
+                if (_dbHelper.GetHistoryByActivity(_currentUser, searchText) == null)
                 {
                     MessageBox.Show("No results found.", "Search result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    historyGridView.DataSource = _databaseHelper.GetActivityHistory(_currentUser);
+                    historyGridView.DataSource = _dbHelper.GetActivityHistory(_currentUser);
                     searchInput.Text = string.Empty;
                     searchInput.Focus();
                 } else
                 {
-                    historyGridView.DataSource = _databaseHelper.GetHistoryByActivity(_currentUser, searchText);
+                    historyGridView.DataSource = _dbHelper.GetHistoryByActivity(_currentUser, searchText);
                 }
             }
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
-            historyGridView.DataSource = _databaseHelper.GetActivityHistory(_currentUser);
+            historyGridView.DataSource = _dbHelper.GetActivityHistory(_currentUser);
             searchInput.Text = string.Empty;
             searchInput.Focus();
         }

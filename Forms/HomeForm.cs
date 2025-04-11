@@ -20,7 +20,7 @@ namespace Fitness_Tracker.Forms
             _currentUser = user;
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        private void HomeForm_Load(object sender, EventArgs e)
         {
             usernameLabel.Text = $"Welcome, {_currentUser.GetUsername()}";
             char usernameFirstLetter = _currentUser.GetUsername()[0];
@@ -34,19 +34,19 @@ namespace Fitness_Tracker.Forms
         }
 
 
-        private void btnToGoal_Click(object sender, EventArgs e)
+        private void toGoalButton_Click(object sender, EventArgs e)
         {
             GoalSettingForm goalForm = new GoalSettingForm(_currentUser);
             goalForm.ShowDialog();
         }
 
-        private void btnToAccount_Click(object sender, EventArgs e)
+        private void toAccountButton_Click(object sender, EventArgs e)
         {
             AccountManagementForm accForm = new AccountManagementForm(_currentUser);
             accForm.ShowDialog();
         }
 
-        private void btnToCalories_Click(object sender, EventArgs e)
+        private void toCaloriesButton_Click(object sender, EventArgs e)
         {
             if (_currentUser.GetCalorieGoal() != 0)
             {
@@ -64,7 +64,7 @@ namespace Fitness_Tracker.Forms
             }
         }
 
-        private void btnToHistory_Click(object sender, EventArgs e)
+        private void toHistoryButton_Click(object sender, EventArgs e)
         {
             HistoryForm historyForm = new HistoryForm(_currentUser);
             historyForm.ShowDialog();

@@ -76,7 +76,7 @@
             this.deleteAccButton.TabIndex = 28;
             this.deleteAccButton.Text = "Delete account";
             this.deleteAccButton.UseVisualStyleBackColor = false;
-            this.deleteAccButton.Click += new System.EventHandler(this.btnDeleteAcc_Click);
+            this.deleteAccButton.Click += new System.EventHandler(this.deleteAccButton_Click);
             // 
             // logOutButton
             // 
@@ -91,7 +91,7 @@
             this.logOutButton.TabIndex = 30;
             this.logOutButton.Text = "Log out";
             this.logOutButton.UseVisualStyleBackColor = true;
-            this.logOutButton.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
             // 
             // anotherAccButton
             // 
@@ -108,7 +108,7 @@
             this.anotherAccButton.TabIndex = 32;
             this.anotherAccButton.Text = "Log in with another account";
             this.anotherAccButton.UseVisualStyleBackColor = false;
-            this.anotherAccButton.Click += new System.EventHandler(this.btnAnthAcc_Click);
+            this.anotherAccButton.Click += new System.EventHandler(this.anotherAccButton_Click);
             // 
             // newAccButton
             // 
@@ -123,7 +123,7 @@
             this.newAccButton.TabIndex = 31;
             this.newAccButton.Text = "Create a new account";
             this.newAccButton.UseVisualStyleBackColor = true;
-            this.newAccButton.Click += new System.EventHandler(this.btnNewAcc_Click);
+            this.newAccButton.Click += new System.EventHandler(this.newAccButton_Click);
             // 
             // AccountManagementForm
             // 
@@ -143,8 +143,8 @@
             this.MinimumSize = new System.Drawing.Size(450, 450);
             this.Name = "AccountManagementForm";
             this.Text = "Account";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAccountMgmt_FormClosing);
-            this.Load += new System.EventHandler(this.frmAccountMgmt_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AccountManagementForm_FormClosing);
+            this.Load += new System.EventHandler(this.AccountManagementForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

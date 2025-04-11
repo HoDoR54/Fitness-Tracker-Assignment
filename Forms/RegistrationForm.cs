@@ -14,12 +14,14 @@ namespace Fitness_Tracker.Forms
     public partial class RegistrationForm : Form
     {
         private DatabaseHelper _dbHelper = new DatabaseHelper();
+        private int _attemptCount = 0;
+
         public RegistrationForm()
         {
             InitializeComponent();
         }
 
-        private void frmRegisteration_FormClosing(object sender, FormClosingEventArgs e)
+        private void toLogInLink_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
@@ -74,13 +76,10 @@ namespace Fitness_Tracker.Forms
             return isValid;
         }
 
-
-        int attemptCount = 0;
-
-        private void btnSignUp_Click(object sender, EventArgs e)
+        private void signUpButton_Click(object sender, EventArgs e)
         {
-            attemptCount++;
-            if (attemptCount >= 5)
+            _attemptCount++;
+            if (_attemptCount >= 5)
             {
                 MessageBox.Show("You are making too many attempts.", "Too many attempts", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Application.Exit();
@@ -151,8 +150,7 @@ namespace Fitness_Tracker.Forms
                     gender: gender ? "Female" : "Male",
                     dailyCalorie: 0
                 );
-                DatabaseHelper databaseHelper = new DatabaseHelper();
-                databaseHelper.InsertUser(newUser);
+                _dbHelper.InsertUser(newUser);
 
                 MessageBox.Show("Account created successfully.", "Account created", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HomeForm mainForm = new HomeForm(newUser);

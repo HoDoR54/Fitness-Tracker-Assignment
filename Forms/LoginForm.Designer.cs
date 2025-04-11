@@ -93,7 +93,7 @@
             this.toRegisLink.TabIndex = 25;
             this.toRegisLink.TabStop = true;
             this.toRegisLink.Text = "Sign up";
-            this.toRegisLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogin_LinkClicked);
+            this.toRegisLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.toRegisLink_LinkClicked);
             // 
             // cancelButton
             // 
@@ -110,7 +110,7 @@
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
-            this.cancelButton.Click += new System.EventHandler(this.btnCancel_Click);
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // logInButton
             // 
@@ -127,7 +127,7 @@
             this.logInButton.TabIndex = 2;
             this.logInButton.Text = "Log in";
             this.logInButton.UseVisualStyleBackColor = false;
-            this.logInButton.Click += new System.EventHandler(this.btnLogin_Click);
+            this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
             // 
             // label3
             // 
@@ -171,7 +171,7 @@
             this.MinimumSize = new System.Drawing.Size(471, 410);
             this.Name = "LoginForm";
             this.Text = "Log In";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -15,13 +15,15 @@ namespace Fitness_Tracker.Forms
     public partial class GoalSettingForm : Form
     {
         private User _currentUser;
+        private DatabaseHelper _dbHelper = new DatabaseHelper();
+
         public GoalSettingForm(User user)
         {
             InitializeComponent();
             _currentUser = user;
         }
 
-        private void frmGoalSetting_FormClosing(object sender, FormClosingEventArgs e)
+        private void GoalSettingForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             HomeForm existingMainForm = Application.OpenForms.OfType<HomeForm>().FirstOrDefault();
             if (existingMainForm != null)
@@ -29,19 +31,18 @@ namespace Fitness_Tracker.Forms
                 existingMainForm.Close();
             }
 
-            HomeForm mainForm = new HomeForm(databaseHelper.GetUserByUsername(_currentUser.GetUsername()));
+            HomeForm mainForm = new HomeForm(_dbHelper.GetUserByUsername(_currentUser.GetUsername()));
             mainForm.Show();
             this.Hide();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
 
-        DatabaseHelper databaseHelper = new DatabaseHelper();
 
-        private void btnSetGoal_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
             int intake = (int)calorieIntake.Value;
             int goal = (int)calorieBurningGoal.Value;
@@ -74,7 +75,7 @@ namespace Fitness_Tracker.Forms
             else
             {
                 _currentUser.SetCalorieGoal(goal);
-                databaseHelper.UpdateUserCalGoal(goal, _currentUser.GetUsername());
+                _dbHelper.UpdateUserCalGoal(goal, _currentUser.GetUsername());
 
                 MessageBox.Show("Goal set successfully!", "Goal set", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -84,7 +85,7 @@ namespace Fitness_Tracker.Forms
                     existingMainForm.Close();
                 }
 
-                HomeForm mainForm = new HomeForm(databaseHelper.GetUserByUsername(_currentUser.GetUsername()));
+                HomeForm mainForm = new HomeForm(_dbHelper.GetUserByUsername(_currentUser.GetUsername()));
                 mainForm.Show();
 
                 this.Close();

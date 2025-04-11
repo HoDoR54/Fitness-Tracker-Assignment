@@ -20,12 +20,12 @@ namespace Fitness_Tracker.Forms
             InitializeComponent();
             _currentUser = user;
         }
-        private void frmAccountMgmt_FormClosing(object sender, FormClosingEventArgs e)
+        private void AccountManagementForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
         }
 
-        private void btnDeleteAcc_Click(object sender, EventArgs e)
+        private void deleteAccButton_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Are you sure you want to delete your account?",
                                              "Confirm Deletion",
@@ -41,13 +41,13 @@ namespace Fitness_Tracker.Forms
             }
         }
 
-        private void frmAccountMgmt_Load(object sender, EventArgs e)
+        private void AccountManagementForm_Load(object sender, EventArgs e)
         {
             nameLabel.Text = _currentUser.GetName();
             usernameLabel.Text = $"Username: {_currentUser.GetUsername()}";
         }
 
-        private void btnLogOut_Click(object sender, EventArgs e)
+        private void logOutButton_Click(object sender, EventArgs e)
         {
             HomeForm existingMainForm = Application.OpenForms.OfType<HomeForm>().FirstOrDefault();
             existingMainForm.Hide();
@@ -56,7 +56,7 @@ namespace Fitness_Tracker.Forms
             this.Hide();
         }
 
-        private void btnAnthAcc_Click(object sender, EventArgs e)
+        private void anotherAccButton_Click(object sender, EventArgs e)
         {
             HomeForm existingMainForm = Application.OpenForms.OfType<HomeForm>().FirstOrDefault();
             existingMainForm.Hide();
@@ -65,7 +65,7 @@ namespace Fitness_Tracker.Forms
             this.Hide();
         }
 
-        private void btnNewAcc_Click(object sender, EventArgs e)
+        private void newAccButton_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }

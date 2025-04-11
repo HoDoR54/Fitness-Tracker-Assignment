@@ -120,7 +120,7 @@
             this.MinimumSize = new System.Drawing.Size(550, 610);
             this.Name = "HistoryForm";
             this.Text = "History";
-            this.Load += new System.EventHandler(this.frmHistory_Load);
+            this.Load += new System.EventHandler(this.HistoryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.historyGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -73,7 +73,7 @@
             this.toGoalButton.TabIndex = 1;
             this.toGoalButton.Text = "Fitness goals";
             this.toGoalButton.UseVisualStyleBackColor = false;
-            this.toGoalButton.Click += new System.EventHandler(this.btnToGoal_Click);
+            this.toGoalButton.Click += new System.EventHandler(this.toGoalButton_Click);
             // 
             // toCaloriesButton
             // 
@@ -90,7 +90,7 @@
             this.toCaloriesButton.TabIndex = 2;
             this.toCaloriesButton.Text = "Calories burnt";
             this.toCaloriesButton.UseVisualStyleBackColor = false;
-            this.toCaloriesButton.Click += new System.EventHandler(this.btnToCalories_Click);
+            this.toCaloriesButton.Click += new System.EventHandler(this.toCaloriesButton_Click);
             // 
             // label10
             // 
@@ -118,7 +118,7 @@
             this.toAccountButton.TabIndex = 27;
             this.toAccountButton.Text = "U";
             this.toAccountButton.UseVisualStyleBackColor = false;
-            this.toAccountButton.Click += new System.EventHandler(this.btnToAccount_Click);
+            this.toAccountButton.Click += new System.EventHandler(this.toAccountButton_Click);
             // 
             // toHistoryButton
             // 
@@ -134,7 +134,7 @@
             this.toHistoryButton.TabIndex = 28;
             this.toHistoryButton.Text = "History";
             this.toHistoryButton.UseVisualStyleBackColor = true;
-            this.toHistoryButton.Click += new System.EventHandler(this.btnToHistory_Click);
+            this.toHistoryButton.Click += new System.EventHandler(this.toHistoryButton_Click);
             // 
             // HomeForm
             // 
@@ -154,7 +154,7 @@
             this.MinimumSize = new System.Drawing.Size(728, 438);
             this.Name = "HomeForm";
             this.Text = "Fitness Tracker";
-            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.Load += new System.EventHandler(this.HomeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

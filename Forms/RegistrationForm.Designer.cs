@@ -142,7 +142,7 @@
             this.signUpButton.TabIndex = 20;
             this.signUpButton.Text = "Sign up";
             this.signUpButton.UseVisualStyleBackColor = true;
-            this.signUpButton.Click += new System.EventHandler(this.btnSignUp_Click);
+            this.signUpButton.Click += new System.EventHandler(this.signUpButton_Click);
             // 
             // toLogInLink
             // 
@@ -483,7 +483,7 @@
             this.MinimumSize = new System.Drawing.Size(771, 659);
             this.Name = "RegistrationForm";
             this.Text = "Create a new account";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRegisteration_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.toLogInLink_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.numCurrentWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGoalWeight)).EndInit();

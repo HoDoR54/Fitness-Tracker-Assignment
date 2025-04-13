@@ -13,7 +13,9 @@ namespace Fitness_Tracker.Forms
 {
     public partial class RegistrationForm : Form
     {
+        // DatabaseHelper is a class that handles database operations
         private DatabaseHelper _dbHelper = new DatabaseHelper();
+        // _attemptCount keeps track of the number of registration attempts
         private int _attemptCount = 0;
 
         public RegistrationForm()
@@ -36,10 +38,12 @@ namespace Fitness_Tracker.Forms
         public bool ValidateRegisPw(string password)
         {
             bool isValid = true;
+            // list to store alert messages
             List<string> alertMessages = new List<string>();
 
             if (password.Length < 12)
             {
+                // add alert message if password is too short; same for other conditions
                 alertMessages.Add("A password should be no shorter than 12 characters.");
                 isValid = false;
             }
@@ -70,6 +74,7 @@ namespace Fitness_Tracker.Forms
             }
             if (!isValid)
             {
+                // show all the alert messages in a single message box
                 string message = string.Join("\n", alertMessages);
                 MessageBox.Show(message, "Invalid password", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
@@ -78,12 +83,15 @@ namespace Fitness_Tracker.Forms
 
         private void signUpButton_Click(object sender, EventArgs e)
         {
+            // Check if the user has made too many attempts
             _attemptCount++;
             if (_attemptCount >= 5)
             {
                 MessageBox.Show("You are making too many attempts.", "Too many attempts", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Application.Exit();
             }
+
+            // Validate the input fields
             if (string.IsNullOrEmpty(usernameTextBox.Text.Trim()))
             {
                 MessageBox.Show("A username is required.", "Empty username", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
@@ -137,8 +145,11 @@ namespace Fitness_Tracker.Forms
             }
             else
             {
+
+                // All fields are valid, proceed with registration
                 bool gender = femaleRadio.Checked;
 
+                // instantiate a new user and add it to the database
                 User newUser = new User(
                     username: usernameTextBox.Text.Trim(),
                     name: fullNameTextBox.Text.Trim(),
@@ -152,6 +163,7 @@ namespace Fitness_Tracker.Forms
                 );
                 _dbHelper.InsertUser(newUser);
 
+                // Show a success message and redirect to the main form
                 MessageBox.Show("Account created successfully.", "Account created", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HomeForm mainForm = new HomeForm(newUser);
                 mainForm.Show();

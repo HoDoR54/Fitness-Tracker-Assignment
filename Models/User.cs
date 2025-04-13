@@ -37,19 +37,6 @@ namespace Fitness_Tracker.Utils
         public int GetCalorieGoal() => _dailyCalorie;
 
         public string GetPassword() => _password;
-
-        public bool VerifyPassword(string password) => _password == password;
-
-        public void SetCurrentWeight(decimal newWeight)
-        {
-            if (newWeight > 0) _currentWeightInKg = newWeight;
-        }
-
-        public void SetWeightGoal(decimal newGoal)
-        {
-            if (newGoal > 0) _weightGoalInKg = newGoal;
-        }
-
         public void SetCalorieGoal(int newGoal)
         {
             if (newGoal > 0) _dailyCalorie = newGoal;

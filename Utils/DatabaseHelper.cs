@@ -1,4 +1,5 @@
 ﻿using Fitness_Tracker.DB_Fitness_TrackerDataSetTableAdapters;
+using Fitness_Tracker.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace Fitness_Tracker.Utils
         private tblActivityTableAdapter actAdapter = new tblActivityTableAdapter();
         private tblActivityMetricTableAdapter amAdapter = new tblActivityMetricTableAdapter();
 
+        // this method is used to generate a new userId for the new user
         public string AutoGenerateUserId(string lastUserId)
         {
             string userId = "FIT001";
@@ -41,6 +43,7 @@ namespace Fitness_Tracker.Utils
         }
 
 
+        // this method is used to insert a new user into the database (in registratrion form)
         public bool InsertUser(User user)
         {
             try
@@ -63,18 +66,21 @@ namespace Fitness_Tracker.Utils
             }
         }
 
+        // two methods below are used to check if the username already exists in the database
+        // and if so, check if the password is correct
         public bool CheckAccountExistence (string username)
         {
             User user = GetUserByUsername(username);
-            return user == null ? false : true;
+            return user != null;
         }
 
         public bool CheckPassword (string username, string password)
         {
             User user = GetUserByUsername(username);
-            return user.GetPassword() == password ? true : false;
+            return user.GetPassword() == password;
         }
 
+        // this method is used to get the user data from the database
         public User GetUserByUsername(string username)
         {
             userData = userAdapter.GetData();
@@ -95,10 +101,10 @@ namespace Fitness_Tracker.Utils
                     dailyCalorie: Convert.ToInt32(matchedRow["dailyCalorie"])
                 );
             }
-
             return null;
         }
 
+        // update user calorie goal (a User attribute)
         public bool UpdateUserCalGoal (int calorieGoal, string username)
         {
             try
@@ -113,12 +119,13 @@ namespace Fitness_Tracker.Utils
             }
         }
 
-        public bool AddUserActivity(string activity, string username, decimal burntCalories)
+        // add user activity to the database
+        public bool AddUserActivity(Activity activity, string username, decimal burntCalories)
         {
-            DateTime now = DateTime.Now;
             try
             {
-                int? activityId = actAdapter.GetActivityIdByName(activity);
+                DateTime now = DateTime.Now;
+                int? activityId = activity.GetActivityId();
                 string userId = userAdapter.GetIdByUsername(username);
                 int rowsInserted = auAdapter.InsertUserActivity(activityId, userId, burntCalories, now);
                 return rowsInserted > 0;
@@ -130,42 +137,59 @@ namespace Fitness_Tracker.Utils
             }
         }
 
-        public List<string> GetAllActivities ()
+        // get all activities and their metrics from the database
+        public List<Activity> GetAllActivities()
         {
-            DB_Fitness_TrackerDataSet.tblActivityDataTable activityData = new DB_Fitness_TrackerDataSet.tblActivityDataTable();
-            List<string> activities = new List<string>();
-            actAdapter.GetAllActivities(activityData);
-
-            for (int i = 0; i < activityData.Rows.Count; i++)
-            {
-                activities.Add(activityData.Rows[i]["activityName"].ToString());
-            }
-            return activities;
-        }
-
-        public List<Dictionary<string, string>> GetMetricsByActivityName (string activityName)
-        {
-            DB_Fitness_TrackerDataSet.tblActivityMetricDataTable metricData = new DB_Fitness_TrackerDataSet.tblActivityMetricDataTable();
-            List<Dictionary<string, string>> metrics = new List<Dictionary<string, string>>();
-
-            amAdapter.GetMetricsByActivityName(metricData, activityName);
-
-            for (int i = 0; i < metricData.Rows.Count; i++)
-            {
-                Dictionary<string, string> metricAndUnit = new Dictionary<string, string>();
-                metricAndUnit.Add(metricData[i]["metricName"].ToString(), metricData[i]["metricUnit"].ToString());
-                metrics.Add(metricAndUnit);
-            }
-            return metrics;
-        }
-
-        public decimal GetTodayCalories(User currentUser)
-        {
-            DateTime today = DateTime.Today;
-            DB_Fitness_TrackerDataSet.tblActivityUserDataTable actUserData = new DB_Fitness_TrackerDataSet.tblActivityUserDataTable();
-            string userId = userAdapter.GetIdByUsername(currentUser.GetUsername());
             try
             {
+                DB_Fitness_TrackerDataSet.tblActivityDataTable activityData = new DB_Fitness_TrackerDataSet.tblActivityDataTable();
+
+                List<Activity> activities = new List<Activity>();
+                actAdapter.Fill(activityData);
+
+                for (int i = 0; i < activityData.Rows.Count; i++)
+                {
+                    // add activity to the list
+                    int activityId = Convert.ToInt32(activityData[i]["id"]);
+                    string activityName = activityData[i]["activityName"].ToString();
+                    Activity newActivity = new Activity(activityId, activityName);
+                    activities.Add(newActivity);
+
+                    // get and add metrics to the activity
+                    DB_Fitness_TrackerDataSet.tblActivityMetricDataTable metricData = new DB_Fitness_TrackerDataSet.tblActivityMetricDataTable();
+                    amAdapter.GetMetricsByActivityName(metricData, activityName);
+
+                    List<Metric> metrics = new List<Metric>();
+                    for (int m = 0; m < metricData.Rows.Count; m++)
+                    {
+                        int metricId = Convert.ToInt32(metricData[m]["id"]);
+                        string metricName = metricData[m]["metricName"].ToString();
+                        string metricUnit = metricData[m]["metricUnit"].ToString();
+                        Metric newMetric = new Metric(metricId, metricName, metricUnit);
+                        metrics.Add(newMetric);
+                    }
+
+                    newActivity.SetMetrics(metrics);
+                }
+
+                return activities;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        // get the total calories burnt today
+        public decimal GetTodayCalories(User currentUser)
+        {
+            try
+            {
+                DateTime today = DateTime.Today;
+                DB_Fitness_TrackerDataSet.tblActivityUserDataTable actUserData = new DB_Fitness_TrackerDataSet.tblActivityUserDataTable();
+                string userId = userAdapter.GetIdByUsername(currentUser.GetUsername());
+
                 int rowCount = auAdapter.GetTodayCalories(actUserData, today.ToString("yyyy-MM-dd"), userId);
 
                 decimal totalCalories = 0;
@@ -185,12 +209,13 @@ namespace Fitness_Tracker.Utils
             }
         }
 
+        // get the activity history of the user
         public DB_Fitness_TrackerDataSet.GetHistoryDataTable GetActivityHistory (User currentUser)
         {
-            GetHistoryTableAdapter historyAdapter = new GetHistoryTableAdapter();
-            string userId = userAdapter.GetIdByUsername(currentUser.GetUsername());
             try
             {
+                GetHistoryTableAdapter historyAdapter = new GetHistoryTableAdapter();
+                string userId = userAdapter.GetIdByUsername(currentUser.GetUsername());
                 DB_Fitness_TrackerDataSet.GetHistoryDataTable historyData = historyAdapter.GetHistory(userId);
                 return historyData.Rows.Count > 0 ? historyData : null;
             }
@@ -201,13 +226,13 @@ namespace Fitness_Tracker.Utils
             }
         }
 
+        // get the activity history of the user by activity name (used for the search feature)
         public DB_Fitness_TrackerDataSet.GetHistoryDataTable GetHistoryByActivity(User currentUser, string activity)
         {
-            GetHistoryTableAdapter historyAdapter = new GetHistoryTableAdapter();
-            string userId = userAdapter.GetIdByUsername(currentUser.GetUsername());
-
             try
             {
+                GetHistoryTableAdapter historyAdapter = new GetHistoryTableAdapter();
+                string userId = userAdapter.GetIdByUsername(currentUser.GetUsername());
                 DB_Fitness_TrackerDataSet.GetHistoryDataTable historyData = historyAdapter.GetHistoryByActivity(userId, activity.ToLower());
                 return historyData.Rows.Count > 0 ? historyData : null;
             }
@@ -219,6 +244,7 @@ namespace Fitness_Tracker.Utils
         }
 
 
+        // delete the account permanently
         public void DeleteAccount (string username)
         {
             try

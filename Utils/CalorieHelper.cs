@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fitness_Tracker.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -8,12 +9,20 @@ namespace Fitness_Tracker.Services
     internal class CalorieHelper
     {
 
-        public decimal CalculateCalories(Dictionary<string, List<decimal>> activityMetricValues, decimal metValue, decimal weight)
+        public decimal CalculateCalories(Dictionary<Activity, List<decimal>> activityMetricValues, decimal metValue, decimal weight)
         {
             decimal caloriesBurned = 0;
 
-            string activityName = activityMetricValues.Keys.First();
-            List<decimal> metrics = activityMetricValues[activityName];
+            // Check if activityMetricValues is null or empty
+            Activity activity = activityMetricValues.Keys.First();
+            string activityName = activity.GetActivityName();
+            if (string.IsNullOrEmpty(activityName))
+            {
+                return 0;
+            }
+
+            // Check if the metrics are not null, empty or less than 3
+            List<decimal> metrics = activityMetricValues[activity];
             if (metrics == null || metrics.Count < 3)
             {
                 return 0;
@@ -24,6 +33,10 @@ namespace Fitness_Tracker.Services
 
             decimal timeInHours;
 
+
+            // Calculate calories burned based on activity type
+            // Note: some activities take time in seconds, some in minutes
+            // and some as a speed unit.
             switch (activityName.ToLower())
             {
                 case "walking":
@@ -40,6 +53,7 @@ namespace Fitness_Tracker.Services
 
                 case "running":
                     // Running: metrics -> speed in m/s, distance in meters, average heart rate
+                    // turn speed into time in seconds first
                     decimal timeInSeconds = metric2 / metric1;
                     timeInHours = timeInSeconds / 3600;
                     caloriesBurned = metValue * weight * timeInHours; 
@@ -84,6 +98,9 @@ namespace Fitness_Tracker.Services
 
             return caloriesBurned;
         }
+
+        // Get MET value for a specific activity
+        // Could have statically added to the database but forgot
         public decimal GetMETForActivity(string activity)
         {
             if (string.IsNullOrEmpty(activity))

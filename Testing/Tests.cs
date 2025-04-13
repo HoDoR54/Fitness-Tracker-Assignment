@@ -1,4 +1,5 @@
-﻿using Fitness_Tracker.Services;
+﻿using Fitness_Tracker.Models;
+using Fitness_Tracker.Services;
 using Fitness_Tracker.Utils;
 using System;
 using System.Collections.Generic;
@@ -98,10 +99,11 @@ namespace Fitness_Tracker.Testing
         // Test the CalculateCalories method
         public void TestCalculateCalories()
         {
+            Activity activity = new Activity(1, "walking");
             // WB-09: Valid inputs for "walking"
-            var activityMetricValues = new Dictionary<string, List<decimal>>()
+            var activityMetricValues = new Dictionary<Activity, List<decimal>>()
                 {
-                    { "walking", new List<decimal> { 1000, 3.0m, 45.0m } }
+                    { activity, new List<decimal> { 1000, 3.0m, 45.0m } }
                 };
             decimal metValue = 3.8m;
             decimal weight = 70.00m;
@@ -112,9 +114,10 @@ namespace Fitness_Tracker.Testing
             Console.WriteLine("\n");
 
             // WB-10: Invalid activity name "walk"
-            activityMetricValues = new Dictionary<string, List<decimal>>()
+            activity.SetActivityName("walk");
+            activityMetricValues = new Dictionary<Activity, List<decimal>>()
                 {
-                    { "walk", new List<decimal> { 1000, 3.0m, 45.0m } }
+                    { activity, new List<decimal> { 1000, 3.0m, 45.0m } }
                 };
             caloriesBurned = _calorieHelper.CalculateCalories(activityMetricValues, metValue, weight);
             Console.WriteLine("Test WB-10");
@@ -123,9 +126,9 @@ namespace Fitness_Tracker.Testing
             Console.WriteLine("\n");
 
             // WB-11: Missing one metric (e.g., only two values for "walk")
-            activityMetricValues = new Dictionary<string, List<decimal>>()
+            activityMetricValues = new Dictionary<Activity, List<decimal>>()
                 {
-                    { "walk", new List<decimal> { 1000, 3.0m } }
+                    { activity, new List<decimal> { 1000, 3.0m } }
                 };
             caloriesBurned = _calorieHelper.CalculateCalories(activityMetricValues, metValue, weight);
             Console.WriteLine("Test WB-11");
@@ -134,9 +137,9 @@ namespace Fitness_Tracker.Testing
             Console.WriteLine("\n");
 
             // WB-12: MET value of 0
-            activityMetricValues = new Dictionary<string, List<decimal>>()
+            activityMetricValues = new Dictionary<Activity, List<decimal>>()
                 {
-                    { "walk", new List<decimal> { 1000, 3.0m, 45.0m } }
+                    { activity, new List<decimal> { 1000, 3.0m, 45.0m } }
                 };
             metValue = 0;
             caloriesBurned = _calorieHelper.CalculateCalories(activityMetricValues, metValue, weight);
@@ -146,9 +149,9 @@ namespace Fitness_Tracker.Testing
             Console.WriteLine("\n");
 
             // WB-13: Bodyweight of 0 kg
-            activityMetricValues = new Dictionary<string, List<decimal>>()
+            activityMetricValues = new Dictionary<Activity, List<decimal>>()
                 {
-                    { "walk", new List<decimal> { 1000, 3.0m, 45.0m } }
+                    { activity, new List<decimal> { 1000, 3.0m, 45.0m } }
                 };
             weight = 0;
             caloriesBurned = _calorieHelper.CalculateCalories(activityMetricValues, metValue, weight);
